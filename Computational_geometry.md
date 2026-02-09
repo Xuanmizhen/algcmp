@@ -14,4 +14,4 @@
 | 计算正弦 | [`std::sin`, `std::sinf` (C++11), `std::sinl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/sin.html) | `math.sin` |
 | 计算余弦 | [`std::cos`, `std::cosf` (C++11), `std::cosl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/cos.html) | `math.cos` |
 | 计算正切 | [`std::tan`, `std::tanf` (C++11), `std::tanl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/tan.html) | `math.tan` |
-| 计算模长 | [`std::hypot` (C++11), `std::hypotf` (C++11), `std::hypotl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/hypot.html) | `math.hypot` |
+| 计算斜边/向量模长 | [`std::hypot` (C++11), `std::hypotf` (C++11), `std::hypotl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/hypot.html) | `math.hypot` |
