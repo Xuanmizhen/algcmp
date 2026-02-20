@@ -11,6 +11,7 @@ use clap::{Parser, Subcommand};
 // Import modules
 mod commands;
 mod errors;
+mod references;
 mod utils;
 
 use crate::commands::{download::download_references, print::print_references};

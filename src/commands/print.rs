@@ -1,21 +1,24 @@
 use log::{error, info};
 use markup5ever::{
-    LocalName, QualName,
+    Attribute, LocalName, QualName,
     interface::{NodeOrText, TreeSink},
     tendril::StrTendril,
 };
 use scraper::{Html, HtmlTreeSink, Selector};
-use std::{fs, path::Path};
+use std::{collections::HashSet, fs, path::Path};
 
-use crate::{errors::AppError, utils::get_html_files};
+use crate::{
+    errors::AppError,
+    references::{compare_cpp_names, get_required_references},
+};
 
 /**
  * Print references by concatenating HTML files
  *
  * This function:
- * 1. Checks if all HTML files in ./cppreference are present
- * 2. If not, error out
- * 3. If yes, concatenate them in alphabetical order
+ * 1. Checks if all required HTML files in ./cppreference are present
+ * 2. If not, error out with details about missing files
+ * 3. If yes, concatenate them in alphabetical order by manipulating DOM elements
  * 4. For non-colored output, flatten pre elements with class "de1"
  * 5. Save the result to the appropriate file
  *
@@ -35,34 +38,152 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
         )));
     }
 
-    // Get all HTML files in cppreference directory
-    let html_files = get_html_files(cppreference_dir)?;
+    // Get required references from markdown files
+    let unique_references = get_required_references()?;
 
-    if html_files.is_empty() {
-        error!("No HTML files found in cppreference directory");
+    // Get the set of required file names (without extension)
+    let required_names: HashSet<String> = unique_references.keys().cloned().collect();
+
+    info!("Found {} required references", required_names.len());
+
+    // Get all HTML files in cppreference directory
+    let html_files: Vec<_> = fs::read_dir(cppreference_dir)?
+        .filter_map(|entry| entry.ok())
+        .filter(|entry| {
+            entry.path().extension().map_or(false, |ext| ext == "html")
+        })
+        .map(|entry| entry.path())
+        .collect();
+
+    // Get the set of existing file names (without extension)
+    let existing_names: HashSet<String> = html_files
+        .iter()
+        .filter_map(|path| {
+            path.file_stem()
+                .and_then(|stem| stem.to_str())
+                .map(|s| s.to_string())
+        })
+        .collect();
+
+    // Check for missing files
+    let missing_files: Vec<_> = required_names.difference(&existing_names).collect();
+    if !missing_files.is_empty() {
+        error!("Missing required HTML files:");
+        for name in &missing_files {
+            error!("  - {}.html", name);
+        }
         return Err(AppError::IoError(std::io::Error::new(
             std::io::ErrorKind::NotFound,
-            "No HTML files found in cppreference directory",
+            format!(
+                "Missing {} required HTML file(s). Run 'cargo run -- ref download' first.",
+                missing_files.len()
+            ),
         )));
     }
 
-    // Sort files alphabetically
-    let mut sorted_files = html_files;
-    sorted_files.sort_by(|a, b| a.file_name().cmp(&b.file_name()));
+    // Filter HTML files to only include required ones, then sort
+    let mut sorted_files: Vec<_> = html_files
+        .into_iter()
+        .filter(|path| {
+            path.file_stem()
+                .and_then(|stem| stem.to_str())
+                .map(|s| required_names.contains(s))
+                .unwrap_or(false)
+        })
+        .collect();
 
-    // Concatenate files
-    let mut concatenated_content = String::new();
+    // Sort files using recursive lexicographic order on :: split
+    sorted_files.sort_by(|a, b| {
+        let a_name = a.file_stem().and_then(|s| s.to_str()).unwrap_or("");
+        let b_name = b.file_stem().and_then(|s| s.to_str()).unwrap_or("");
+        compare_cpp_names(a_name, b_name)
+    });
 
-    for file in &sorted_files {
-        let content = fs::read_to_string(file)?;
-        concatenated_content.push_str(&content);
-    }
+    // Process files by manipulating DOM elements
+    let processed_content = {
+        // Create an iterator over the sorted files
+        let mut files_iter = sorted_files.into_iter();
 
-    // Process content if not colored
-    let processed_content = if colored {
-        concatenated_content
-    } else {
-        process_for_printing(&concatenated_content)?
+        if let Some(first_file) = files_iter.next() {
+            // Parse the first file as the root document
+            let root_html = Html::parse_document(&fs::read_to_string(first_file)?);
+            let tree_sink = HtmlTreeSink::new(root_html);
+
+            // Get the body element of the root document
+            let body_selector = Selector::parse("body").unwrap();
+            let body_id = {
+                let html_ref = tree_sink.0.borrow();
+                html_ref
+                    .select(&body_selector)
+                    .next()
+                    .map(|e| e.id())
+                    .ok_or_else(|| {
+                        AppError::IoError(std::io::Error::new(
+                            std::io::ErrorKind::InvalidData,
+                            "Could not find body element in root document",
+                        ))
+                    })
+            }?;
+
+            // Process remaining files
+            for file in files_iter {
+                // Parse the current file
+                let current_html = Html::parse_document(&fs::read_to_string(file)?);
+
+                // Get all elements from the current file's body
+                let current_body_selector = Selector::parse("body").unwrap();
+                if let Some(current_body) = current_html.select(&current_body_selector).next() {
+                    // Create a temporary container element
+                    let container_id = {
+                        let container_name =
+                            QualName::new(None, Default::default(), LocalName::from("div"));
+                        tree_sink.create_element(container_name, Vec::new(), Default::default())
+                    };
+
+                    // Add the container to the root body
+                    tree_sink.append(&body_id, NodeOrText::AppendNode(container_id));
+
+                    // Add all children of the current body to the container
+                    for child in current_body.children() {
+                        match *child.value() {
+                            scraper::node::Node::Element(_) => {
+                                // For elements, we need to recreate them in the tree sink
+                                if let Some(child_element) = scraper::ElementRef::wrap(child) {
+                                    add_element_to_tree(&tree_sink, &container_id, &child_element);
+                                }
+                            }
+                            scraper::node::Node::Text(ref text_node) => {
+                                // For text nodes, add directly
+                                let mut tendril = StrTendril::new();
+                                tendril.push_slice(&text_node.text);
+                                tree_sink.append(&container_id, NodeOrText::AppendText(tendril));
+                            }
+                            _ => {
+                                // Skip other node types
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Convert back to HTML string
+            let root_html = tree_sink.0.into_inner();
+            let concatenated_content = root_html.html();
+
+            // Process content if not colored
+            if colored {
+                concatenated_content
+            } else {
+                process_for_printing(&concatenated_content)?
+            }
+        } else {
+            // No files found
+            error!("No HTML files found in cppreference directory");
+            return Err(AppError::IoError(std::io::Error::new(
+                std::io::ErrorKind::NotFound,
+                "No HTML files found in cppreference directory",
+            )));
+        }
     };
 
     // Save to appropriate file
@@ -76,6 +197,61 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
     info!("Saved concatenated references to {:?}", output_file);
 
     Ok(())
+}
+
+/**
+ * Recursively add an element and its children to the tree sink
+ *
+ * @param tree_sink HtmlTreeSink to add elements to
+ * @param parent_id ID of the parent element
+ * @param element Element to add
+ */
+fn add_element_to_tree(
+    tree_sink: &HtmlTreeSink,
+    parent_id: &<HtmlTreeSink as TreeSink>::Handle,
+    element: &scraper::ElementRef,
+) {
+    // Create the element
+    let element_id = {
+        let element_name = QualName::new(
+            None,
+            Default::default(),
+            LocalName::from(element.value().name()),
+        );
+
+        // Create attributes
+        let mut attrs = Vec::new();
+        for attr in element.value().attrs() {
+            attrs.push(Attribute {
+                name: QualName::new(None, Default::default(), LocalName::from(attr.0)),
+                value: StrTendril::from(attr.1),
+            });
+        }
+
+        tree_sink.create_element(element_name, attrs, Default::default())
+    };
+
+    // Add the element to the parent
+    tree_sink.append(parent_id, NodeOrText::AppendNode(element_id));
+
+    // Add children
+    for child in element.children() {
+        match *child.value() {
+            scraper::node::Node::Element(_) => {
+                if let Some(child_element) = scraper::ElementRef::wrap(child) {
+                    add_element_to_tree(tree_sink, &element_id, &child_element);
+                }
+            }
+            scraper::node::Node::Text(ref text_node) => {
+                let mut tendril = StrTendril::new();
+                tendril.push_slice(&text_node.text);
+                tree_sink.append(&element_id, NodeOrText::AppendText(tendril));
+            }
+            _ => {
+                // Skip other node types
+            }
+        }
+    }
 }
 
 /**
@@ -98,21 +274,14 @@ pub fn process_for_printing(content: &str) -> Result<String, AppError> {
     // Find all pre elements with class "de1"
     let pre_selector = Selector::parse("pre.de1").unwrap();
 
-    // Get all pre.de1 elements and their parent elements
-    let pre_elements_with_parent: Vec<_> = {
+    // Get all pre.de1 elements
+    let pre_elements: Vec<_> = {
         let html_ref = tree_sink.0.borrow();
-        html_ref
-            .select(&pre_selector)
-            .map(|e| {
-                let pre_id = e.id();
-                let parent_id = e.parent().map(|p| p.id());
-                (pre_id, parent_id)
-            })
-            .collect()
+        html_ref.select(&pre_selector).map(|e| e.id()).collect()
     };
 
     // Process each pre.de1 element
-    for pre_id in pre_elements_with_parent.into_iter().map(|(id, _)| id) {
+    for pre_id in pre_elements {
         // Get the text content of the pre element
         let text_content = {
             let html_ref = tree_sink.0.borrow();
