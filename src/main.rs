@@ -1,16 +1,47 @@
 #![forbid(unsafe_code)]
 
-//! C++ Reference Downloader
+//! C++ Reference Manager for Algorithm Competition
 //!
-//! This program extracts C++ reference URLs from Markdown files, downloads the corresponding
-//! HTML pages, and processes them by removing specified elements. It supports checking for
-//! existing files and only downloading missing ones, with an option to overwrite existing files.
+//! This program helps algorithm competition participants manage C++ reference documentation
+//! from cppreference.com. It provides two main functionalities:
+//!
+//! # Commands
+//!
+//! ## `ref download`
+//! Extracts C++ reference URLs from Markdown files in `./contents`, downloads the corresponding
+//! HTML pages from cppreference.com, and processes them by removing navigation elements.
+//! Only downloads missing files unless `--overwrite` is specified.
+//!
+//! ## `ref print`
+//! Concatenates all downloaded HTML files in `./cppreference` into a single file for printing.
+//! Supports colored output (preserving syntax highlighting) or flattened output (removing
+//! syntax highlighting for non-colored printing).
+//!
+//! # Usage
+//!
+//! ```bash
+//! # Download C++ references
+//! cargo run -- ref download
+//! cargo run -- ref download --overwrite
+//!
+//! # Generate printable HTML
+//! cargo run -- ref print           # Flattened output (no syntax highlighting)
+//! cargo run -- ref print --colored # Colored output (with syntax highlighting)
+//! ```
+//!
+//! # Directory Structure
+//!
+//! - `./contents/` - Markdown files containing C++ reference links
+//! - `./cppreference/` - Downloaded HTML files from cppreference.com
+//! - `./cppreference_print.html` - Generated printable HTML (flattened)
+//! - `./cppreference_print_colored.html` - Generated printable HTML (colored)
 
 use clap::{Parser, Subcommand};
 
 // Import modules
 mod commands;
 mod errors;
+mod html;
 mod references;
 mod utils;
 

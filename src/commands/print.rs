@@ -1,3 +1,12 @@
+//! Print command implementation
+//!
+//! This module provides functionality to concatenate HTML files from the
+//! `./cppreference` directory into a single printable HTML file. It supports
+//! two output modes:
+//!
+//! - **Colored**: Preserves syntax highlighting from the original pages
+//! - **Flattened**: Removes syntax highlighting for non-colored printing
+
 use log::{error, info};
 use markup5ever::{
     Attribute, LocalName, QualName,
@@ -9,22 +18,39 @@ use std::{collections::HashSet, fs, path::Path};
 
 use crate::{
     errors::AppError,
+    html::flatten_code_blocks,
     references::{compare_cpp_names, get_required_references},
 };
 
-/**
- * Print references by concatenating HTML files
- *
- * This function:
- * 1. Checks if all required HTML files in ./cppreference are present
- * 2. If not, error out with details about missing files
- * 3. If yes, concatenate them in alphabetical order by manipulating DOM elements
- * 4. For non-colored output, flatten pre elements with class "de1"
- * 5. Save the result to the appropriate file
- *
- * @param colored Whether to include colored output
- * @return Result indicating success or error
- */
+/// Concatenate HTML files for printing
+///
+/// This function:
+/// 1. Checks if all required HTML files in `./cppreference` are present
+/// 2. If not, errors out with details about missing files
+/// 3. If yes, concatenates them in sorted order by manipulating DOM elements
+/// 4. For non-colored output, flattens `pre` elements with class `de1`
+/// 5. Saves the result to the appropriate file
+///
+/// # Arguments
+///
+/// * `colored` - Whether to include colored output (preserve syntax highlighting)
+///
+/// # Returns
+///
+/// Returns `Ok(())` on success, or an error if something goes wrong.
+///
+/// # Errors
+///
+/// Returns an error if:
+/// - The cppreference directory does not exist
+/// - Required HTML files are missing
+/// - File reading or writing fails
+/// - HTML parsing fails
+///
+/// # Output Files
+///
+/// - `./cppreference_print.html` - Flattened output (no syntax highlighting)
+/// - `./cppreference_print_colored.html` - Colored output (with syntax highlighting)
 pub fn print_references(colored: bool) -> Result<(), AppError> {
     info!("Starting reference printer");
 
@@ -66,19 +92,13 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
         .collect();
 
     // Check for missing files
-    let missing_files: Vec<_> = required_names.difference(&existing_names).collect();
+    let missing_files: Vec<_> = required_names.difference(&existing_names).cloned().collect();
     if !missing_files.is_empty() {
         error!("Missing required HTML files:");
         for name in &missing_files {
             error!("  - {}.html", name);
         }
-        return Err(AppError::IoError(std::io::Error::new(
-            std::io::ErrorKind::NotFound,
-            format!(
-                "Missing {} required HTML file(s). Run 'cargo run -- ref download' first.",
-                missing_files.len()
-            ),
-        )));
+        return Err(AppError::missing_files(&missing_files));
     }
 
     // Filter HTML files to only include required ones, then sort
@@ -118,10 +138,10 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
                     .next()
                     .map(|e| e.id())
                     .ok_or_else(|| {
-                        AppError::IoError(std::io::Error::new(
-                            std::io::ErrorKind::InvalidData,
-                            "Could not find body element in root document",
-                        ))
+                        AppError::HtmlParsingError {
+                            file: "root document".to_string(),
+                            reason: "Could not find body element".to_string(),
+                        }
                     })
             }?;
 
@@ -174,7 +194,7 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
             if colored {
                 concatenated_content
             } else {
-                process_for_printing(&concatenated_content)?
+                flatten_code_blocks(&concatenated_content)?
             }
         } else {
             // No files found
@@ -199,13 +219,16 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
     Ok(())
 }
 
-/**
- * Recursively add an element and its children to the tree sink
- *
- * @param tree_sink HtmlTreeSink to add elements to
- * @param parent_id ID of the parent element
- * @param element Element to add
- */
+/// Recursively add an element and its children to the tree sink
+///
+/// This function creates a deep copy of an element and all its children
+/// in the target tree sink.
+///
+/// # Arguments
+///
+/// * `tree_sink` - The HtmlTreeSink to add elements to
+/// * `parent_id` - The ID of the parent element
+/// * `element` - The element to add
 fn add_element_to_tree(
     tree_sink: &HtmlTreeSink,
     parent_id: &<HtmlTreeSink as TreeSink>::Handle,
@@ -252,68 +275,4 @@ fn add_element_to_tree(
             }
         }
     }
-}
-
-/**
- * Process HTML for printing (flatten pre elements)
- *
- * This function flattens pre elements with class "de1" by replacing them with
- * new pre elements containing only their text content, removing any child elements
- * that provide syntax highlighting.
- *
- * @param content HTML content
- * @return Result containing processed HTML
- */
-pub fn process_for_printing(content: &str) -> Result<String, AppError> {
-    // Parse HTML
-    let html = Html::parse_document(content);
-
-    // Create HtmlTreeSink for manipulation
-    let tree_sink = HtmlTreeSink::new(html);
-
-    // Find all pre elements with class "de1"
-    let pre_selector = Selector::parse("pre.de1").unwrap();
-
-    // Get all pre.de1 elements
-    let pre_elements: Vec<_> = {
-        let html_ref = tree_sink.0.borrow();
-        html_ref.select(&pre_selector).map(|e| e.id()).collect()
-    };
-
-    // Process each pre.de1 element
-    for pre_id in pre_elements {
-        // Get the text content of the pre element
-        let text_content = {
-            let html_ref = tree_sink.0.borrow();
-            html_ref
-                .select(&pre_selector)
-                .find(|e| e.id() == pre_id)
-                .map(|e| e.text().collect::<String>())
-                .unwrap_or_default()
-        };
-
-        // Remove all children from the pre element
-        // We'll do this by creating a temporary node to hold the children
-        // then removing that node
-        let temp_id = {
-            let temp_name = QualName::new(None, Default::default(), LocalName::from("temp"));
-            tree_sink.create_element(temp_name, Vec::new(), Default::default())
-        };
-
-        // Move all children of pre_id to temp_id
-        tree_sink.reparent_children(&pre_id, &temp_id);
-
-        // Remove the temporary node (which now contains all the old children)
-        tree_sink.remove_from_parent(&temp_id);
-
-        // Add the text content as a new text node
-        tree_sink.append(
-            &pre_id,
-            NodeOrText::AppendText(StrTendril::from(text_content)),
-        );
-    }
-
-    // Convert back to HTML string
-    let modified_html = tree_sink.0.into_inner();
-    Ok(modified_html.html())
 }
