@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" class="client-nojs">
-<head>
+<!DOCTYPE html><html class="client-nojs" dir="ltr" lang="en"><head>
 <title>std::ranges::unique - cppreference.com</title>
-<meta charset="UTF-8" />
-<meta name="generator" content="MediaWiki 1.21.2" />
-<link rel="alternate" type="application/x-wiki" title="Edit" href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit" />
-<link rel="edit" title="Edit" href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit" />
-<link rel="shortcut icon" href="../../../../favicon.ico" />
-<link rel="search" type="application/opensearchdescription+xml" href="../../../../mwiki/opensearch_desc.php" title="cppreference.com (en)" />
-<link rel="EditURI" type="application/rsd+xml" href="../../../../mwiki/api.php@action=rsd" />
-<link rel="alternate" type="application/atom+xml" title="cppreference.com Atom feed" href="https://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
-<link rel="stylesheet" href="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler,MathJax,StandardRevisions%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint,shared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;%252A.css" />
-<meta name="ResourceLoaderDynamicStyles" content="" />
-<link rel="stylesheet" href="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;%252A.css" />
+<meta charset="UTF-8">
+<meta content="MediaWiki 1.21.2" name="generator">
+<link href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit" rel="alternate" title="Edit" type="application/x-wiki">
+<link href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit" rel="edit" title="Edit">
+<link href="../../../../favicon.ico" rel="shortcut icon">
+<link href="../../../../mwiki/opensearch_desc.php" rel="search" title="cppreference.com (en)" type="application/opensearchdescription+xml">
+<link href="../../../../mwiki/api.php@action=rsd" rel="EditURI" type="application/rsd+xml">
+<link href="https://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="cppreference.com Atom feed" type="application/atom+xml">
+<link href="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler,MathJax,StandardRevisions%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint,shared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;%252A.css" rel="stylesheet">
+<meta content="" name="ResourceLoaderDynamicStyles">
+<link href="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;%252A.css" rel="stylesheet">
 <style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
 /* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
 
@@ -106,93 +104,7 @@ mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.
 </style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
 <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_algorithm_ranges_unique skin-cppreference2 action-view cpp-navbar">
         <!-- header -->
-        <div id="mw-head" class="noprint">
-            <div id="cpp-head-first-base">
-                <div id="cpp-head-first">
-                    <h5><a href="../../../../index.html">
-                        cppreference.com                        </a></h5>
-                    <div id="cpp-head-search">
-                        
-<!-- 0 -->
-<div id="p-search">
-<form action="https://duckduckgo.com/" method="get">
-  <input type="hidden" name="sites" value="cppreference.com">
-  <input type="search" name="q">
-  <input type="submit" value="Search">
-</form>
-</div>
-
-<!-- /0 -->
-                    </div>
-                    <div id="cpp-head-personal" hidden>
-                        
-<!-- 0 -->
-<div id="p-personal" class="">
-<span id="pt-createaccount"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Falgorithm%2Franges%2Funique&amp;type=signup">Create account</a></span>	<div class="menu">
-        <ul>
-<li id="pt-login"><a href="https://en.cppreference.com/mwiki/index.php?title=Special:UserLogin&amp;returnto=cpp%2Falgorithm%2Franges%2Funique" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>        </ul>
-    </div>
-</div>
-
-<!-- /0 -->
-                    </div>
-
-                </div>
-            </div>
-            <div id="cpp-head-second-base">
-                <div id="cpp-head-second">
-                    <div id="cpp-head-tools-left">
-                        
-<!-- 0 -->
-<div id="p-namespaces" class="vectorTabs">
-	<h5>Namespaces</h5>
-	<ul>
-					<li  id="ca-nstab-main" class="selected"><span><a href="unique.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
-					<li  id="ca-talk" class="new"><span><a href="https://en.cppreference.com/mwiki/index.php?title=Talk:cpp/algorithm/ranges/unique&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>
-			</ul>
-</div>
-
-<!-- /0 -->
-
-<!-- 1 -->
-<div id="p-variants" class="vectorMenu emptyPortlet">
-		<h5><span>Variants</span><a href="unique.html#"></a></h5>
-	<div class="menu">
-		<ul>
-					</ul>
-	</div>
-</div>
-
-<!-- /1 -->
-                    </div>
-                    <div id="cpp-head-tools-right">
-                        
-<!-- 0 -->
-<div id="p-views" hidden class="vectorTabs">
-	<h5>Views</h5>
-	<ul>
-					<li id="ca-view" class="selected"><span><a href="unique.html" >View</a></span></li>
-					<li id="ca-edit"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit"  title="You can edit this page. Please use the preview button before saving [e]" accesskey="e">Edit</a></span></li>
-					<li id="ca-history" class="collapsible"><span><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">History</a></span></li>
-			</ul>
-</div>
-
-<!-- /0 -->
-
-<!-- 1 -->
-<div id="p-cactions" class="vectorMenu emptyPortlet">
-	<h5><span>Actions</span><a href="unique.html#"></a></h5>
-	<div class="menu">
-		<ul>
-					</ul>
-	</div>
-</div>
-
-<!-- /1 -->
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!-- /header -->
         <!-- content -->
 <style type="text/css">
@@ -264,9 +176,9 @@ html { font-variant-ligatures: no-common-ligatures; }
                 <a id="top"></a>
                 <div id="mw-js-message" style="display:none;"></div>
                                 <!-- firstHeading -->
-<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" id="_carbonads_js"></script>
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -274,7 +186,7 @@ html { font-variant-ligatures: no-common-ligatures; }
 
   gtag('config', 'G-8HW0LXMYCY');
 </script>
-                <h1 id="firstHeading" class="firstHeading"><span style="font-size:0.7em; line-height:130%">std::ranges::</span>unique</h1>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::ranges::</span>unique</h1>
                 <!-- /firstHeading -->
                 <!-- bodyContent -->
                 <div id="bodyContent">
@@ -282,528 +194,10 @@ html { font-variant-ligatures: no-common-ligatures; }
                     <div id="siteSub">From cppreference.com</div>
                     <!-- /tagline -->
                                         <!-- subtitle -->
-                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>&lrm; | <a href="../../algorithm.html" title="cpp/algorithm">algorithm</a>&lrm; | <a href="../ranges.html" title="cpp/algorithm/ranges">ranges</a></span></div>
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../algorithm.html" title="cpp/algorithm">algorithm</a>‎ | <a href="../ranges.html" title="cpp/algorithm/ranges">ranges</a></span></div>
                     <!-- /subtitle -->
                                                             <!-- bodycontent -->
-                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="t-navbar" style=""><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../../cpp.html" title="cpp">C++</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
-<tr class="t-nv"><td colspan="5"><a href="../../compiler_support.html" title="cpp/compiler support">Compiler support</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../freestanding.html" title="cpp/freestanding">Freestanding and hosted</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../language.html" title="cpp/language">Language</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../standard_library.html" title="cpp/standard library">Standard library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../headers.html" title="cpp/header">Standard library headers</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../iterator/concepts.html" title="cpp/named req">Named requirements</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../experimental/feature_test.html" title="cpp/feature test">Feature test macros</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../utility.html#Language_support" title="cpp/utility">Language support library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../concepts.html" title="cpp/concepts">Concepts library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../error.html" title="cpp/error">Diagnostics library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../memory.html" title="cpp/memory">Memory management library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../meta.html" title="cpp/meta">Metaprogramming library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../utility.html" title="cpp/utility">General utilities library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../container.html" title="cpp/container">Containers library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../iterator.html" title="cpp/iterator">Iterators library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../ranges.html" title="cpp/ranges">Ranges library</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../algorithm.html" title="cpp/algorithm">Algorithms library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../string.html" title="cpp/string">Strings library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../text.html" title="cpp/text">Text processing library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../numeric.html" title="cpp/numeric">Numerics library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../chrono.html" title="cpp/chrono">Date and time library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../io.html" title="cpp/io">Input/output library</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../filesystem.html" title="cpp/filesystem">Filesystem library</a> <span class="t-mark-rev t-since-cxx17">(C++17)</span></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../atomic.html" title="cpp/thread">Concurrency support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../experimental/execution.html" title="cpp/execution">Execution control library</a> <span class="t-mark-rev t-since-cxx26">(C++26)</span></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../experimental.html" title="cpp/experimental">Technical specifications</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../symbol_index.html" title="cpp/symbol index">Symbols index</a></td></tr>
-<tr class="t-nv"><td colspan="5"><a href="../../links/libs.html" title="cpp/links/libs">External libraries</a></td></tr>
-</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../../algorithm.html" title="cpp/algorithm">Algorithm library</a><div class="t-navbar-menu"><div><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-h1"><td colspan="5"><a href="../ranges.html" title="cpp/algorithm/ranges">Constrained algorithms and algorithms on ranges</a> <span class="t-mark-rev t-since-cxx20">(C++20)</span></td></tr>
-<tr class="t-nv"><td colspan="5">Constrained algorithms, e.g. <a href="copy.html" title="cpp/algorithm/ranges/copy"><tt>ranges::copy</tt></a>, <a href="sort.html" title="cpp/algorithm/ranges/sort"><tt>ranges::sort</tt></a>, ...</td></tr>
-<tr class="t-nv-h1"><td colspan="5"><a href="../../algorithm.html#Execution_policies" title="cpp/algorithm">Execution policies <span class="t-mark-rev t-since-cxx17">(C++17)</span></a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_execution_policy.html" title="cpp/algorithm/is execution policy"><span class="t-lines"><span>is_execution_policy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span>&#160;&#160;</span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../execution_policy_tag.html" title="cpp/algorithm/execution policy tag"><span class="t-lines"><span>execution::seq</span><span>execution::par</span><span>execution::par_unseq</span><span>execution::unseq</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span>&#160;&#160;&#160;&#160;</span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../execution_policy_tag_t.html" title="cpp/algorithm/execution policy tag t"><span class="t-lines"><span>execution::sequenced_policy</span><span>execution::parallel_policy</span><span>execution::parallel_unsequenced_policy</span><span>execution::parallel_unsequenced</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-h1"><td colspan="5"><a href="../../algorithm.html#Non-modifying_sequence_operations" title="cpp/algorithm">Non-modifying sequence operations</a></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Batch_operations" title="cpp/algorithm">Batch operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../for_each.html" title="cpp/algorithm/for each"><span class="t-lines"><span>for_each</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../for_each_n.html" title="cpp/algorithm/for each n"><span class="t-lines"><span>for_each_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Search_operations" title="cpp/algorithm">Search operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../none_of.html" title="cpp/algorithm/all any none of"><span class="t-lines"><span>all_of</span><span>any_of</span><span>none_of</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../count.html" title="cpp/algorithm/count"><span class="t-lines"><span>count</span><span>count_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../mismatch.html" title="cpp/algorithm/mismatch"><span class="t-lines"><span>mismatch</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../equal.html" title="cpp/algorithm/equal"><span class="t-lines"><span>equal</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../find.html" title="cpp/algorithm/find"><span class="t-lines"><span>find</span><span>find_if</span><span>find_if_not</span></span></a></div><div><span class="t-lines"><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../find_end.html" title="cpp/algorithm/find end"><span class="t-lines"><span>find_end</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../find_first_of.html" title="cpp/algorithm/find first of"><span class="t-lines"><span>find_first_of</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../adjacent_find.html" title="cpp/algorithm/adjacent find"><span class="t-lines"><span>adjacent_find</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../search.html" title="cpp/algorithm/search"><span class="t-lines"><span>search</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../search_n.html" title="cpp/algorithm/search n"><span class="t-lines"><span>search_n</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h1"><td colspan="5"><a href="../../algorithm.html#Modifying_sequence_operations" title="cpp/algorithm">Modifying sequence operations</a></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Copy_operations" title="cpp/algorithm">Copy operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../copy.html" title="cpp/algorithm/copy"><span class="t-lines"><span>copy</span><span>copy_if</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../copy_backward.html" title="cpp/algorithm/copy backward"><span class="t-lines"><span>copy_backward</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../copy_n.html" title="cpp/algorithm/copy n"><span class="t-lines"><span>copy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../move.html" title="cpp/algorithm/move"><span class="t-lines"><span>move</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../move_backward.html" title="cpp/algorithm/move backward"><span class="t-lines"><span>move_backward</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Swap_operations" title="cpp/algorithm">Swap operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../utility/swap.html" title="cpp/algorithm/swap"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../iter_swap.html" title="cpp/algorithm/iter swap"><span class="t-lines"><span>iter_swap</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../swap_ranges.html" title="cpp/algorithm/swap ranges"><span class="t-lines"><span>swap_ranges</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Transformation_operations" title="cpp/algorithm">Transformation operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../replace.html" title="cpp/algorithm/replace"><span class="t-lines"><span>replace</span><span>replace_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../transform.html" title="cpp/algorithm/transform"><span class="t-lines"><span>transform</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../replace_copy.html" title="cpp/algorithm/replace copy"><span class="t-lines"><span>replace_copy</span><span>replace_copy_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Generation_operations" title="cpp/algorithm">Generation operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../fill.html" title="cpp/algorithm/fill"><span class="t-lines"><span>fill</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../fill_n.html" title="cpp/algorithm/fill n"><span class="t-lines"><span>fill_n</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../generate.html" title="cpp/algorithm/generate"><span class="t-lines"><span>generate</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../generate_n.html" title="cpp/algorithm/generate n"><span class="t-lines"><span>generate_n</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Removing_operations" title="cpp/algorithm">Removing operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../remove.html" title="cpp/algorithm/remove"><span class="t-lines"><span>remove</span><span>remove_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unique.html" title="cpp/algorithm/unique"><span class="t-lines"><span>unique</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../remove_copy.html" title="cpp/algorithm/remove copy"><span class="t-lines"><span>remove_copy</span><span>remove_copy_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../unique_copy.html" title="cpp/algorithm/unique copy"><span class="t-lines"><span>unique_copy</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Order-changing_operations" title="cpp/algorithm">Order-changing operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../reverse.html" title="cpp/algorithm/reverse"><span class="t-lines"><span>reverse</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../reverse_copy.html" title="cpp/algorithm/reverse copy"><span class="t-lines"><span>reverse_copy</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../rotate.html" title="cpp/algorithm/rotate"><span class="t-lines"><span>rotate</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../rotate_copy.html" title="cpp/algorithm/rotate copy"><span class="t-lines"><span>rotate_copy</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../random_shuffle.html" title="cpp/algorithm/random shuffle"><span class="t-lines"><span>random_shuffle</span><span>shuffle</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../shift.html" title="cpp/algorithm/shift"><span class="t-lines"><span>shift_left</span><span>shift_right</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Sampling_operations" title="cpp/algorithm">Sampling operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../sample.html" title="cpp/algorithm/sample"><span class="t-lines"><span>sample</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-h1"><td colspan="5"><a href="../../algorithm.html#Sorting_and_related_operations" title="cpp/algorithm">Sorting and related operations</a></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Partitioning_operations" title="cpp/algorithm">Partitioning operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../partition.html" title="cpp/algorithm/partition"><span class="t-lines"><span>partition</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../partition_copy.html" title="cpp/algorithm/partition copy"><span class="t-lines"><span>partition_copy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span>&#160;&#160;</span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../stable_partition.html" title="cpp/algorithm/stable partition"><span class="t-lines"><span>stable_partition</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_partitioned.html" title="cpp/algorithm/is partitioned"><span class="t-lines"><span>is_partitioned</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../partition_point.html" title="cpp/algorithm/partition point"><span class="t-lines"><span>partition_point</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Sorting_operations" title="cpp/algorithm">Sorting operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../sort.html" title="cpp/algorithm/sort"><span class="t-lines"><span>sort</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../stable_sort.html" title="cpp/algorithm/stable sort"><span class="t-lines"><span>stable_sort</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../partial_sort.html" title="cpp/algorithm/partial sort"><span class="t-lines"><span>partial_sort</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../partial_sort_copy.html" title="cpp/algorithm/partial sort copy"><span class="t-lines"><span>partial_sort_copy</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_sorted.html" title="cpp/algorithm/is sorted"><span class="t-lines"><span>is_sorted</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_sorted_until.html" title="cpp/algorithm/is sorted until"><span class="t-lines"><span>is_sorted_until</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../nth_element.html" title="cpp/algorithm/nth element"><span class="t-lines"><span>nth_element</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Binary_search_operations_.28on_partitioned_ranges.29" title="cpp/algorithm">Binary search operations<br />(on partitioned ranges)</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lower_bound.html" title="cpp/algorithm/lower bound"><span class="t-lines"><span>lower_bound</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../upper_bound.html" title="cpp/algorithm/upper bound"><span class="t-lines"><span>upper_bound</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../equal_range.html" title="cpp/algorithm/equal range"><span class="t-lines"><span>equal_range</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../binary_search.html" title="cpp/algorithm/binary search"><span class="t-lines"><span>binary_search</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Set_operations_.28on_sorted_ranges.29" title="cpp/algorithm">Set operations (on sorted ranges)</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../includes.html" title="cpp/algorithm/includes"><span class="t-lines"><span>includes</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../set_union.html" title="cpp/algorithm/set union"><span class="t-lines"><span>set_union</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../set_intersection.html" title="cpp/algorithm/set intersection"><span class="t-lines"><span>set_intersection</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../set_difference.html" title="cpp/algorithm/set difference"><span class="t-lines"><span>set_difference</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../set_symmetric_difference.html" title="cpp/algorithm/set symmetric difference"><span class="t-lines"><span>set_symmetric_difference</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Merge_operations_.28on_sorted_ranges.29" title="cpp/algorithm">Merge operations (on sorted ranges)</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../merge.html" title="cpp/algorithm/merge"><span class="t-lines"><span>merge</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../inplace_merge.html" title="cpp/algorithm/inplace merge"><span class="t-lines"><span>inplace_merge</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Heap_operations" title="cpp/algorithm">Heap operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../push_heap.html" title="cpp/algorithm/push heap"><span class="t-lines"><span>push_heap</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../pop_heap.html" title="cpp/algorithm/pop heap"><span class="t-lines"><span>pop_heap</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../make_heap.html" title="cpp/algorithm/make heap"><span class="t-lines"><span>make_heap</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../sort_heap.html" title="cpp/algorithm/sort heap"><span class="t-lines"><span>sort_heap</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_heap.html" title="cpp/algorithm/is heap"><span class="t-lines"><span>is_heap</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_heap_until.html" title="cpp/algorithm/is heap until"><span class="t-lines"><span>is_heap_until</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Minimum.2Fmaximum_operations" title="cpp/algorithm">Minimum/maximum operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../max.html" title="cpp/algorithm/max"><span class="t-lines"><span>max</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../min.html" title="cpp/algorithm/min"><span class="t-lines"><span>min</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../minmax.html" title="cpp/algorithm/minmax"><span class="t-lines"><span>minmax</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../clamp.html" title="cpp/algorithm/clamp"><span class="t-lines"><span>clamp</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../max_element.html" title="cpp/algorithm/max element"><span class="t-lines"><span>max_element</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../min_element.html" title="cpp/algorithm/min element"><span class="t-lines"><span>min_element</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../minmax_element.html" title="cpp/algorithm/minmax element"><span class="t-lines"><span>minmax_element</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Lexicographical_comparison_operations" title="cpp/algorithm">Lexicographical comparison operations</a></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lexicographical_compare.html" title="cpp/algorithm/lexicographical compare"><span class="t-lines"><span>lexicographical_compare</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../lexicographical_compare_three_way.html" title="cpp/algorithm/lexicographical compare three way"><span class="t-lines"><span>lexicographical_compare_three_way</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../../algorithm.html#Permutation_operations" title="cpp/algorithm">Permutation operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../next_permutation.html" title="cpp/algorithm/next permutation"><span class="t-lines"><span>next_permutation</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../prev_permutation.html" title="cpp/algorithm/prev permutation"><span class="t-lines"><span>prev_permutation</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../is_permutation.html" title="cpp/algorithm/is permutation"><span class="t-lines"><span>is_permutation</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h1"><td colspan="5"><a href="../../algorithm.html#C_library" title="cpp/algorithm">C library</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../qsort.html" title="cpp/algorithm/qsort"><span class="t-lines"><span>qsort</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../bsearch.html" title="cpp/algorithm/bsearch"><span class="t-lines"><span>bsearch</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h1"><td colspan="5"><a href="../../algorithm.html#Numeric_operations" title="cpp/algorithm">Numeric operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../inner_product.html" title="cpp/algorithm/inner product"><span class="t-lines"><span>inner_product</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../adjacent_difference.html" title="cpp/algorithm/adjacent difference"><span class="t-lines"><span>adjacent_difference</span></span></a></div><div><span class="t-lines"><span>&#160;&#160;</span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../reduce.html" title="cpp/algorithm/reduce"><span class="t-lines"><span>reduce</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../transform_reduce.html" title="cpp/algorithm/transform reduce"><span class="t-lines"><span>transform_reduce</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../partial_sum.html" title="cpp/algorithm/partial sum"><span class="t-lines"><span>partial_sum</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../inclusive_scan.html" title="cpp/algorithm/inclusive scan"><span class="t-lines"><span>inclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span>&#160;&#160;&#160;</span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../exclusive_scan.html" title="cpp/algorithm/exclusive scan"><span class="t-lines"><span>exclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../transform_inclusive_scan.html" title="cpp/algorithm/transform inclusive scan"><span class="t-lines"><span>transform_inclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../transform_exclusive_scan.html" title="cpp/algorithm/transform exclusive scan"><span class="t-lines"><span>transform_exclusive_scan</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h1"><td colspan="5"><a href="../../algorithm.html#Operations_on_uninitialized_memory" title="cpp/algorithm">Operations on uninitialized memory</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_copy.html" title="cpp/memory/uninitialized copy"><span class="t-lines"><span>uninitialized_copy</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_move.html" title="cpp/memory/uninitialized move"><span class="t-lines"><span>uninitialized_move</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span>&#160;&#160;&#160;</span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_fill.html" title="cpp/memory/uninitialized fill"><span class="t-lines"><span>uninitialized_fill</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_copy_n.html" title="cpp/memory/uninitialized copy n"><span class="t-lines"><span>uninitialized_copy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_move_n.html" title="cpp/memory/uninitialized move n"><span class="t-lines"><span>uninitialized_move_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_fill_n.html" title="cpp/memory/uninitialized fill n"><span class="t-lines"><span>uninitialized_fill_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/destroy.html" title="cpp/memory/destroy"><span class="t-lines"><span>destroy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/destroy_n.html" title="cpp/memory/destroy n"><span class="t-lines"><span>destroy_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/destroy_at.html" title="cpp/memory/destroy at"><span class="t-lines"><span>destroy_at</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/construct_at.html" title="cpp/memory/construct at"><span class="t-lines"><span>construct_at</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span>&#160;&#160;&#160;&#160;&#160;&#160;</span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_default_construct.html" title="cpp/memory/uninitialized default construct"><span class="t-lines"><span>uninitialized_default_construct</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_value_construct.html" title="cpp/memory/uninitialized value construct"><span class="t-lines"><span>uninitialized_value_construct</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_default_construct_n.html" title="cpp/memory/uninitialized default construct n"><span class="t-lines"><span>uninitialized_default_construct_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/uninitialized_value_construct_n.html" title="cpp/memory/uninitialized value construct n"><span class="t-lines"><span>uninitialized_value_construct_n</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div><div class="t-navbar-head"><a href="../ranges.html" title="cpp/algorithm/ranges">Constrained algorithms</a><div class="t-navbar-menu"><div>All names in this menu belong to namespace <code>std::ranges</code>
-<div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Non-modifying_sequence_operations" title="cpp/algorithm/ranges">Non-modifying sequence operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="all_any_none_of.html" title="cpp/algorithm/ranges/all any none of"><span class="t-lines"><span>all_of</span><span>any_of</span><span>none_of</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="for_each.html" title="cpp/algorithm/ranges/for each"><span class="t-lines"><span>for_each</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="for_each_n.html" title="cpp/algorithm/ranges/for each n"><span class="t-lines"><span>for_each_n</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="count.html" title="cpp/algorithm/ranges/count"><span class="t-lines"><span>count</span><span>count_if</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="adjacent_find.html" title="cpp/algorithm/ranges/adjacent find"><span class="t-lines"><span>adjacent_find</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="mismatch.html" title="cpp/algorithm/ranges/mismatch"><span class="t-lines"><span>mismatch</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="equal.html" title="cpp/algorithm/ranges/equal"><span class="t-lines"><span>equal</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lexicographical_compare.html" title="cpp/algorithm/ranges/lexicographical compare"><span class="t-lines"><span>lexicographical_compare</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="contains.html" title="cpp/algorithm/ranges/contains"><span class="t-lines"><span>contains</span><span>contains_subrange</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="find.html" title="cpp/algorithm/ranges/find"><span class="t-lines"><span>find</span><span>find_if</span><span>find_if_not</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="find_last.html" title="cpp/algorithm/ranges/find last"><span class="t-lines"><span>find_last</span><span>find_last_if</span><span>find_last_if_not</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="find_end.html" title="cpp/algorithm/ranges/find end"><span class="t-lines"><span>find_end</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="find_first_of.html" title="cpp/algorithm/ranges/find first of"><span class="t-lines"><span>find_first_of</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="search.html" title="cpp/algorithm/ranges/search"><span class="t-lines"><span>search</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="search_n.html" title="cpp/algorithm/ranges/search n"><span class="t-lines"><span>search_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="starts_with.html" title="cpp/algorithm/ranges/starts with"><span class="t-lines"><span>starts_with</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ends_with.html" title="cpp/algorithm/ranges/ends with"><span class="t-lines"><span>ends_with</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Modifying_sequence_operations" title="cpp/algorithm/ranges">Modifying sequence operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="copy.html" title="cpp/algorithm/ranges/copy"><span class="t-lines"><span>copy</span><span>copy_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="copy_n.html" title="cpp/algorithm/ranges/copy n"><span class="t-lines"><span>copy_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="copy_backward.html" title="cpp/algorithm/ranges/copy backward"><span class="t-lines"><span>copy_backward</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="move.html" title="cpp/algorithm/ranges/move"><span class="t-lines"><span>move</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="move_backward.html" title="cpp/algorithm/ranges/move backward"><span class="t-lines"><span>move_backward</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shift.html" title="cpp/algorithm/ranges/shift"><span class="t-lines"><span>shift_left</span><span>shift_right</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fill.html" title="cpp/algorithm/ranges/fill"><span class="t-lines"><span>fill</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fill_n.html" title="cpp/algorithm/ranges/fill n"><span class="t-lines"><span>fill_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="generate.html" title="cpp/algorithm/ranges/generate"><span class="t-lines"><span>generate</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="generate_n.html" title="cpp/algorithm/ranges/generate n"><span class="t-lines"><span>generate_n</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="transform.html" title="cpp/algorithm/ranges/transform"><span class="t-lines"><span>transform</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap_ranges.html" title="cpp/algorithm/ranges/swap ranges"><span class="t-lines"><span>swap_ranges</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="shuffle.html" title="cpp/algorithm/ranges/shuffle"><span class="t-lines"><span>shuffle</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="sample.html" title="cpp/algorithm/ranges/sample"><span class="t-lines"><span>sample</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="remove.html" title="cpp/algorithm/ranges/remove"><span class="t-lines"><span>remove</span><span>remove_if</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="replace.html" title="cpp/algorithm/ranges/replace"><span class="t-lines"><span>replace</span><span>replace_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reverse.html" title="cpp/algorithm/ranges/reverse"><span class="t-lines"><span>reverse</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rotate.html" title="cpp/algorithm/ranges/rotate"><span class="t-lines"><span>rotate</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="remove_copy.html" title="cpp/algorithm/ranges/remove copy"><span class="t-lines"><span>remove_copy</span><span>remove_copy_if</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>unique</span></span></strong></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="replace_copy.html" title="cpp/algorithm/ranges/replace copy"><span class="t-lines"><span>replace_copy</span><span>replace_copy_if</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reverse_copy.html" title="cpp/algorithm/ranges/reverse copy"><span class="t-lines"><span>reverse_copy</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="rotate_copy.html" title="cpp/algorithm/ranges/rotate copy"><span class="t-lines"><span>rotate_copy</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unique_copy.html" title="cpp/algorithm/ranges/unique copy"><span class="t-lines"><span>unique_copy</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Partitioning_operations" title="cpp/algorithm/ranges">Partitioning operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="is_partitioned.html" title="cpp/algorithm/ranges/is partitioned"><span class="t-lines"><span>is_partitioned</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="partition_point.html" title="cpp/algorithm/ranges/partition point"><span class="t-lines"><span>partition_point</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="partition.html" title="cpp/algorithm/ranges/partition"><span class="t-lines"><span>partition</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="partition_copy.html" title="cpp/algorithm/ranges/partition copy"><span class="t-lines"><span>partition_copy</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="stable_partition.html" title="cpp/algorithm/ranges/stable partition"><span class="t-lines"><span>stable_partition</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Sorting_operations" title="cpp/algorithm/ranges">Sorting operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="is_sorted.html" title="cpp/algorithm/ranges/is sorted"><span class="t-lines"><span>is_sorted</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="is_sorted_until.html" title="cpp/algorithm/ranges/is sorted until"><span class="t-lines"><span>is_sorted_until</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="sort.html" title="cpp/algorithm/ranges/sort"><span class="t-lines"><span>sort</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="stable_sort.html" title="cpp/algorithm/ranges/stable sort"><span class="t-lines"><span>stable_sort</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="partial_sort.html" title="cpp/algorithm/ranges/partial sort"><span class="t-lines"><span>partial_sort</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="nth_element.html" title="cpp/algorithm/ranges/nth element"><span class="t-lines"><span>nth_element</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="partial_sort_copy.html" title="cpp/algorithm/ranges/partial sort copy"><span class="t-lines"><span>partial_sort_copy</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Binary_search_operations_.28on_sorted_ranges.29" title="cpp/algorithm/ranges">Binary search operations (on sorted ranges)</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="lower_bound.html" title="cpp/algorithm/ranges/lower bound"><span class="t-lines"><span>lower_bound</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="upper_bound.html" title="cpp/algorithm/ranges/upper bound"><span class="t-lines"><span>upper_bound</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="binary_search.html" title="cpp/algorithm/ranges/binary search"><span class="t-lines"><span>binary_search</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="equal_range.html" title="cpp/algorithm/ranges/equal range"><span class="t-lines"><span>equal_range</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Set_operations_.28on_sorted_ranges.29" title="cpp/algorithm/ranges">Set operations (on sorted ranges)</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="merge.html" title="cpp/algorithm/ranges/merge"><span class="t-lines"><span>merge</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="inplace_merge.html" title="cpp/algorithm/ranges/inplace merge"><span class="t-lines"><span>inplace_merge</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="set_difference.html" title="cpp/algorithm/ranges/set difference"><span class="t-lines"><span>set_difference</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="set_intersection.html" title="cpp/algorithm/ranges/set intersection"><span class="t-lines"><span>set_intersection</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="set_union.html" title="cpp/algorithm/ranges/set union"><span class="t-lines"><span>set_union</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="includes.html" title="cpp/algorithm/ranges/includes"><span class="t-lines"><span>includes</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="set_symmetric_difference.html" title="cpp/algorithm/ranges/set symmetric difference"><span class="t-lines"><span>set_symmetric_difference</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Heap_operations" title="cpp/algorithm/ranges">Heap operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="is_heap.html" title="cpp/algorithm/ranges/is heap"><span class="t-lines"><span>is_heap</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="is_heap_until.html" title="cpp/algorithm/ranges/is heap until"><span class="t-lines"><span>is_heap_until</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="make_heap.html" title="cpp/algorithm/ranges/make heap"><span class="t-lines"><span>make_heap</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="sort_heap.html" title="cpp/algorithm/ranges/sort heap"><span class="t-lines"><span>sort_heap</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="push_heap.html" title="cpp/algorithm/ranges/push heap"><span class="t-lines"><span>push_heap</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="pop_heap.html" title="cpp/algorithm/ranges/pop heap"><span class="t-lines"><span>pop_heap</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Minimum.2Fmaximum_operations" title="cpp/algorithm/ranges">Minimum/maximum operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="max.html" title="cpp/algorithm/ranges/max"><span class="t-lines"><span>max</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="max_element.html" title="cpp/algorithm/ranges/max element"><span class="t-lines"><span>max_element</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="min.html" title="cpp/algorithm/ranges/min"><span class="t-lines"><span>min</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="min_element.html" title="cpp/algorithm/ranges/min element"><span class="t-lines"><span>min_element</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="minmax.html" title="cpp/algorithm/ranges/minmax"><span class="t-lines"><span>minmax</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="minmax_element.html" title="cpp/algorithm/ranges/minmax element"><span class="t-lines"><span>minmax_element</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="clamp.html" title="cpp/algorithm/ranges/clamp"><span class="t-lines"><span>clamp</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Permutation_operations" title="cpp/algorithm/ranges">Permutation operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="is_permutation.html" title="cpp/algorithm/ranges/is permutation"><span class="t-lines"><span>is_permutation</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="next_permutation.html" title="cpp/algorithm/ranges/next permutation"><span class="t-lines"><span>next_permutation</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="prev_permutation.html" title="cpp/algorithm/ranges/prev permutation"><span class="t-lines"><span>prev_permutation</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Constrained_fold_operations" title="cpp/algorithm/ranges">Fold operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fold_left.html" title="cpp/algorithm/ranges/fold left"><span class="t-lines"><span>fold_left</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fold_left_first.html" title="cpp/algorithm/ranges/fold left first"><span class="t-lines"><span>fold_left_first</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fold_right.html" title="cpp/algorithm/ranges/fold right"><span class="t-lines"><span>fold_right</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fold_right_last.html" title="cpp/algorithm/ranges/fold right last"><span class="t-lines"><span>fold_right_last</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fold_left_with_iter.html" title="cpp/algorithm/ranges/fold left with iter"><span class="t-lines"><span>fold_left_with_iter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="fold_left_first_with_iter.html" title="cpp/algorithm/ranges/fold left first with iter"><span class="t-lines"><span>fold_left_first_with_iter</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Constrained_numeric_operations" title="cpp/algorithm/ranges">Numeric operations</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iota.html" title="cpp/algorithm/ranges/iota"><span class="t-lines"><span>iota</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span><code>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Constrained_random_number_algorithms" title="cpp/algorithm/ranges">Random number generation</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="generate_random.html" title="cpp/algorithm/ranges/generate random"><span class="t-lines"><span>generate_random</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx26">(C++26)</span></span></span></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Constrained_uninitialized_memory_algorithms" title="cpp/algorithm/ranges">Operations on uninitialized storage</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/construct_at.html" title="cpp/memory/ranges/construct at"><span class="t-lines"><span>construct_at</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/destroy.html" title="cpp/memory/ranges/destroy"><span class="t-lines"><span>destroy</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/destroy_n.html" title="cpp/memory/ranges/destroy n"><span class="t-lines"><span>destroy_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/destroy_at.html" title="cpp/memory/ranges/destroy at"><span class="t-lines"><span>destroy_at</span></span></a></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_copy.html" title="cpp/memory/ranges/uninitialized copy"><span class="t-lines"><span>uninitialized_copy</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_move.html" title="cpp/memory/ranges/uninitialized move"><span class="t-lines"><span>uninitialized_move</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_fill.html" title="cpp/memory/ranges/uninitialized fill"><span class="t-lines"><span>uninitialized_fill</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_copy_n.html" title="cpp/memory/ranges/uninitialized copy n"><span class="t-lines"><span>uninitialized_copy_n</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_move_n.html" title="cpp/memory/ranges/uninitialized move n"><span class="t-lines"><span>uninitialized_move_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_fill_n.html" title="cpp/memory/ranges/uninitialized fill n"><span class="t-lines"><span>uninitialized_fill_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_default_construct.html" title="cpp/memory/ranges/uninitialized default construct"><span class="t-lines"><span>uninitialized_default_construct</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_default_construct_n.html" title="cpp/memory/ranges/uninitialized default construct n"><span class="t-lines"><span>uninitialized_default_construct_n</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_value_construct.html" title="cpp/memory/ranges/uninitialized value construct"><span class="t-lines"><span>uninitialized_value_construct</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../memory/ranges/uninitialized_value_construct_n.html" title="cpp/memory/ranges/uninitialized value construct n"><span class="t-lines"><span>uninitialized_value_construct_n</span></span></a></div></div></td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-<tr class="t-nv-h2"><td colspan="5"><a href="../ranges.html#Return_types" title="cpp/algorithm/ranges">Return types</a></td></tr>
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/in_fun_result.html" title="cpp/algorithm/ranges/return types/in fun result"><span class="t-lines"><span>in_fun_result</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/in_in_result.html" title="cpp/algorithm/ranges/return types/in in result"><span class="t-lines"><span>in_in_result</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/in_found_result.html" title="cpp/algorithm/ranges/return types/in found result"><span class="t-lines"><span>in_found_result</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/in_out_result.html" title="cpp/algorithm/ranges/return types/in out result"><span class="t-lines"><span>in_out_result</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/in_in_out_result.html" title="cpp/algorithm/ranges/return types/in in out result"><span class="t-lines"><span>in_in_out_result</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/in_out_out_result.html" title="cpp/algorithm/ranges/return types/in out out result"><span class="t-lines"><span>in_out_out_result</span></span></a></div><div><span class="t-lines"><span><code>&#160;&#160;</code></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/min_max_result.html" title="cpp/algorithm/ranges/return types/min max result"><span class="t-lines"><span>min_max_result</span></span></a></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td><td><div><table class="t-nv-begin" cellpadding="0" style="">
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/out_value_result.html" title="cpp/algorithm/ranges/return types/out value result"><span class="t-lines"><span>out_value_result</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="return_types/in_value_result.html" title="cpp/algorithm/ranges/return types/in value result"><span class="t-lines"><span>in_value_result</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx23">(C++23)</span></span></span></div></div></td></tr>
-<tr class="t-nv"><td colspan="5"><br />
-</td></tr>
-</table></div></td></tr>
-</table></div></td></tr>
-</table></div><div><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/navbar_content&amp;action=edit">&#91;edit&#93;</a></span></div></div></div></div><div class="t-navbar-sep">&#160;</div></div>
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
 <table class="t-dcl-begin"><tbody>
 <tr class="t-dsc-header">
 <td> <div>Defined in header <code><a href="../../header/algorithm.html" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code>
@@ -817,38 +211,38 @@ html { font-variant-ligatures: no-common-ligatures; }
 <td></td>
 </tr>
 <tr class="t-dcl t-since-cxx20">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../iterator/permutable.html"><span class="kw3154">std::<span class="me2">permutable</span></span></a> I, <a href="../../iterator/sentinel_for.html"><span class="kw2881">std::<span class="me2">sentinel_for</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a>,<br />
-<p>&#160; &#160; &#160; &#160; &#160; <a href="../../iterator/indirect_equivalence_relation.html"><span class="kw3141">std::<span class="me2">indirect_equivalence_relation</span></span></a><span class="sy1">&lt;</span>std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-placeholder/iterator/projected"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span>I, Proj<span class="sy1">&gt;&gt;</span><br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; C <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/equal_to"><span class="kw2860">ranges::<span class="me2">equal_to</span></span></a> <span class="sy1">&gt;</span><br />
-<span class="kw4">constexpr</span> <a href="../../ranges/subrange.html"><span class="kw2929">ranges::<span class="me2">subrange</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span><br />
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../iterator/permutable.html"><span class="kw3154">std::<span class="me2">permutable</span></span></a> I, <a href="../../iterator/sentinel_for.html"><span class="kw2881">std::<span class="me2">sentinel_for</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a>,<br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="../../iterator/indirect_equivalence_relation.html"><span class="kw3141">std::<span class="me2">indirect_equivalence_relation</span></span></a><span class="sy1">&lt;</span>std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-placeholder/iterator/projected"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span>I, Proj<span class="sy1">&gt;&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; C <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/equal_to"><span class="kw2860">ranges::<span class="me2">equal_to</span></span></a> <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> <a href="../../ranges/subrange.html"><span class="kw2929">ranges::<span class="me2">subrange</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span><br>
 </p>
-&#160; &#160; unique<span class="br0">&#40;</span> I first, S last, C comp <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>, Proj proj <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&nbsp; &nbsp; unique<span class="br0">(</span> I first, S last, C comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
 <td> (1) </td>
 <td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
 </tr>
 <tr class="t-dcl t-since-cxx20">
-<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/forward_range.html"><span class="kw2923">ranges::<span class="me2">forward_range</span></span></a> R, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a>,<br />
-<p>&#160; &#160; &#160; &#160; &#160; <a href="../../iterator/indirect_equivalence_relation.html"><span class="kw3141">std::<span class="me2">indirect_equivalence_relation</span></span></a><span class="sy1">&lt;</span>std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-placeholder/iterator/projected"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, Proj<span class="sy1">&gt;&gt;</span><br />
-&#160; &#160; &#160; &#160; &#160; &#160; &#160; C <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/equal_to"><span class="kw2860">ranges::<span class="me2">equal_to</span></span></a> <span class="sy1">&gt;</span><br />
-requires <a href="../../iterator/permutable.html"><span class="kw3154">std::<span class="me2">permutable</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span><br />
-<span class="kw4">constexpr</span> <a href="../../ranges/borrowed_iterator_t.html"><span class="kw2916">ranges::<span class="me2">borrowed_subrange_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span><br />
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/forward_range.html"><span class="kw2923">ranges::<span class="me2">forward_range</span></span></a> R, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a>,<br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <a href="../../iterator/indirect_equivalence_relation.html"><span class="kw3141">std::<span class="me2">indirect_equivalence_relation</span></span></a><span class="sy1">&lt;</span>std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-placeholder/iterator/projected"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, Proj<span class="sy1">&gt;&gt;</span><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; C <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/equal_to"><span class="kw2860">ranges::<span class="me2">equal_to</span></span></a> <span class="sy1">&gt;</span><br>
+requires <a href="../../iterator/permutable.html"><span class="kw3154">std::<span class="me2">permutable</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span><br>
+<span class="kw4">constexpr</span> <a href="../../ranges/borrowed_iterator_t.html"><span class="kw2916">ranges::<span class="me2">borrowed_subrange_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span><br>
 </p>
-&#160; &#160; unique<span class="br0">&#40;</span> R<span class="sy3">&amp;&amp;</span> r, C comp <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>, Proj proj <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span> <span class="br0">&#41;</span><span class="sy4">;</span></span></div></td>
+&nbsp; &nbsp; unique<span class="br0">(</span> R<span class="sy3">&amp;&amp;</span> r, C comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
 <td> (2) </td>
 <td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
 </tr>
 <tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
 </tbody></table>
-<div class="t-li1"><span class="t-li">1)</span> Eliminates all except the first element from every consecutive group of equivalent elements from the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&#160;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> and returns a subrange <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">ret</span></span><code>,&#160;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span>, where <code>ret</code> is a past-the-end iterator for the new end of the range.</div>
-<div class="t-li1"><span class="t-li"></span> Two consecutive elements <code>*(i - 1)</code> and <code>*i</code> are considered equivalent if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">&#40;</span>comp, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">&#40;</span>proj, <span class="sy2">*</span><span class="br0">&#40;</span>i <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="br0">&#41;</span>, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">&#40;</span>proj, <span class="sy2">*</span>i<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>, where <code>i</code> is an iterator in the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first <span class="sy2">+</span> <span class="nu0">1</span></span></span><code>,&#160;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span>.</div>
-<div class="t-li1"><span class="t-li">2)</span> Same as <span class="t-v">(1)</span>, but uses <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span> as the range, as if using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/begin.html"><span class="kw2901">ranges::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>r<span class="br0">&#41;</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/end.html"><span class="kw2903">ranges::<span class="me2">end</span></span></a><span class="br0">&#40;</span>r<span class="br0">&#41;</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span>.</div>
+<div class="t-li1"><span class="t-li">1)</span> Eliminates all except the first element from every consecutive group of equivalent elements from the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> and returns a subrange <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">ret</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span>, where <code>ret</code> is a past-the-end iterator for the new end of the range.</div>
+<div class="t-li1"><span class="t-li"></span> Two consecutive elements <code>*(i - 1)</code> and <code>*i</code> are considered equivalent if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>comp, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span><span class="br0">(</span>i <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span>i<span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> <span class="kw2">true</span></span></span>, where <code>i</code> is an iterator in the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first <span class="sy2">+</span> <span class="nu0">1</span></span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span>.</div>
+<div class="t-li1"><span class="t-li">2)</span> Same as <span class="t-v">(1)</span>, but uses <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span> as the range, as if using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/begin.html"><span class="kw2901">ranges::<span class="me2">begin</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/end.html"><span class="kw2903">ranges::<span class="me2">end</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span>.</div>
 <p>The function-like entities described on this page are <a href="../ranges.html#Algorithm_function_objects" title="cpp/algorithm/ranges"><i>algorithm function objects</i></a> (informally known as <i>niebloids</i>), that is:
 </p>
 <ul><li> Explicit template argument lists cannot be specified when calling any of them.
 </li><li> None of them are visible to <a href="../../language/adl.html" title="cpp/language/adl">argument-dependent lookup</a>.
 </li><li> When any of them are found by <a href="../../language/unqualified_lookup.html" title="cpp/language/unqualified lookup">normal unqualified lookup</a> as the name to the left of the function-call operator, <a href="../../language/adl.html" title="cpp/language/adl">argument-dependent lookup</a> is inhibited.
 </li></ul>
-<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
 <ul>
 <li class="toclevel-1 tocsection-1"><a href="unique.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
 <li class="toclevel-1 tocsection-2"><a href="unique.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
@@ -858,12 +252,12 @@ requires <a href="../../iterator/permutable.html"><span class="kw3154">std::<spa
 <li class="toclevel-1 tocsection-6"><a href="unique.html#Example"><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
 <li class="toclevel-1 tocsection-7"><a href="unique.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
 </ul>
-</td></tr></table>
+</td></tr></tbody></table>
 <h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
 <table class="t-par-begin">
 
 
-<tr class="t-par">
+<tbody><tr class="t-par">
 <td> first, last
 </td>
 <td> -
@@ -890,113 +284,113 @@ requires <a href="../../iterator/permutable.html"><span class="kw3154">std::<spa
 <td> -
 </td>
 <td> the projection to apply to the elements
-</td></tr></table>
+</td></tr></tbody></table>
 <h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
-<p>Returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">&#123;</span>ret, last<span class="br0">&#125;</span></span></span>, where <code>ret</code> is a past-the-end iterator for the new end of the range.
+<p>Returns <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">{</span>ret, last<span class="br0">}</span></span></span>, where <code>ret</code> is a past-the-end iterator for the new end of the range.
 </p>
 <h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit&amp;section=3" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
-<p>For nonempty ranges, exactly <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/ranges/distance.html"><span class="kw3160">ranges::<span class="me2">distance</span></span></a><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span> <span class="sy2">-</span> <span class="nu0">1</span></span></span> applications of the corresponding predicate <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> and no more that twice as many applications of any projection <span class="t-c"><span class="mw-geshi cpp source-cpp">proj</span></span>.
+<p>For nonempty ranges, exactly <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/ranges/distance.html"><span class="kw3160">ranges::<span class="me2">distance</span></span></a><span class="br0">(</span>first, last<span class="br0">)</span> <span class="sy2">-</span> <span class="nu0">1</span></span></span> applications of the corresponding predicate <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> and no more that twice as many applications of any projection <span class="t-c"><span class="mw-geshi cpp source-cpp">proj</span></span>.
 </p>
 <h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
-<p>Removing is done by shifting (by means of move assignment) the elements in the range in such a way that the elements that are not to be removed appear in the beginning of the range. Relative order of the elements that remain is preserved and the <i>physical</i> size of the container is unchanged. Iterators in <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">ret</span></span><code>,&#160;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> (if any) are still dereferenceable, but the elements themselves have unspecified values (as per <a href="../../named_req/MoveAssignable.html" title="cpp/named req/MoveAssignable"><span style="font-family: Georgia, &#39;DejaVu Serif&#39;, serif; font-style:italic">MoveAssignable</span></a> post-condition).
-</p><p>A call to <code>ranges::unique</code> is sometimes followed by a call to a container’s <code>erase</code> member function, which erases the unspecified values and reduces the <i>physical</i> size of the container to match its new <i>logical</i> size. These two invocations together model the <a href="https://en.wikipedia.org/wiki/Erase-remove_idiom" class="extiw" title="enwiki:Erase-remove idiom"><i>Erase–remove</i> idiom</a>.
+<p>Removing is done by shifting (by means of move assignment) the elements in the range in such a way that the elements that are not to be removed appear in the beginning of the range. Relative order of the elements that remain is preserved and the <i>physical</i> size of the container is unchanged. Iterators in <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">ret</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> (if any) are still dereferenceable, but the elements themselves have unspecified values (as per <a href="../../named_req/MoveAssignable.html" title="cpp/named req/MoveAssignable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">MoveAssignable</span></a> post-condition).
+</p><p>A call to <code>ranges::unique</code> is sometimes followed by a call to a container’s <code>erase</code> member function, which erases the unspecified values and reduces the <i>physical</i> size of the container to match its new <i>logical</i> size. These two invocations together model the <a class="extiw" href="https://en.wikipedia.org/wiki/Erase-remove_idiom" title="enwiki:Erase-remove idiom"><i>Erase–remove</i> idiom</a>.
 </p>
 <h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit&amp;section=5" title="Edit section: Possible implementation">edit</a>]</span> <span class="mw-headline" id="Possible_implementation">Possible implementation</span></h3>
 <table class="eq-fun-cpp-table">
 
 
-<tr>
+<tbody><tr>
 <td>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> unique_fn
-<span class="br0">&#123;</span>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> unique_fn
+<span class="br0">{</span>
     <span class="kw1">template</span><span class="sy1">&lt;</span><a href="../../iterator/permutable.html"><span class="kw3154">std::<span class="me2">permutable</span></span></a> I, <a href="../../iterator/sentinel_for.html"><span class="kw2881">std::<span class="me2">sentinel_for</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a>,
              <a href="../../iterator/indirect_equivalence_relation.html"><span class="kw3141">std::<span class="me2">indirect_equivalence_relation</span></span></a><span class="sy1">&lt;</span>std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-placeholder/iterator/projected"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span>I, Proj<span class="sy1">&gt;&gt;</span>
                  C <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/equal_to"><span class="kw2860">ranges::<span class="me2">equal_to</span></span></a><span class="sy1">&gt;</span>
     <span class="kw4">constexpr</span> <a href="../../ranges/subrange.html"><span class="kw2929">ranges::<span class="me2">subrange</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span>
-        operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>I first, S last, C comp <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>, Proj proj <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
-    <span class="br0">&#123;</span>
-        first <span class="sy1">=</span> <a href="adjacent_find.html"><span class="kw2983">ranges::<span class="me2">adjacent_find</span></span></a><span class="br0">&#40;</span>first, last, comp, proj<span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">if</span> <span class="br0">&#40;</span>first <span class="sy1">==</span> last<span class="br0">&#41;</span>
-            <span class="kw1">return</span> <span class="br0">&#123;</span>first, first<span class="br0">&#125;</span><span class="sy4">;</span>
-        <span class="kw4">auto</span> i <span class="br0">&#123;</span>first<span class="br0">&#125;</span><span class="sy4">;</span>
+        operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>I first, S last, C comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span><span class="br0">)</span> <span class="kw4">const</span>
+    <span class="br0">{</span>
+        first <span class="sy1">=</span> <a href="adjacent_find.html"><span class="kw2983">ranges::<span class="me2">adjacent_find</span></span></a><span class="br0">(</span>first, last, comp, proj<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">if</span> <span class="br0">(</span>first <span class="sy1">==</span> last<span class="br0">)</span>
+            <span class="kw1">return</span> <span class="br0">{</span>first, first<span class="br0">}</span><span class="sy4">;</span>
+        <span class="kw4">auto</span> i <span class="br0">{</span>first<span class="br0">}</span><span class="sy4">;</span>
         <span class="sy2">++</span>first<span class="sy4">;</span>
-        <span class="kw1">while</span> <span class="br0">&#40;</span><span class="sy2">++</span>first <span class="sy3">!</span><span class="sy1">=</span> last<span class="br0">&#41;</span>
-            <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy3">!</span><a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">&#40;</span>comp, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">&#40;</span>proj, <span class="sy2">*</span>i<span class="br0">&#41;</span>, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">&#40;</span>proj, <span class="sy2">*</span>first<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>
-                <span class="sy2">*++</span>i <span class="sy1">=</span> <a href="../../iterator/ranges/iter_move.html"><span class="kw3158">ranges::<span class="me2">iter_move</span></span></a><span class="br0">&#40;</span>first<span class="br0">&#41;</span><span class="sy4">;</span>
-        <span class="kw1">return</span> <span class="br0">&#123;</span><span class="sy2">++</span>i, first<span class="br0">&#125;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span>
-&#160;
+        <span class="kw1">while</span> <span class="br0">(</span><span class="sy2">++</span>first <span class="sy3">!</span><span class="sy1">=</span> last<span class="br0">)</span>
+            <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span><a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>comp, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span>i<span class="br0">)</span>, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span>first<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>
+                <span class="sy2">*++</span>i <span class="sy1">=</span> <a href="../../iterator/ranges/iter_move.html"><span class="kw3158">ranges::<span class="me2">iter_move</span></span></a><span class="br0">(</span>first<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="br0">{</span><span class="sy2">++</span>i, first<span class="br0">}</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+&nbsp;
     <span class="kw1">template</span><span class="sy1">&lt;</span><a href="../../ranges/forward_range.html"><span class="kw2923">ranges::<span class="me2">forward_range</span></span></a> R, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a>,
              <a href="../../iterator/indirect_equivalence_relation.html"><span class="kw3141">std::<span class="me2">indirect_equivalence_relation</span></span></a><span class="sy1">&lt;</span>std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-placeholder/iterator/projected"><span class="kw2696">projected</span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, Proj<span class="sy1">&gt;&gt;</span>
                  C <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/equal_to"><span class="kw2860">ranges::<span class="me2">equal_to</span></span></a><span class="sy1">&gt;</span>
     requires <a href="../../iterator/permutable.html"><span class="kw3154">std::<span class="me2">permutable</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;&gt;</span>
     <span class="kw4">constexpr</span> <a href="../../ranges/borrowed_iterator_t.html"><span class="kw2916">ranges::<span class="me2">borrowed_subrange_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>
-        operator<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#40;</span>R<span class="sy3">&amp;&amp;</span> r, C comp <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>, Proj proj <span class="sy1">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="br0">&#41;</span> <span class="kw4">const</span>
-    <span class="br0">&#123;</span>
-        <span class="kw1">return</span> <span class="br0">&#40;</span><span class="sy2">*</span>this<span class="br0">&#41;</span><span class="br0">&#40;</span><a href="../../ranges/begin.html"><span class="kw2901">ranges::<span class="me2">begin</span></span></a><span class="br0">&#40;</span>r<span class="br0">&#41;</span>, <a href="../../ranges/end.html"><span class="kw2903">ranges::<span class="me2">end</span></span></a><span class="br0">&#40;</span>r<span class="br0">&#41;</span>,
-                       std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>comp<span class="br0">&#41;</span>, std<span class="sy4">::</span><span class="me2">move</span><span class="br0">&#40;</span>proj<span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    <span class="br0">&#125;</span>
-<span class="br0">&#125;</span><span class="sy4">;</span>
-&#160;
-<span class="kw1">inline</span> <span class="kw4">constexpr</span> unique_fn unique <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy4">;</span></pre></div></div>
-</td></tr></table>
+        operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>R<span class="sy3">&amp;&amp;</span> r, C comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span><span class="br0">)</span> <span class="kw4">const</span>
+    <span class="br0">{</span>
+        <span class="kw1">return</span> <span class="br0">(</span><span class="sy2">*</span>this<span class="br0">)</span><span class="br0">(</span><a href="../../ranges/begin.html"><span class="kw2901">ranges::<span class="me2">begin</span></span></a><span class="br0">(</span>r<span class="br0">)</span>, <a href="../../ranges/end.html"><span class="kw2903">ranges::<span class="me2">end</span></span></a><span class="br0">(</span>r<span class="br0">)</span>,
+                       std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>comp<span class="br0">)</span>, std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>proj<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw1">inline</span> <span class="kw4">constexpr</span> unique_fn unique <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+</td></tr></tbody></table>
 <h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit&amp;section=6" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
 <div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;algorithm&gt;</span>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;algorithm&gt;</span>
 <span class="co2">#include &lt;cmath&gt;</span>
 <span class="co2">#include &lt;complex&gt;</span>
 <span class="co2">#include &lt;iostream&gt;</span>
 <span class="co2">#include &lt;vector&gt;</span>
-&#160;
-<span class="kw1">struct</span> id <span class="br0">&#123;</span>
+&nbsp;
+<span class="kw1">struct</span> id <span class="br0">{</span>
     <span class="kw4">int</span> i<span class="sy4">;</span>
-    <span class="kw1">explicit</span> id<span class="br0">&#40;</span><span class="kw4">int</span> i<span class="br0">&#41;</span> <span class="sy4">:</span> i <span class="br0">&#123;</span>i<span class="br0">&#125;</span> <span class="br0">&#123;</span><span class="br0">&#125;</span>
-<span class="br0">&#125;</span><span class="sy4">;</span>
-&#160;
-<span class="kw4">void</span> print<span class="br0">&#40;</span>id i, <span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> v<span class="br0">&#41;</span>
-<span class="br0">&#123;</span>
-    <a href="../../io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i.<span class="me1">i</span> <span class="sy1">&lt;&lt;</span> <span class="st0">&quot;) &quot;</span><span class="sy4">;</span>
-    std<span class="sy4">::</span><a href="for_each.html"><span class="kw3008">ranges::<span class="me2">for_each</span></span></a><span class="br0">&#40;</span>v, <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">auto</span> <span class="kw4">const</span><span class="sy3">&amp;</span> e<span class="br0">&#41;</span> <span class="br0">&#123;</span> <a href="../../io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> e <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span> <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> id<span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span> <span class="sy4">:</span> i <span class="br0">{</span>i<span class="br0">}</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw4">void</span> print<span class="br0">(</span>id i, <span class="kw4">const</span> <span class="kw4">auto</span><span class="sy3">&amp;</span> v<span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../../io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i.<span class="me1">i</span> <span class="sy1">&lt;&lt;</span> <span class="st0">") "</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><a href="for_each.html"><span class="kw3008">ranges::<span class="me2">for_each</span></span></a><span class="br0">(</span>v, <span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">auto</span> <span class="kw4">const</span><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span> <a href="../../io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> e <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span> <span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>
     <a href="../../io/cout.html"><span class="kw1776">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
-<span class="br0">&#125;</span>
-&#160;
-<span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
-<span class="br0">&#123;</span>
+<span class="br0">}</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
     <span class="co1">// a vector containing several duplicated elements</span>
-    <a href="../../container/vector.html"><span class="kw1278">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">3</span>, <span class="nu0">3</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span>, <span class="nu0">4</span><span class="br0">&#125;</span><span class="sy4">;</span>
-&#160;
-    print<span class="br0">&#40;</span>id <span class="br0">&#123;</span><span class="nu0">1</span><span class="br0">&#125;</span>, v<span class="br0">&#41;</span><span class="sy4">;</span>
-&#160;
+    <a href="../../container/vector.html"><span class="kw1278">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v <span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">1</span>, <span class="nu0">1</span>, <span class="nu0">3</span>, <span class="nu0">3</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span>, <span class="nu0">4</span><span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+    print<span class="br0">(</span>id <span class="br0">{</span><span class="nu0">1</span><span class="br0">}</span>, v<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
     <span class="co1">// remove consecutive (adjacent) duplicates</span>
-    <span class="kw4">const</span> <span class="kw4">auto</span> ret <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">unique</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span><span class="sy4">;</span>
+    <span class="kw4">const</span> <span class="kw4">auto</span> ret <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">unique</span><span class="br0">(</span>v<span class="br0">)</span><span class="sy4">;</span>
     <span class="co1">// v now holds {1 2 1 3 4 5 4 x x x}, where 'x' is indeterminate</span>
-    v.<span class="me1">erase</span><span class="br0">&#40;</span>ret.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, ret.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    print<span class="br0">&#40;</span>id <span class="br0">&#123;</span><span class="nu0">2</span><span class="br0">&#125;</span>, v<span class="br0">&#41;</span><span class="sy4">;</span>
-&#160;
+    v.<span class="me1">erase</span><span class="br0">(</span>ret.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, ret.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    print<span class="br0">(</span>id <span class="br0">{</span><span class="nu0">2</span><span class="br0">}</span>, v<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
     <span class="co1">// sort followed by unique, to remove all duplicates</span>
-    std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-algorithm-placeholder/sort"><span class="kw2871">ranges::<span class="me2">sort</span></span></a><span class="br0">&#40;</span>v<span class="br0">&#41;</span><span class="sy4">;</span> <span class="co1">// {1 1 2 3 4 4 5}</span>
-    print<span class="br0">&#40;</span>id <span class="br0">&#123;</span><span class="nu0">3</span><span class="br0">&#125;</span>, v<span class="br0">&#41;</span><span class="sy4">;</span>
-&#160;
-    <span class="kw4">const</span> <span class="kw4">auto</span> <span class="br0">&#91;</span>first, last<span class="br0">&#93;</span> <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">unique</span><span class="br0">&#40;</span>v.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, v.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><a href="http://en.cppreference.com/w/cpp/ranges-algorithm-placeholder/sort"><span class="kw2871">ranges::<span class="me2">sort</span></span></a><span class="br0">(</span>v<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// {1 1 2 3 4 4 5}</span>
+    print<span class="br0">(</span>id <span class="br0">{</span><span class="nu0">3</span><span class="br0">}</span>, v<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="kw4">const</span> <span class="kw4">auto</span> <span class="br0">[</span>first, last<span class="br0">]</span> <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">unique</span><span class="br0">(</span>v.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, v.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
     <span class="co1">// v now holds {1 2 3 4 5 x x}, where 'x' is indeterminate</span>
-    v.<span class="me1">erase</span><span class="br0">&#40;</span>first, last<span class="br0">&#41;</span><span class="sy4">;</span>
-    print<span class="br0">&#40;</span>id <span class="br0">&#123;</span><span class="nu0">4</span><span class="br0">&#125;</span>, v<span class="br0">&#41;</span><span class="sy4">;</span>
-&#160;
+    v.<span class="me1">erase</span><span class="br0">(</span>first, last<span class="br0">)</span><span class="sy4">;</span>
+    print<span class="br0">(</span>id <span class="br0">{</span><span class="nu0">4</span><span class="br0">}</span>, v<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
     <span class="co1">// unique with custom comparison and projection</span>
-    <a href="../../container/vector.html"><span class="kw1278">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../../numeric/complex.html"><span class="kw1481">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;&gt;</span> vc <span class="br0">&#123;</span> <span class="br0">&#123;</span><span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="sy2">-</span><span class="nu0">1</span>, <span class="nu0">2</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="sy2">-</span><span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="nu0">2</span>, <span class="nu0">4</span><span class="br0">&#125;</span>, <span class="br0">&#123;</span><span class="sy2">-</span><span class="nu0">3</span>, <span class="nu0">5</span><span class="br0">&#125;</span> <span class="br0">&#125;</span><span class="sy4">;</span>
-    print<span class="br0">&#40;</span>id <span class="br0">&#123;</span><span class="nu0">5</span><span class="br0">&#125;</span>, vc<span class="br0">&#41;</span><span class="sy4">;</span>
-&#160;
-    <span class="kw4">const</span> <span class="kw4">auto</span> ret2 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">unique</span><span class="br0">&#40;</span>vc,
+    <a href="../../container/vector.html"><span class="kw1278">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../../numeric/complex.html"><span class="kw1481">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;&gt;</span> vc <span class="br0">{</span> <span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">}</span>, <span class="br0">{</span><span class="sy2">-</span><span class="nu0">1</span>, <span class="nu0">2</span><span class="br0">}</span>, <span class="br0">{</span><span class="sy2">-</span><span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span>, <span class="br0">{</span><span class="nu0">2</span>, <span class="nu0">4</span><span class="br0">}</span>, <span class="br0">{</span><span class="sy2">-</span><span class="nu0">3</span>, <span class="nu0">5</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span>
+    print<span class="br0">(</span>id <span class="br0">{</span><span class="nu0">5</span><span class="br0">}</span>, vc<span class="br0">)</span><span class="sy4">;</span>
+&nbsp;
+    <span class="kw4">const</span> <span class="kw4">auto</span> ret2 <span class="sy1">=</span> std<span class="sy4">::</span><span class="me2">ranges</span><span class="sy4">::</span><span class="me2">unique</span><span class="br0">(</span>vc,
         <span class="co1">// consider two complex nums equal if their real parts are equal by module:</span>
-        <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><span class="kw4">int</span> x, <span class="kw4">int</span> y<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> std<span class="sy4">::</span><span class="me2">abs</span><span class="br0">&#40;</span>x<span class="br0">&#41;</span> <span class="sy1">==</span> std<span class="sy4">::</span><span class="me2">abs</span><span class="br0">&#40;</span>y<span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>, <span class="co1">// comp</span>
-        <span class="br0">&#91;</span><span class="br0">&#93;</span><span class="br0">&#40;</span><a href="../../numeric/complex.html"><span class="kw1481">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> z<span class="br0">&#41;</span> <span class="br0">&#123;</span> <span class="kw1">return</span> z.<span class="me1">real</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy4">;</span> <span class="br0">&#125;</span>             <span class="co1">// proj</span>
-    <span class="br0">&#41;</span><span class="sy4">;</span>
-    vc.<span class="me1">erase</span><span class="br0">&#40;</span>ret2.<span class="me1">begin</span><span class="br0">&#40;</span><span class="br0">&#41;</span>, ret2.<span class="me1">end</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy4">;</span>
-    print<span class="br0">&#40;</span>id <span class="br0">&#123;</span><span class="nu0">6</span><span class="br0">&#125;</span>, vc<span class="br0">&#41;</span><span class="sy4">;</span>
-<span class="br0">&#125;</span></pre></div></div>
+        <span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> x, <span class="kw4">int</span> y<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> std<span class="sy4">::</span><span class="me2">abs</span><span class="br0">(</span>x<span class="br0">)</span> <span class="sy1">==</span> std<span class="sy4">::</span><span class="me2">abs</span><span class="br0">(</span>y<span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>, <span class="co1">// comp</span>
+        <span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><a href="../../numeric/complex.html"><span class="kw1481">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> z<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> z.<span class="me1">real</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>             <span class="co1">// proj</span>
+    <span class="br0">)</span><span class="sy4">;</span>
+    vc.<span class="me1">erase</span><span class="br0">(</span>ret2.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, ret2.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    print<span class="br0">(</span>id <span class="br0">{</span><span class="nu0">6</span><span class="br0">}</span>, vc<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
 <p>Output:
 </p>
-<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">1) 1 2 1 1 3 3 3 4 5 4
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">1) 1 2 1 1 3 3 3 4 5 4
 2) 1 2 1 3 4 5 4
 3) 1 1 2 3 4 4 5
 4) 1 2 3 4 5
@@ -1006,42 +400,42 @@ requires <a href="../../iterator/permutable.html"><span class="kw3154">std::<spa
 <h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=edit&amp;section=7" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
 <table class="t-dsc-begin">
 
-<tr class="t-dsc">
+<tbody><tr class="t-dsc">
 <td> <div class="t-dsc-member-div"><div><a href="unique_copy.html" title="cpp/algorithm/ranges/unique copy"> <span class="t-lines"><span>ranges::unique_copy</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
 </td>
-<td> creates a copy of some range of elements that contains no consecutive duplicates<br /><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_unique_copy&amp;action=edit">&#91;edit&#93;</a></span>
+<td> creates a copy of some range of elements that contains no consecutive duplicates<br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_unique_copy&amp;action=edit" rel="nofollow">[edit]</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td> <div class="t-dsc-member-div"><div><a href="adjacent_find.html" title="cpp/algorithm/ranges/adjacent find"> <span class="t-lines"><span>ranges::adjacent_find</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
 </td>
-<td> finds the first two adjacent items that are equal (or satisfy a given predicate)<br /><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_adjacent_find&amp;action=edit">&#91;edit&#93;</a></span>
+<td> finds the first two adjacent items that are equal (or satisfy a given predicate)<br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_adjacent_find&amp;action=edit" rel="nofollow">[edit]</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td> <div class="t-dsc-member-div"><div><a href="remove.html" title="cpp/algorithm/ranges/remove"> <span class="t-lines"><span>ranges::remove</span><span>ranges::remove_if</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
 </td>
-<td> removes elements satisfying specific criteria<br /><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_remove&amp;action=edit">&#91;edit&#93;</a></span>
+<td> removes elements satisfying specific criteria<br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_remove&amp;action=edit" rel="nofollow">[edit]</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="../unique.html" title="cpp/algorithm/unique"> <span class="t-lines"><span>unique</span></span></a></div></div>
 </td>
-<td>  removes consecutive duplicate elements in a range <br /> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_unique&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  removes consecutive duplicate elements in a range <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_unique&amp;action=edit" rel="nofollow">[edit]</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="../../container/list/unique.html" title="cpp/container/list/unique"> <span class="t-lines"><span>unique</span></span></a></div></div>
 </td>
-<td>  removes consecutive duplicate elements <br /> <span class="t-mark">(public member function of <code>std::list&lt;T,Allocator&gt;</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_unique&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  removes consecutive duplicate elements <br> <span class="t-mark">(public member function of <code>std::list&lt;T,Allocator&gt;</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_unique&amp;action=edit" rel="nofollow">[edit]</a></span>
 </td></tr>
 
 <tr class="t-dsc">
 <td>  <div class="t-dsc-member-div"><div><a href="../../container/forward_list/unique.html" title="cpp/container/forward list/unique"> <span class="t-lines"><span>unique</span></span></a></div></div>
 </td>
-<td>  removes consecutive duplicate elements <br /> <span class="t-mark">(public member function of <code>std::forward_list&lt;T,Allocator&gt;</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a rel="nofollow" class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_unique&amp;action=edit">&#91;edit&#93;</a></span>
+<td>  removes consecutive duplicate elements <br> <span class="t-mark">(public member function of <code>std::forward_list&lt;T,Allocator&gt;</code>)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_unique&amp;action=edit" rel="nofollow">[edit]</a></span>
 </td></tr>
-</table>
+</tbody></table>
 
 <!-- 
 NewPP limit report
@@ -1060,7 +454,7 @@ Expensive parser function count: 0/100
                     Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;oldid=180509">https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;oldid=180509</a>"                    </div>
                     <!-- /printfooter -->
                                                             <!-- catlinks -->
-                    <div id='catlinks' class='catlinks catlinks-allhidden'></div>                    <!-- /catlinks -->
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    <!-- /catlinks -->
                                                             <div class="visualClear"></div>
                     <!-- debughtml -->
                                         <!-- /debughtml -->
@@ -1070,22 +464,22 @@ Expensive parser function count: 0/100
         </div>
         <!-- /content -->
         <!-- footer -->
-        <div id="cpp-footer-base" class="noprint">
-            <div id="footer" hidden>
-                        <div id="cpp-navigationn" hidden>
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
             <h5>Navigation</h5>
             <ul>
-<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
         </div>
-                        <div id="cpp-toolbox" hidden>
+                        <div hidden="" id="cpp-toolbox">
             <h5><span>Toolbox</span><a href="unique.html#"></a></h5>
             <ul>
-<li id="t-whatlinkshere"><a href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/algorithm/ranges/unique" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/algorithm/ranges/unique" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;oldid=180509" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=info">Page information</a></li>            </ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/algorithm/ranges/unique" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/algorithm/ranges/unique" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;oldid=180509" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/unique&amp;action=info">Page information</a></li>            </ul>
         </div>
-                        <div id="cpp-languagess" hidden>
+                        <div hidden="" id="cpp-languagess">
             <div><ul><li>In other languages</li></ul></div>
             <div><ul>
-<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="de" hreflang="de">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="es" hreflang="es">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="fr" hreflang="fr">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="it" hreflang="it">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="ja" hreflang="ja">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="pt" hreflang="pt">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="ru" hreflang="ru">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm/ranges/unique" title="cpp/algorithm/ranges/unique" lang="zh" hreflang="zh">中文</a></li>            </ul></div>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="de" lang="de" title="cpp/algorithm/ranges/unique">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="es" lang="es" title="cpp/algorithm/ranges/unique">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="fr" lang="fr" title="cpp/algorithm/ranges/unique">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="it" lang="it" title="cpp/algorithm/ranges/unique">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="ja" lang="ja" title="cpp/algorithm/ranges/unique">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="pt" lang="pt" title="cpp/algorithm/ranges/unique">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="ru" lang="ru" title="cpp/algorithm/ranges/unique">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm/ranges/unique" hreflang="zh" lang="zh" title="cpp/algorithm/ranges/unique">中文</a></li>            </ul></div>
         </div>
             <ul id="footer-info">
                                     <li id="footer-info-lastmod"> This page was last modified on 11 February 2025, at 10:43.</li>
@@ -1095,9 +489,9 @@ Expensive parser function count: 0/100
                                     <li id="footer-places-about"><a href="../../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
                                     <li id="footer-places-disclaimer"><a href="../../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
                             </ul>
-                                    <ul id="footer-icons" class="noprint">
+                                    <ul class="noprint" id="footer-icons">
                                     <li id="footer-poweredbyico">
-                                            <a href="https://www.mediawiki.org/"><img src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31" /></a>                                            <a href="http://qbnz.com/highlighter/"><img src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" alt="Powered by GeSHi" height="31" width="88" /></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" alt="Hosted by Tiger Technologies" height="31" width="88" /></a>                                        </li>
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
                                 </ul>
                         <div style="clear:both">
             </div>
@@ -1113,6 +507,7 @@ mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.pag
 }</script>
 <script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
 <!-- Served in 3.937 secs. -->
-	</body>
-<!-- Cached 20250317165750 -->
-</html>
+	
+
+
+</body><!-- Cached 20250317165750 --></html>
