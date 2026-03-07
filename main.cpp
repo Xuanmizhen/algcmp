@@ -3,12 +3,6 @@
 #include <iostream>
 #include <type_traits> // std::make_signed_t
 
-#define dbg(val) \
-    ([](const auto v) { \
-        std::cerr << "[" __FILE__ ":" << __LINE__ << "] " #val " = " << v << '\n'; \
-        return v; \
-    })(val)
-
 using i16 = int16_t;
 using i32 = int32_t;
 using i64 = int64_t;
@@ -24,6 +18,12 @@ using u128 = __uint128_t;
 using std::cin;
 using std::cout;
 using std::cerr;
+
+#define dbg(val) \
+    ([](const auto v) { \
+        cerr << "[" __FILE__ ":" << __LINE__ << "] " #val " = " << v << '\n'; \
+        return v; \
+    })(val)
 
 void run() {
     u32 t;
