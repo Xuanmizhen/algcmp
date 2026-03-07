@@ -5,7 +5,7 @@
 
 #define dbg(val) \
     ([](const auto v) { \
-        std::cerr << '[' << __FILE__ << ':' << __LINE__ << "] " #val " = " << v << '\n'; \
+        std::cerr << "[" __FILE__ ":" << __LINE__ << "] " #val " = " << v << '\n'; \
         return v; \
     })(val)
 
