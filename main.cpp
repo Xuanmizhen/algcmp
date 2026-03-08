@@ -1,10 +1,13 @@
 // C++20
 // PTA: C++ (g++)
 
+#include <cassert>
 #include <compare> // std::strong_ordering
 #include <cstdint>
 #include <fstream>
 #include <iostream>
+#include <source_location>
+#include <string_view>
 #include <type_traits> // std::make_signed_t
 #include <vector>
 
@@ -22,14 +25,24 @@ using u128 = __uint128_t;
 
 using std::cin;
 using std::cout;
-using std::cerr;
+using std::source_location;
 
+
+std::ostream &log_loc(std::ostream &os, const source_location loc = source_location::current()) {
+    return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: ";
+}
 
 #define dbg(val) \
-    ([](const auto v) { \
-        cerr << "[" __FILE__ ":" << __LINE__ << "] " #val " = " << v << '\n'; \
+    ([](const auto v, const source_location loc) { \
+        log_loc(std::clog, loc) << ' ' << #val << " = " << v << '\n'; \
         return v; \
-    })(val)
+    })(val, source_location::current())
+
+#ifdef LOCAL
+#define debug_assert(e) assert(e)
+#else
+#define debug_assert(e) void
+#endif
 
 class disjoint_set {
     std::vector<isize> parent_or_neg_rank;
@@ -83,7 +96,7 @@ int main() {
     ifstream fin("in.txt");
     ofstream fout("out.txt");
     if (!fin.is_open() || !fout.is_open()) {
-        cerr << "files not opened\n";
+        std::cerr << "files not opened\n";
         return 1;
     }
     cin.rdbuf(fin.rdbuf());
