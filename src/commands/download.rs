@@ -9,9 +9,7 @@ use std::{fs, path::Path};
 use tokio::time::Duration;
 
 use crate::{
-    errors::AppError,
-    html::remove_navigation_elements,
-    references::get_required_references,
+    errors::AppError, html::remove_navigation_elements, references::get_required_references,
 };
 
 /// Download C++ reference pages from cppreference.com

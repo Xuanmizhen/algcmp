@@ -75,9 +75,7 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
     // Get all HTML files in cppreference directory
     let html_files: Vec<_> = fs::read_dir(cppreference_dir)?
         .filter_map(|entry| entry.ok())
-        .filter(|entry| {
-            entry.path().extension().map_or(false, |ext| ext == "html")
-        })
+        .filter(|entry| entry.path().extension().map_or(false, |ext| ext == "html"))
         .map(|entry| entry.path())
         .collect();
 
@@ -92,7 +90,10 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
         .collect();
 
     // Check for missing files
-    let missing_files: Vec<_> = required_names.difference(&existing_names).cloned().collect();
+    let missing_files: Vec<_> = required_names
+        .difference(&existing_names)
+        .cloned()
+        .collect();
     if !missing_files.is_empty() {
         error!("Missing required HTML files:");
         for name in &missing_files {
@@ -137,11 +138,9 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
                     .select(&body_selector)
                     .next()
                     .map(|e| e.id())
-                    .ok_or_else(|| {
-                        AppError::HtmlParsingError {
-                            file: "root document".to_string(),
-                            reason: "Could not find body element".to_string(),
-                        }
+                    .ok_or_else(|| AppError::HtmlParsingError {
+                        file: "root document".to_string(),
+                        reason: "Could not find body element".to_string(),
                     })
             }?;
 

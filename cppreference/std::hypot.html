@@ -1,0 +1,550 @@
+<!DOCTYPE html><html class="client-nojs" dir="ltr" lang="en"><head>
+<title>std::hypot, std::hypotf, std::hypotl - cppreference.com</title>
+<meta charset="UTF-8">
+<meta content="MediaWiki 1.21.2" name="generator">
+<link href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit" rel="alternate" title="Edit" type="application/x-wiki">
+<link href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit" rel="edit" title="Edit">
+<link href="../../../../favicon.ico" rel="shortcut icon">
+<link href="../../../../mwiki/opensearch_desc.php" rel="search" title="cppreference.com (en)" type="application/opensearchdescription+xml">
+<link href="../../../../mwiki/api.php@action=rsd" rel="EditURI" type="application/rsd+xml">
+<link href="https://en.cppreference.com/mwiki/index.php?title=Special:RecentChanges&amp;feed=atom" rel="alternate" title="cppreference.com Atom feed" type="application/atom+xml">
+<link href="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=ext.gadget.ColiruCompiler,MathJax,StandardRevisions%257Cext.rtlcite%257Cmediawiki.legacy.commonPrint,shared%257Cskins.cppreference2&amp;only=styles&amp;skin=cppreference2&amp;%252A.css" rel="stylesheet">
+<meta content="" name="ResourceLoaderDynamicStyles">
+<link href="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=cppreference2&amp;%252A.css" rel="stylesheet">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/numeric/math/hypot","wgTitle":"cpp/numeric/math/hypot","wgCurRevisionId":180162,"wgArticleId":2949,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/numeric/math/hypot","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1,"gadget-StandardRevisions":1,"gadget-MathJax":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:173cd59b4efc63a37dd7498667b0fea2 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style><!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]--></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_numeric_math_hypot skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>hypot, <span style="font-size:0.7em; line-height:130%">std::</span>hypotf, <span style="font-size:0.7em; line-height:130%">std::</span>hypotl</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../numeric.html" title="cpp/numeric">numeric</a>‎ | <a href="../math.html" title="cpp/numeric/math">math</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/cmath.html" title="cpp/header/cmath">&lt;cmath&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+<tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(1)</td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx11 t-until-cxx23">
+<td><div><span id="Version_1"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &nbsp; &nbsp; &nbsp; hypot <span class="br0">(</span> <span class="kw4">float</span> x, <span class="kw4">float</span> y <span class="br0">)</span><span class="sy4">;</span><br>
+<p><span class="kw4">double</span> &nbsp; &nbsp; &nbsp;hypot <span class="br0">(</span> <span class="kw4">double</span> x, <span class="kw4">double</span> y <span class="br0">)</span><span class="sy4">;</span><br>
+</p>
+<span class="kw4">long</span> <span class="kw4">double</span> hypot <span class="br0">(</span> <span class="kw4">long</span> <span class="kw4">double</span> x, <span class="kw4">long</span> <span class="kw4">double</span> y <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> </td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-until-cxx23">(until C++23)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx23">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*floating-point-type*/</span> <br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hypot <span class="br0">(</span> <span class="coMULTI">/*floating-point-type*/</span> x,<br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*floating-point-type*/</span> y <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx23">(since C++23)</span> <br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span> </td>
+</tr>
+</tbody><tbody>
+<tr class="t-dcl t-since-cxx11">
+<td><div><span id="Version_2"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &nbsp; &nbsp; &nbsp; hypotf<span class="br0">(</span> <span class="kw4">float</span> x, <span class="kw4">float</span> y <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2)</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td><div><span id="Version_3"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span> hypotl<span class="br0">(</span> <span class="kw4">long</span> <span class="kw4">double</span> x, <span class="kw4">long</span> <span class="kw4">double</span> y <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (3)</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+</tbody>
+<tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(4)</td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx17 t-until-cxx23">
+<td><div><span id="Version_4"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &nbsp; &nbsp; &nbsp; hypot <span class="br0">(</span> <span class="kw4">float</span> x, <span class="kw4">float</span> y, <span class="kw4">float</span> z <span class="br0">)</span><span class="sy4">;</span><br>
+<p><span class="kw4">double</span> &nbsp; &nbsp; &nbsp;hypot <span class="br0">(</span> <span class="kw4">double</span> x, <span class="kw4">double</span> y, <span class="kw4">double</span> z <span class="br0">)</span><span class="sy4">;</span><br>
+</p>
+<span class="kw4">long</span> <span class="kw4">double</span> hypot <span class="br0">(</span> <span class="kw4">long</span> <span class="kw4">double</span> x, <span class="kw4">long</span> <span class="kw4">double</span> y, <span class="kw4">long</span> <span class="kw4">double</span> z <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> </td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span> <br><span class="t-mark-rev t-until-cxx23">(until C++23)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx23">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*floating-point-type*/</span><br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hypot <span class="br0">(</span> <span class="coMULTI">/*floating-point-type*/</span> x,<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*floating-point-type*/</span> y,<br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*floating-point-type*/</span> z <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx23">(since C++23)</span> <br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span> </td>
+</tr>
+</tbody><tbody>
+<tr class="t-dcl-h">
+<td> <div><a href="hypot.html#Notes">Additional overloads</a></div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/cmath.html" title="cpp/header/cmath">&lt;cmath&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td><div><span id="Version_A"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Arithmetic1, Arithmetic2 <span class="sy1">&gt;</span><br>
+<p><span class="coMULTI">/*common-floating-point-type*/</span><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hypot <span class="br0">(</span> Arithmetic1 x, Arithmetic2 y <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (A)</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Arithmetic1, Arithmetic2, Arithmetic3 <span class="sy1">&gt;</span><br>
+<p><span class="coMULTI">/*common-floating-point-type*/</span><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; hypot <span class="br0">(</span> Arithmetic1 x, Arithmetic2 y, Arithmetic3 z <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (B) </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="t-li1"><span class="t-li">1-3)</span> Computes the square root of the sum of the squares of <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span>, without undue overflow or underflow at intermediate stages of the computation.<span class="t-rev-inl t-since-cxx23"><span>The library provides overloads of <code>std::hypot</code> for all cv-unqualified floating-point types as the type of the parameters <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span>.</span><span><span class="t-mark-rev t-since-cxx23">(since C++23)</span></span></span></div>
+<div class="t-li1"><span class="t-li">4)</span> Computes the square root of the sum of the squares of <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp">z</span></span>, without undue overflow or underflow at intermediate stages of the computation.<span class="t-rev-inl t-since-cxx23"><span>The library provides overloads of <code>std::hypot</code> for all cv-unqualified floating-point types as the type of the parameters <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">z</span></span>.</span><span><span class="t-mark-rev t-since-cxx23">(since C++23)</span></span></span></div>
+<div class="t-li1"><span class="t-li">A,B)</span> Additional overloads are provided for all other combinations of arithmetic types.</div>
+<p>The value computed by the two-argument version of this function is the length of the hypotenuse of a right-angled triangle with sides of length <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span>, or the distance of the point <code>(x,y)</code> from the origin <code>(0,0)</code>, or the magnitude of a complex number <code>x+<i>i</i>y</code>.
+</p><p>The value computed by the three-argument version of this function is the distance of the point <code>(x,y,z)</code> from the origin <code>(0,0,0)</code>.
+</p>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="hypot.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="hypot.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="hypot.html#Error_handling"><span class="tocnumber">3</span> <span class="toctext">Error handling</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="hypot.html#Notes"><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="hypot.html#Example"><span class="tocnumber">5</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="hypot.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> x, y, z
+</td>
+<td> -
+</td>
+<td> floating-point or integer values
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
+<div class="t-li1"><span class="t-li">1-3,A)</span> If no errors occur, the hypotenuse of a right-angled triangle, <span class="mjax" style="display:none">\(\scriptsize{\sqrt{x^2+y^2} }\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;"><span class="t-mrad"><span>√</span><span>x<span class="t-su">2<br></span>+y<span class="t-su">2<br></span></span></span></span>, is returned.</div>
+<div class="t-li1"><span class="t-li">4,B)</span> If no errors occur, the distance from origin in 3D space, <span class="mjax" style="display:none">\(\scriptsize{\sqrt{x^2+y^2+z^2} }\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;"><span class="t-mrad"><span>√</span><span>x<span class="t-su">2<br></span>+y<span class="t-su">2<br></span>+z<span class="t-su">2<br></span></span></span></span>, is returned.</div>
+<p>If a range error due to overflow occurs, <span class="t-lc"><a href="HUGE_VALL.html" title="cpp/numeric/math/HUGE VAL">+HUGE_VAL</a></span>, <code>+HUGE_VALF</code>, or <code>+HUGE_VALL</code> is returned.
+</p><p>If a range error due to underflow occurs, the correct result (after rounding) is returned.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=3" title="Edit section: Error handling">edit</a>]</span> <span class="mw-headline" id="Error_handling">Error handling</span></h3>
+<p>Errors are reported as specified in <span class="t-lc"><a href="math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a></span>.
+</p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
+</p>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>x, y<span class="br0">)</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>y, x<span class="br0">)</span></span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>x, <span class="sy2">-</span>y<span class="br0">)</span></span></span> are equivalent.
+</li><li> if one of the arguments is ±0, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>x, y<span class="br0">)</span></span></span> is equivalent to <span class="t-lc"><a href="fabs.html" title="cpp/numeric/math/fabs">std::fabs</a></span> called with the non-zero argument.
+</li><li> if one of the arguments is ±∞, <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>x, y<span class="br0">)</span></span></span> returns +∞ even if the other argument is NaN.
+</li><li> otherwise, if any of the arguments is NaN, NaN is returned.
+</li></ul>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>Implementations usually guarantee precision of less than 1 <a class="extiw" href="https://en.wikipedia.org/wiki/Unit_in_the_last_place" title="enwiki:Unit in the last place">ulp</a> (Unit in the Last Place — Unit of Least Precision): <a class="external text" href="https://sourceware.org/git/?p=glibc.git;a=blob_plain;f=sysdeps/ieee754/dbl-64/e_hypot.c" rel="nofollow">GNU</a>, <a class="external text" href="https://www.freebsd.org/cgi/cvsweb.cgi/src/lib/msun/src/e_hypot.c" rel="nofollow">BSD</a>.
+</p><p><span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>x, y<span class="br0">)</span></span></span> is equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">abs</span><span class="br0">(</span><a href="../complex.html"><span class="kw1480">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>x, y<span class="br0">)</span><span class="br0">)</span></span></span>.
+</p><p><a class="external text" href="https://pubs.opengroup.org/onlinepubs/9799919799/functions/hypot.html" rel="nofollow">POSIX specifies</a> that underflow may only occur when both arguments are subnormal and the correct result is also subnormal (this forbids naive implementations).
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-cxx17"><td>
+<p>Distance between two points <code>(x1, y1, z1)</code> and <code>(x2, y2, z2)</code> on 3D space can be calculated using 3-argument overload of <code>std::hypot</code> as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>x2 <span class="sy2">-</span> x1, y2 <span class="sy2">-</span> y1, z2 <span class="sy2">-</span> z1<span class="br0">)</span></span></span>.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td></tr>
+</tbody></table>
+<p>The additional overloads are not required to be provided exactly as <span class="t-v">(A,B)</span>. They only need to be sufficient to ensure that for their first argument <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span>, second argument <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> and the optional third argument <span class="t-c"><span class="mw-geshi cpp source-cpp">num3</span></span>:
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-until-cxx23"><td>
+<ul><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">num3</span></span> has type <span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span>, then
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>, and
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2, num3<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num3<span class="br0">)</span><span class="br0">)</span></span></span>.
+</li></ul>
+</dd></dl>
+<ul><li> Otherwise, if <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> and/or <span class="t-c"><span class="mw-geshi cpp source-cpp">num3</span></span> has type <span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span> or an integer type, then
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>, and
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2, num3<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num3<span class="br0">)</span><span class="br0">)</span></span></span>.
+</li></ul>
+</dd></dl>
+<ul><li> Otherwise, if <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">num3</span></span> has type <span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span>, then
+</li></ul>
+<dl><dd><ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>, and
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2, num3<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="br0">(</span>num3<span class="br0">)</span><span class="br0">)</span></span></span>.
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-until-cxx23">(until C++23)</span></td></tr>
+<tr class="t-rev t-since-cxx23"><td>
+<p>If <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">num3</span></span> have arithmetic types, then
+</p>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*common-floating-point-type*/</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*common-floating-point-type*/</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>, and
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>num1, num2, num3<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*common-floating-point-type*/</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*common-floating-point-type*/</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span>,</span><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*common-floating-point-type*/</span><span class="sy1">&gt;</span><span class="br0">(</span>num3<span class="br0">)</span><span class="br0">)</span></span></span>,
+</li></ul>
+<p>where <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*common-floating-point-type*/</span></span> is the floating-point type with the greatest <a href="../../language/usual_arithmetic_conversions.html#Floating-point_conversion_rank" title="cpp/language/usual arithmetic conversions">floating-point conversion rank</a> and greatest <a href="../../language/usual_arithmetic_conversions.html#Floating-point_conversion_subrank" title="cpp/language/usual arithmetic conversions">floating-point conversion subrank</a> among the types of <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">num3</span></span>, arguments of integer type are considered to have the same floating-point conversion rank as <span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span>.
+</p><p>If no such floating-point type with the greatest rank and subrank exists, then <a href="../../language/overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a> does not result in a usable candidate from the overloads provided.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx23">(since C++23)</span></td></tr>
+</tbody></table>
+<table class="wikitable ftm-begin">
+
+<tbody><tr>
+<th><a href="../../utility/feature_test.html" title="cpp/utility/feature test">Feature-test</a> macro</th>
+<th><abbr title="The year/month in which the feature was adopted. The hyperlink under each value opens a compiler support page with entry for given feature.">Value</abbr></th>
+<th><abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr></th>
+<th>Feature
+</th></tr>
+<tr>
+<td><a href="../../experimental/feature_test.html#cpp_lib_hypot" title="cpp/feature test"><code>__cpp_lib_hypot</code></a></td>
+<td><a href="../../compiler_support/17.html#cpp_lib_hypot_201603L" title="cpp/compiler support/17"><code>201603L</code></a></td>
+<td><span class="t-mark">(C++17)</span></td>
+<td>3-argument overload of <code>std::hypot</code> <span class="t-v">(4,B)</span>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cerrno&gt;</span>
+<span class="co2">#include &lt;cfenv&gt;</span>
+<span class="co2">#include &lt;cfloat&gt;</span>
+<span class="co2">#include &lt;cmath&gt;</span>
+<span class="co2">#include &lt;cstring&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+&nbsp;
+<span class="co1">// #pragma STDC FENV_ACCESS ON</span>
+&nbsp;
+<span class="kw1">struct</span> Point3D <span class="br0">{</span> <span class="kw4">float</span> x, y, z<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+&nbsp;
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// typical usage</span>
+    <a href="../../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"(1,1) cartesian is ("</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">)</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">','</span> <span class="sy1">&lt;&lt;</span> <a href="atan2.html"><span class="kw1347">std::<span class="me2">atan2</span></span></a><span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">1</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">") polar<span class="es1">\n</span>"</span><span class="sy4">;</span>
+&nbsp;
+    Point3D a<span class="br0">{</span><span class="nu16">3.14</span>, <span class="nu16">2.71</span>, <span class="nu16">9.87</span><span class="br0">}</span>, b<span class="br0">{</span><span class="nu16">1.14</span>, <span class="nu16">5.71</span>, <span class="nu16">3.87</span><span class="br0">}</span><span class="sy4">;</span>
+    <span class="co1">// C++17 has 3-argument hypot overload:</span>
+    <a href="../../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"distance(a,b) = "</span>
+              <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span>a.<span class="me1">x</span> <span class="sy2">-</span> b.<span class="me1">x</span>, a.<span class="me1">y</span> <span class="sy2">-</span> b.<span class="me1">y</span>, a.<span class="me1">z</span> <span class="sy2">-</span> b.<span class="me1">z</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// special values</span>
+    <a href="../../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"hypot(NAN,INFINITY) = "</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><a href="NAN.html"><span class="kw1386">NAN</span></a>, <a href="INFINITY.html"><span class="kw1385">INFINITY</span></a><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+&nbsp;
+    <span class="co1">// error handling</span>
+    <span class="kw2">errno</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <a href="../fenv/feclearexcept.html"><span class="kw1458">std::<span class="me2">feclearexcept</span></span></a><span class="br0">(</span><a href="../fenv/FE_exceptions.html"><span class="kw1469">FE_ALL_EXCEPT</span></a><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"hypot(DBL_MAX,DBL_MAX) = "</span> <span class="sy1">&lt;&lt;</span> std<span class="sy4">::</span><span class="me2">hypot</span><span class="br0">(</span><a href="../../types/climits.html"><span class="kw426">DBL_MAX</span></a>, <a href="../../types/climits.html"><span class="kw426">DBL_MAX</span></a><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+&nbsp;
+    <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">errno</span> <span class="sy1">==</span> <a href="../../error/errno_macros.html"><span class="kw867">ERANGE</span></a><span class="br0">)</span>
+        <a href="../../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"    errno = ERANGE "</span> <span class="sy1">&lt;&lt;</span> <a href="../../string/byte/strerror.html"><span class="kw1170">std::<span class="me2">strerror</span></span></a><span class="br0">(</span><span class="kw2">errno</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span><a href="../fenv/fetestexcept.html"><span class="kw1459">std::<span class="me2">fetestexcept</span></span></a><span class="br0">(</span><a href="../fenv/FE_exceptions.html"><span class="kw1473">FE_OVERFLOW</span></a><span class="br0">)</span><span class="br0">)</span>
+        <a href="../../io/cout.html"><span class="kw1775">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"    FE_OVERFLOW raised<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">(1,1) cartesian is (1.41421,0.785398) polar
+distance(a,b) = 7
+hypot(NAN,INFINITY) = inf
+hypot(DBL_MAX,DBL_MAX) = inf
+    errno = ERANGE Numerical result out of range
+    FE_OVERFLOW raised</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="pow.html" title="cpp/numeric/math/pow"> <span class="t-lines"><span>pow</span><span>powf</span><span>powl</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  raises a number to the given power (<span class="mjax" style="display:none">\(\small{x^y}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">x<sup>y</sup></span>) <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/math/dsc_pow&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="sqrt.html" title="cpp/numeric/math/sqrt"> <span class="t-lines"><span>sqrt</span><span>sqrtf</span><span>sqrtl</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  computes square root (<span class="mjax" style="display:none">\(\small{\sqrt{x}}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;"><span class="t-mrad"><span>√</span><span>x</span></span></span>) <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/math/dsc_sqrt&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="cbrt.html" title="cpp/numeric/math/cbrt"> <span class="t-lines"><span>cbrt</span><span>cbrtf</span><span>cbrtl</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  computes cube root (<span class="mjax" style="display:none">\(\small{\sqrt[3]{x}}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;"><span class="t-mrad"><span>3</span><span>√</span><span>x</span></span></span>) <br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/math/dsc_cbrt&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../complex/abs.html" title="cpp/numeric/complex/abs"> <span class="t-lines"><span>abs<span class="t-dsc-small">(std::complex)</span></span></span></a></div></div>
+</td>
+<td>  returns the magnitude of a complex number <br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/complex/dsc_abs&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see"><span><a href="../../../c/numeric/math/hypot.html" title="c/numeric/math/hypot">C documentation</a></span> for <span class="t-dsc-see-tt"><span>hypot</span></span></div>
+</td></tr>
+
+</tbody></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 12995/1000000
+Preprocessor generated node count: 19573/1000000
+Post‐expand include size: 354334/4194304 bytes
+Template argument size: 73646/4194304 bytes
+Highest expansion depth: 22/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2949-0!*!0!!en!*!* and timestamp 20250418073811 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;oldid=180162">https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;oldid=180162</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="hypot.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/numeric/math/hypot" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/numeric/math/hypot" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;oldid=180162" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/hypot&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/hypot" hreflang="de" lang="de" title="cpp/numeric/math/hypot">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/hypot" hreflang="es" lang="es" title="cpp/numeric/math/hypot">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/hypot" hreflang="fr" lang="fr" title="cpp/numeric/math/hypot">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/hypot" hreflang="it" lang="it" title="cpp/numeric/math/hypot">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/hypot" hreflang="ja" lang="ja" title="cpp/numeric/math/hypot">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/hypot" hreflang="pt" lang="pt" title="cpp/numeric/math/hypot">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/hypot" hreflang="ru" lang="ru" title="cpp/numeric/math/hypot">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/hypot" hreflang="zh" lang="zh" title="cpp/numeric/math/hypot">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 4 February 2025, at 23:23.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<!-- Served in 10.688 secs. -->
+	
+
+
+</body><!-- Cached 20250418073811 --></html>

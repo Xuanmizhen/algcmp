@@ -44,7 +44,11 @@ pub enum AppError {
 impl AppError {
     /// Create a new MissingRequiredFiles error
     pub fn missing_files(files: &[String]) -> Self {
-        let files_str = files.iter().map(|f| format!("{}.html", f)).collect::<Vec<_>>().join(", ");
+        let files_str = files
+            .iter()
+            .map(|f| format!("{}.html", f))
+            .collect::<Vec<_>>()
+            .join(", ");
         AppError::MissingRequiredFiles {
             count: files.len(),
             files: files_str,

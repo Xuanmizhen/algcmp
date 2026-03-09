@@ -46,6 +46,18 @@ std::ostream &log_loc(std::ostream &os, const source_location loc = source_locat
 
 class disjoint_set {
     std::vector<isize> parent_or_neg_rank;
+    uint8_t link(usize x, usize y) {
+        const auto cmp{parent_or_neg_rank[x] <=> parent_or_neg_rank[y]};
+        if (cmp < 0) {
+            parent_or_neg_rank[y] = x;
+            return 0;
+        }
+        if (cmp == 0) {
+            --parent_or_neg_rank[y];
+        }
+        parent_or_neg_rank[x] = y;
+        return 1;
+    }
 
 public:
     explicit disjoint_set(const usize n) : parent_or_neg_rank(n, -1) { }
@@ -61,20 +73,19 @@ public:
         }
         return root;
     }
-    bool unite(usize x, usize y) {
+    struct link_res {
+        usize union_repr;
+        std::optional<usize> deleted_repr;
+    };
+    link_res unite(usize x, usize y) {
         if ((x = find_set(x)) == (y = find_set(y))) {
-            return true;
+            return {x, {}};
         }
-        const auto cmp{parent_or_neg_rank[x] <=> parent_or_neg_rank[y]};
-        if (cmp < 0) {
-            parent_or_neg_rank[y] = x;
+        if (link(x, y) == 0) {
+            return {x, y};
         } else {
-            if (cmp == 0) {
-                --parent_or_neg_rank[y];
-            }
-            parent_or_neg_rank[x] = y;
+            return {y, x};
         }
-        return false;
     }
 };
 

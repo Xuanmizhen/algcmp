@@ -88,7 +88,7 @@ pub fn extract_references(files: &[std::path::PathBuf]) -> Result<Vec<CppReferen
 
     // Regex to match C++ reference entries in markdown table format
     let regex = Regex::new(
-        r#"\|\s*[^|]+\|\s*\[`(std::[^`]+)`\s*(?:\([^)]+\))?\]\((https://en.cppreference.com/w/cpp/[^"]+)\)\s*\|"#,
+        r#"\|\s*[^|]+\|\s*\[`(std::[^`]+)`\s*(?:\([^)]+\))?(?:,\s*`std::[^`]+`\s*(?:\([^)]+\))?)*\]\((https://en.cppreference.com/w/cpp/[^"]+)\)\s*\|"#,
     )?;
 
     for file in files {

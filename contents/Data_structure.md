@@ -11,6 +11,7 @@
 | 优先队列 | [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue.html) | |
 | 有序集合 | [`std::set`](https://en.cppreference.com/w/cpp/container/set.html) | |
 | 无序集合 | [`std::unordered_set`](https://en.cppreference.com/w/cpp/container/unordered_set.html) | |
+| 无序映射/（可能是）哈希表 | [`std::unordered_map` (C++11)](https://en.cppreference.com/w/cpp/container/unordered_map.html) | |
 | 位集 | [`std::bitset`](https://en.cppreference.com/w/cpp/utility/bitset.html) | `java.util.BitSet` |
 
 ### Views

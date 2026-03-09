@@ -134,7 +134,8 @@ mod tests {
 
     #[test]
     fn test_flatten_code_blocks_basic() {
-        let html = r#"<!DOCTYPE html><html><body><pre class="de1"><span>code</span></pre></body></html>"#;
+        let html =
+            r#"<!DOCTYPE html><html><body><pre class="de1"><span>code</span></pre></body></html>"#;
         let result = flatten_code_blocks(html).unwrap();
         assert!(result.contains("<pre class=\"de1\">code</pre>"));
     }
