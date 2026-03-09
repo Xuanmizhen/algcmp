@@ -17,3 +17,4 @@
 | 计算余弦 | [`std::cos`, `std::cosf` (C++11), `std::cosl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/cos.html) | `Math.cos` | `math.cos` |
 | 计算正切 | [`std::tan`, `std::tanf` (C++11), `std::tanl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/tan.html) | `Math.tan` | `math.tan` |
 | 计算斜边/向量模长 | [`std::hypot` (C++11), `std::hypotf` (C++11), `std::hypotl` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/hypot.html) | `Math.hypot` | `math.hypot` |
+| 计算辐角 | [`std::atan2`, `std::atan2f` (C++11), `std::atan2l` (C++11)](https://en.cppreference.com/w/cpp/numeric/math/atan2.html) | | `math.atan2` |

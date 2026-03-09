@@ -783,6 +783,412 @@ html { font-variant-ligatures: no-common-ligatures; }
 
   gtag('config', 'G-8HW0LXMYCY');
 </script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>atan2, <span style="font-size:0.7em; line-height:130%">std::</span>atan2f, <span style="font-size:0.7em; line-height:130%">std::</span>atan2l</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../numeric.html" title="cpp/numeric">numeric</a>‎ | <a href="../math.html" title="cpp/numeric/math">math</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/cmath.html" title="cpp/header/cmath">&lt;cmath&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+<tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(1)</td>
+<td></td>
+</tr>
+<tr class="t-dcl t-until-cxx23">
+<td><div><span id="Version_1"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &nbsp; &nbsp; &nbsp; atan2 <span class="br0">(</span> <span class="kw4">float</span> y, <span class="kw4">float</span> x <span class="br0">)</span><span class="sy4">;</span><br><br>
+<p><span class="kw4">double</span> &nbsp; &nbsp; &nbsp;atan2 <span class="br0">(</span> <span class="kw4">double</span> y, <span class="kw4">double</span> x <span class="br0">)</span><span class="sy4">;</span><br><br>
+</p>
+<span class="kw4">long</span> <span class="kw4">double</span> atan2 <span class="br0">(</span> <span class="kw4">long</span> <span class="kw4">double</span> y, <span class="kw4">long</span> <span class="kw4">double</span> x <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> </td>
+<td><span class="t-mark-rev t-until-cxx23">(until C++23)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx23">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*floating-point-type*/</span><br><br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; atan2 <span class="br0">(</span> <span class="coMULTI">/*floating-point-type*/</span> y,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*floating-point-type*/</span> x <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx23">(since C++23)</span> <br><br><span class="t-mark">(constexpr since C++26)</span> </td>
+</tr>
+</tbody><tbody>
+<tr class="t-dcl t-since-cxx11">
+<td><div><span id="Version_2"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span> &nbsp; &nbsp; &nbsp; atan2f<span class="br0">(</span> <span class="kw4">float</span> y, <span class="kw4">float</span> x <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2)</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td><div><span id="Version_3"></span><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span> atan2l<span class="br0">(</span> <span class="kw4">long</span> <span class="kw4">double</span> y, <span class="kw4">long</span> <span class="kw4">double</span> x <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (3)</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div><a href="../simd.html#Math_functions" title="cpp/numeric/simd">SIMD overload</a> <span class="t-mark-rev t-since-cxx26">(since C++26)</span></div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/simd.html" title="cpp/header/simd">&lt;simd&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx26">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> V0, <span class="kw1">class</span> V1 <span class="sy1">&gt;</span><br><br>
+<p><span class="kw4">constexpr</span> <span class="coMULTI">/*math-common-simd-t*/</span><span class="sy1">&lt;</span>V0, V1<span class="sy1">&gt;</span><br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; atan2 <span class="br0">(</span> <span class="kw4">const</span> V0<span class="sy3">&amp;</span> v_y, <span class="kw4">const</span> V1<span class="sy3">&amp;</span> v_x <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (S) </td>
+<td> <span class="t-mark-rev t-since-cxx26">(since C++26)</span> </td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div><a href="atan2.html#Notes">Additional overloads</a> <span class="t-mark-rev t-since-cxx11">(since C++11)</span></div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/cmath.html" title="cpp/header/cmath">&lt;cmath&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="Version_A"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Integer <span class="sy1">&gt;</span><br><br>
+<span class="kw4">double</span> &nbsp; &nbsp; &nbsp;atan2 <span class="br0">(</span> Integer y, Integer x <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (A)</td>
+<td><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<div class="t-li1"><span class="t-li">1-3)</span> Computes the arc tangent of <span class="t-c"><span class="mw-geshi cpp source-cpp">y <span class="sy2">/</span> x</span></span> using the signs of arguments to determine the correct quadrant.<span class="t-rev-inl t-since-cxx23"><span> The library provides overloads of <code>std::atan2</code> for all cv-unqualified floating-point types as the type of the parameters.</span><span><span class="t-mark-rev t-since-cxx23">(since C++23)</span></span></span></div>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-cxx26"><td>
+<div class="t-li1"><span class="t-li">S)</span> The SIMD overload performs an element-wise <code>std::atan2</code> on <span class="t-c"><span class="mw-geshi cpp source-cpp">v_y</span></span>and <span class="t-c"><span class="mw-geshi cpp source-cpp">v_x</span></span>.</div>
+<dl><dd><dl><dd><small>(See <a href="../simd.html#math-common-simd-t" title="cpp/numeric/simd"><tt><i>math-common-simd-t</i></tt></a> for its definition.)</small>
+</dd></dl>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx26">(since C++26)</span></td></tr>
+</tbody></table>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-since-cxx11"><td>
+<div class="t-li1"><span class="t-li">A)</span> Additional overloads are provided for all integer types, which are treated as <span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span>.</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td></tr>
+</tbody></table>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="atan2.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="atan2.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="atan2.html#Error_handling"><span class="tocnumber">3</span> <span class="toctext">Error handling</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="atan2.html#Notes"><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="atan2.html#Example"><span class="tocnumber">5</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="atan2.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> y, x
+</td>
+<td> -
+</td>
+<td> floating-point or integer values
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
+If no errors occur, the arc tangent of <span class="t-c"><span class="mw-geshi cpp source-cpp">y <span class="sy2">/</span> x</span></span> (<span class="texhtml" style="white-space: nowrap;">arctan(<span class="t-mfrac"><table><tbody><tr><td>y</td></tr><tr><td>x</td></tr></tbody></table></span>)</span>) in the range <span class="texhtml" style="white-space: nowrap;">[-π, +π]</span> radians, is returned.
+<div class="t-plot">
+<div class="t-plot-left"><span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> argument</div>
+<div class="t-plot-right">Return value</div>
+<div class="t-plot-image-left-right"><a class="image" href="../../../File%253Amath-atan2.png.html"><img alt="math-atan2.png" height="240" src="https://upload.cppreference.com/mwiki/images/thumb/9/91/math-atan2.png/285px-math-atan2.png" srcset="https://upload.cppreference.com/mwiki/images/thumb/9/91/math-atan2.png/428px-math-atan2.png 1.5x, https://upload.cppreference.com/mwiki/images/thumb/9/91/math-atan2.png/570px-math-atan2.png 2x" width="285"></a></div>
+<div class="t-plot-bottom"><span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> argument</div>
+</div>
+<p>If a domain error occurs, an implementation-defined value is returned (NaN where supported).
+</p><p>If a range error occurs due to underflow, the correct result (after rounding) is returned.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;action=edit&amp;section=3" title="Edit section: Error handling">edit</a>]</span> <span class="mw-headline" id="Error_handling">Error handling</span></h3>
+<p>Errors are reported as specified in <span class="t-lc"><a href="math_errhandling.html" title="cpp/numeric/math/math errhandling">math_errhandling</a></span>.
+</p><p>Domain error may occur if <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> are both zero.
+</p><p>If the implementation supports IEEE floating-point arithmetic (IEC 60559),
+</p>
+<ul><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> are both zero, domain error <i>does not</i> occur.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> are both zero, range error does not occur either.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is zero, pole error does not occur.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is ±0 and <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is negative or -0, ±π is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is ±0 and <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is positive or +0, ±0 is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is ±∞ and <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is finite, ±π/2 is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is ±∞ and <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is -∞, ±3π/4 is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is ±∞ and <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is +∞, ±π/4 is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is ±0 and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is negative, -π/2 is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is ±0 and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is positive, +π/2 is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is -∞ and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is finite and positive, +π is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is -∞ and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is finite and negative, -π is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is +∞ and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is finite and positive, +0 is returned.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is +∞ and <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is finite and negative, -0 is returned.
+</li><li> If either <span class="t-c"><span class="mw-geshi cpp source-cpp">x</span></span> is NaN or <span class="t-c"><span class="mw-geshi cpp source-cpp">y</span></span> is NaN, NaN is returned.
+</li></ul>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span>y, x<span class="br0">)</span></span></span> is equivalent to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../complex/arg.html"><span class="kw2707">std::<span class="me2">arg</span></span></a><span class="br0">(</span><a href="../complex.html"><span class="kw1480">std::<span class="me2">complex</span></span></a><span class="sy1">&lt;</span><a href="../../types/common_type.html"><span class="kw642">std::<span class="me2">common_type_t</span></span></a><span class="sy1">&lt;</span>decltype<span class="br0">(</span>x<span class="br0">)</span>, decltype<span class="br0">(</span>y<span class="br0">)</span><span class="sy1">&gt;&gt;</span><span class="br0">(</span>x, y<span class="br0">)</span><span class="br0">)</span></span></span>.
+</p><p><a class="external text" href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/atan2.html" rel="nofollow">POSIX specifies</a> that in case of underflow, the value <span class="t-c"><span class="mw-geshi cpp source-cpp">y <span class="sy2">/</span> x</span></span> is returned, and if that is not supported, an implementation-defined value no greater than <span class="t-lc"><a href="../../types/climits.html" title="cpp/types/climits">DBL_MIN</a></span>, <span class="t-lc"><a href="../../types/climits.html" title="cpp/types/climits">FLT_MIN</a></span>, and <span class="t-lc"><a href="../../types/climits.html" title="cpp/types/climits">LDBL_MIN</a></span> is returned.
+</p><p>The additional overloads are not required to be provided exactly as <span class="t-v">(A)</span>. They only need to be sufficient to ensure that for their first argument <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span> and second argument <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span>:
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-until-cxx23"><td>
+<ul><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> has type <span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span>, then <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>.
+</li><li> Otherwise, if <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span> and/or <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> has type <span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span> or an integer type, then <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>.
+</li><li> Otherwise, if <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> has type <span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span>, then <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-until-cxx23">(until C++23)</span></td></tr>
+<tr class="t-rev t-since-cxx23"><td>
+<p>If <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span> have arithmetic types, then <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span>num1, num2<span class="br0">)</span></span></span> has the same effect as <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">atan2</span><span class="br0">(</span><span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*common-floating-point-type*/</span><span class="sy1">&gt;</span><span class="br0">(</span>num1<span class="br0">)</span>,</span><br><br><span class="mw-geshi cpp source-cpp">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="coMULTI">/*common-floating-point-type*/</span><span class="sy1">&gt;</span><span class="br0">(</span>num2<span class="br0">)</span><span class="br0">)</span></span></span>, where <span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*common-floating-point-type*/</span></span> is the floating-point type with the greatest <a href="../../language/usual_arithmetic_conversions.html#Floating-point_conversion_rank" title="cpp/language/usual arithmetic conversions">floating-point conversion rank</a> and greatest <a href="../../language/usual_arithmetic_conversions.html#Floating-point_conversion_subrank" title="cpp/language/usual arithmetic conversions">floating-point conversion subrank</a> between the types of <span class="t-c"><span class="mw-geshi cpp source-cpp">num1</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">num2</span></span>, arguments of integer type are considered to have the same floating-point conversion rank as <span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span>.
+</p><p>If no such floating-point type with the greatest rank and subrank exists, then <a href="../../language/overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a> does not result in a usable candidate from the overloads provided.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx23">(since C++23)</span></td></tr>
+</tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;action=edit&amp;section=5" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;cmath&gt;
+#include &lt;iostream&gt;
+&nbsp;
+void print_coordinates(int x, int y)
+{
+    std::cout &lt;&lt; std::showpos
+              &lt;&lt; "(x:" &lt;&lt; x &lt;&lt; ", y:" &lt;&lt; y &lt;&lt; ") cartesian is "
+              &lt;&lt; "(r:" &lt;&lt; std::hypot(x, y)
+              &lt;&lt; ", phi:" &lt;&lt; std::atan2(y, x) &lt;&lt; ") polar\n";
+}
+&nbsp;
+int main()
+{
+    // normal usage: the signs of the two arguments determine the quadrant
+    print_coordinates(+1, +1); // atan2( 1,  1) =  +pi/4, Quad I
+    print_coordinates(-1, +1); // atan2( 1, -1) = +3pi/4, Quad II
+    print_coordinates(-1, -1); // atan2(-1, -1) = -3pi/4, Quad III
+    print_coordinates(+1, -1); // atan2(-1,  1) =  -pi/4, Quad IV
+&nbsp;
+    // special values
+    std::cout &lt;&lt; std::noshowpos
+              &lt;&lt; "atan2(0, 0) = " &lt;&lt; atan2(0, 0) &lt;&lt; '\n'
+              &lt;&lt; "atan2(0,-0) = " &lt;&lt; atan2(0, -0.0) &lt;&lt; '\n'
+              &lt;&lt; "atan2(7, 0) = " &lt;&lt; atan2(7, 0) &lt;&lt; '\n'
+              &lt;&lt; "atan2(7,-0) = " &lt;&lt; atan2(7, -0.0) &lt;&lt; '\n';
+}</pre></div></div>
+<p>Output:
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">(x:+1, y:+1) cartesian is (r:1.41421, phi:0.785398) polar
+(x:-1, y:+1) cartesian is (r:1.41421, phi:2.35619) polar
+(x:-1, y:-1) cartesian is (r:1.41421, phi:-2.35619) polar
+(x:+1, y:-1) cartesian is (r:1.41421, phi:-0.785398) polar
+atan2(0, 0) = 0
+atan2(0,-0) = 3.14159
+atan2(7, 0) = 1.5708
+atan2(7,-0) = 1.5708</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="asin.html" title="cpp/numeric/math/asin"> <span class="t-lines"><span>asin</span><span>asinf</span><span>asinl</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  computes arc sine (<span class="mjax" style="display:none">\({\small\arcsin{x}}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">arcsin(x)</span>) <br><br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/math/dsc_asin&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="acos.html" title="cpp/numeric/math/acos"> <span class="t-lines"><span>acos</span><span>acosf</span><span>acosl</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  computes arc cosine (<span class="mjax" style="display:none">\({\small\arccos{x}}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">arccos(x)</span>) <br><br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/math/dsc_acos&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="atan.html" title="cpp/numeric/math/atan"> <span class="t-lines"><span>atan</span><span>atanf</span><span>atanl</span></span></a></div><div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div></div>
+</td>
+<td>  computes arc tangent (<span class="mjax" style="display:none">\({\small\arctan{x}}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">arctan(x)</span>) <br><br> <span class="t-mark">(function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/math/dsc_atan&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../complex/arg.html" title="cpp/numeric/complex/arg"> <span class="t-lines"><span>arg</span></span></a></div></div>
+</td>
+<td>  returns the phase angle <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/complex/dsc_arg&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../valarray/atan2.html" title="cpp/numeric/valarray/atan2"> <span class="t-lines"><span>atan2<span class="t-dsc-small">(std::valarray)</span></span></span></a></div></div>
+</td>
+<td>  applies the function <span class="t-lc"><strong class="selflink">std::atan2</strong></span> to a valarray and a value <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/numeric/valarray/dsc_atan2&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see"><span><a href="../../../c/numeric/math/atan2.html" title="c/numeric/math/atan2">C documentation</a></span> for <span class="t-dsc-see-tt"><span>atan2</span></span></div>
+</td></tr>
+
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;oldid=160746">https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;oldid=160746</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="atan2.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/numeric/math/atan2" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/numeric/math/atan2" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;oldid=160746" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/numeric/math/atan2&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/numeric/math/atan2" hreflang="de" lang="de" title="cpp/numeric/math/atan2">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/numeric/math/atan2" hreflang="es" lang="es" title="cpp/numeric/math/atan2">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/numeric/math/atan2" hreflang="fr" lang="fr" title="cpp/numeric/math/atan2">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/numeric/math/atan2" hreflang="it" lang="it" title="cpp/numeric/math/atan2">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/numeric/math/atan2" hreflang="ja" lang="ja" title="cpp/numeric/math/atan2">日本語</a></li><li class="interwiki-pl"><a href="http://pl.cppreference.com/w/cpp/numeric/math/atan2" hreflang="pl" lang="pl" title="cpp/numeric/math/atan2">Polski</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/numeric/math/atan2" hreflang="pt" lang="pt" title="cpp/numeric/math/atan2">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/numeric/math/atan2" hreflang="ru" lang="ru" title="cpp/numeric/math/atan2">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/numeric/math/atan2" hreflang="zh" lang="zh" title="cpp/numeric/math/atan2">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 15 October 2023, at 10:46.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
+
+</div><div>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
                 <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>bit_width</h1>
                 
                 
