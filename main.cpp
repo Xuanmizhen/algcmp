@@ -6,6 +6,8 @@
 #include <cstdint>
 #include <fstream>
 #include <iostream>
+#include <numbers> // std::numbers::pi_v, std::numbers::pi, std::numbers::inv_pi_v, std::numbers::inv_pi
+#include <optional> // std::optional
 #include <source_location>
 #include <string_view>
 #include <type_traits> // std::make_signed_t
@@ -43,6 +45,15 @@ std::ostream &log_loc(std::ostream &os, const source_location loc = source_locat
 #else
 #define debug_assert(e) void
 #endif
+
+namespace std {
+namespace numbers {
+template <class _Tp> inline constexpr _Tp tau_v = 2 * pi_v<_Tp>;
+template <class _Tp> inline constexpr _Tp inv_tau_v = inv_pi_v<_Tp> / static_cast<_Tp>(2.0);
+inline constexpr double tau = tau_v<double>;
+inline constexpr double inv_tau = inv_tau_v<double>;
+}
+}
 
 class disjoint_set {
     std::vector<isize> parent_or_neg_rank;

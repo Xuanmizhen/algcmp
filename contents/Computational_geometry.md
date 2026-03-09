@@ -4,8 +4,9 @@
 ### Constants
 | Constant | C++ | Java | Python |
 | -------- | --- | ------------- | ------ |
-| $\tau$  | | `Math.TAU` | `math.tau` |
-| $\pi$  | [`std::numbers::pi_v` (C++20), `std::numbers::pi` (C++20)](https://en.cppreference.com/w/cpp/numeric/constants.html) | `Math.PI` | `math.pi` |
+| $\tau$ | | `Math.TAU` | `math.tau` |
+| $\pi$ | [`std::numbers::pi_v` (C++20), `std::numbers::pi` (C++20)](https://en.cppreference.com/w/cpp/numeric/constants.html) | `Math.PI` | `math.pi` |
+| $\dfrac{1}{\pi}$ | [`std::numbers::inv_pi_v` (C++20), `std::numbers::inv_pi` (C++20)](https://en.cppreference.com/w/cpp/numeric/constants.html) | | |
 
 ### Functions
 | Functionality | C++ | Java | Python |
