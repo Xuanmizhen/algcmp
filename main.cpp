@@ -106,7 +106,7 @@ public:
 template <std::three_way_comparable weight>
 class edge {
 public:
-    std::pair<usize, usize> vertices;
+    usize u, v;
     weight cost;
 
     std::weak_ordering operator<=>(const edge& rhs) const {
@@ -119,7 +119,7 @@ std::optional<edge<weight>> kruskal_safe_edge(disjoint_set &components, std::pri
     while (!q.empty()) {
         const auto e = q.top();
         q.pop();
-        if (components.unite(e.vertices.first, e.vertices.second).deleted_repr.has_value()) {
+        if (components.unite(e.u, e.v).deleted_repr.has_value()) {
             return e;
         }
     }
