@@ -8,10 +8,13 @@
 #include <iostream>
 #include <numbers> // std::numbers::pi_v, std::numbers::pi, std::numbers::inv_pi_v, std::numbers::inv_pi
 #include <optional> // std::optional
+#include <queue> // std::priority_queue
 #include <source_location>
 #include <string_view>
 #include <type_traits> // std::make_signed_t
 #include <vector>
+
+// #include <bits/stdc++.h> // g++
 
 using i16 = int16_t;
 using i32 = int32_t;
@@ -99,6 +102,29 @@ public:
         }
     }
 };
+
+template <std::three_way_comparable weight>
+class edge {
+public:
+    std::pair<usize, usize> vertices;
+    weight cost;
+
+    std::weak_ordering operator<=>(const edge& rhs) const {
+        return rhs.cost <=> cost;
+    }
+};
+
+template <std::three_way_comparable weight>
+std::optional<edge<weight>> kruskal_safe_edge(disjoint_set &components, std::priority_queue<edge<weight>> &q) {
+    while (!q.empty()) {
+        const auto e = q.top();
+        q.pop();
+        if (components.unite(e.vertices.first, e.vertices.second).deleted_repr.has_value()) {
+            return e;
+        }
+    }
+    return {};
+}
 
 
 void run() {
