@@ -33,6 +33,8 @@ using std::cout;
 using std::source_location;
 
 
+#define loop for (;;)
+
 std::ostream &log_loc(std::ostream &os, const source_location loc = source_location::current()) {
     return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: ";
 }
