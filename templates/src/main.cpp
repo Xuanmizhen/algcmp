@@ -105,36 +105,36 @@ public:
     }
 };
 
-template <std::three_way_comparable weight>
-class edge {
-public:
-    usize u, v;
-    weight cost;
+// template <std::three_way_comparable weight>
+// class edge {
+// public:
+//     usize u, v;
+//     weight cost;
 
-    std::weak_ordering operator<=>(const edge& rhs) const {
-        return rhs.cost <=> cost;
-    }
-};
+//     std::weak_ordering operator<=>(const edge& rhs) const {
+//         return rhs.cost <=> cost;
+//     }
+// };
 
-template <std::three_way_comparable weight>
-std::optional<edge<weight>> kruskal_safe_edge(disjoint_set &components, std::priority_queue<edge<weight>> &q) {
-    while (!q.empty()) {
-        const auto e = q.top();
-        q.pop();
-        if (components.unite(e.u, e.v).deleted_repr.has_value()) {
-            return e;
-        }
-    }
-    return {};
-}
+// template <std::three_way_comparable weight>
+// std::optional<edge<weight>> kruskal_safe_edge(disjoint_set &components, std::priority_queue<edge<weight>> &q) {
+//     while (!q.empty()) {
+//         const auto e = q.top();
+//         q.pop();
+//         if (components.unite(e.u, e.v).deleted_repr.has_value()) {
+//             return e;
+//         }
+//     }
+//     return {};
+// }
 
 
 void run() {
-    u32 t;
-    cin >> t;
-    while (t-- > 0) {
-        // Process each test case
-    }
+    // u32 t;
+    // cin >> t;
+    // while (t-- > 0) {
+    //     // Process each test case
+    // }
 }
 
 int main() {
