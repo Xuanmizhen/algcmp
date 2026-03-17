@@ -86,9 +86,13 @@ pub fn get_required_references() -> Result<HashMap<String, CppReference>, AppErr
 pub fn extract_references(files: &[std::path::PathBuf]) -> Result<Vec<CppReference>, AppError> {
     let mut references = Vec::new();
 
-    // Regex to match C++ reference entries in markdown table format
+    // Regex to match individual C++ reference links in markdown tables.
+    // We intentionally match each link independently so that a single line
+    // can contain multiple links (e.g. `[...] url1 ..., [...] url2 ...`).
     let regex = Regex::new(
-        r#"\|\s*[^|]+\|\s*\[`(std::[^`]+)`\s*(?:\([^)]+\))?(?:,\s*`std::[^`]+`\s*(?:\([^)]+\))?)*\]\((https://en.cppreference.com/w/cpp/[^"]+)\)\s*\|"#,
+        // Capture the first `std::...` name inside a markdown link, even if the link
+        // contains extra text (e.g. `(C++20)`, aliases, etc.) before the closing `]`.
+        r#"\[`(std::[^`]+)`[^\]]*\]\((https://en\.cppreference\.com/w/cpp/[^)]+)\)"#,
     )?;
 
     for file in files {
@@ -96,7 +100,7 @@ pub fn extract_references(files: &[std::path::PathBuf]) -> Result<Vec<CppReferen
         let content = fs::read_to_string(file)?;
 
         for (line_num, line) in content.lines().enumerate() {
-            if let Some(captures) = regex.captures(line) {
+            for captures in regex.captures_iter(line) {
                 let name = captures
                     .get(1)
                     .map(|m| m.as_str().trim().to_string())
@@ -278,7 +282,9 @@ mod tests {
     #[test]
     fn test_extract_references_from_string() {
         let markdown = r#"| Algorithm | [`std::sort`](https://en.cppreference.com/w/cpp/algorithm/sort) | Sorts elements |
-| Algorithm | [`std::find`](https://en.cppreference.com/w/cpp/algorithm/find) (C++20) | Finds element |"#;
+| Algorithm | [`std::find`](https://en.cppreference.com/w/cpp/algorithm/find) (C++20) | Finds element |
+| Container | [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue.html), [`std::priority_queue<T,Container,Compare>::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue/priority_queue.html) | |
+| 空视图 | [`std::ranges::views::single` (C++20), `std::ranges::single_view` (C++20)](https://en.cppreference.com/w/cpp/ranges/single_view.html) |"#;
 
         // Create a temporary file for testing
         let temp_dir = tempfile::tempdir().unwrap();
@@ -286,8 +292,16 @@ mod tests {
         fs::write(&temp_file, markdown).unwrap();
 
         let refs = extract_references(&[temp_file]).unwrap();
-        assert_eq!(refs.len(), 2);
-        assert_eq!(refs[0].name, "std::sort");
-        assert_eq!(refs[1].name, "std::find");
+        // We expect 5 extracted references (one per distinct markdown link).
+        // The last link contains multiple names, but only the first is considered the primary name.
+        assert_eq!(refs.len(), 5);
+        assert!(refs.iter().any(|r| r.name == "std::sort"));
+        assert!(refs.iter().any(|r| r.name == "std::find"));
+        assert!(refs.iter().any(|r| r.name == "std::priority_queue"));
+        assert!(refs
+            .iter()
+            .any(|r| r.name == "std::priority_queue<T,Container,Compare>::priority_queue"));
+        assert!(refs.iter().any(|r| r.name == "std::ranges::views::single"));
+        assert!(!refs.iter().any(|r| r.name == "std::ranges::single_view"));
     }
 }
