@@ -53,8 +53,8 @@ std::ostream &log_loc(std::ostream &os, const source_location loc = source_locat
 
 namespace std {
 namespace numbers {
-template <class _Tp> inline constexpr _Tp tau_v = 2 * pi_v<_Tp>;
-template <class _Tp> inline constexpr _Tp inv_tau_v = inv_pi_v<_Tp> / static_cast<_Tp>(2.0);
+template <class T> inline constexpr T tau_v = 2 * pi_v<T>;
+template <class T> inline constexpr T inv_tau_v = inv_pi_v<T> / static_cast<T>(2.0);
 inline constexpr double tau = tau_v<double>;
 inline constexpr double inv_tau = inv_tau_v<double>;
 }
