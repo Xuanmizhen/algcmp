@@ -128,6 +128,23 @@ std::optional<undirected_edge<W>> kruskal_safe_edge(disjoint_set &components, st
     return {};
 }
 
+template<typename C>
+struct action
+{
+    usize dest;
+    C cost;
+};
+
+template<typename W>
+class directed_edge
+{
+public:
+    usize source;
+    action<W> act;
+
+    directed_edge(const usize src, const usize dst, const W weight) : source(src), act(dst, weight) { }
+};
+
 
 void run() {
     u32 t;
