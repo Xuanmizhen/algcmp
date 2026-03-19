@@ -8090,10 +8090,591 @@ mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.pag
 
 
 </div><div>
-<h1>Forbidden</h1>
-<p>You don't have permission to access this resource.</p>
-<p>Additionally, a 403 Forbidden
-error was encountered while trying to use an ErrorDocument to handle the request.</p>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::priority_queue&lt;T,Container,Compare&gt;::</span>priority_queue</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../container.html" title="cpp/container">container</a>‎ | <a href="../priority_queue.html" title="cpp/container/priority queue">priority queue</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp">priority_queue<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> priority_queue<span class="br0">(</span>Compare<span class="br0">(</span><span class="br0">)</span>, Container<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span></span></div></td>
+<td> (1) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> priority_queue<span class="br0">(</span> <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare <span class="br0">)</span><br><br>
+&nbsp; &nbsp; <span class="sy4">:</span> priority_queue<span class="br0">(</span>compare, Container<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+</tbody>
+<tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(3)</td>
+<td></td>
+</tr>
+<tr class="t-dcl t-until-cxx11">
+<td><div><span id="Version_3"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> priority_queue<span class="br0">(</span> <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare <span class="sy1">=</span> Compare<span class="br0">(</span><span class="br0">)</span>,<br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="kw4">const</span> Container<span class="sy3">&amp;</span> cont <span class="sy1">=</span> Container<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> </td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp">priority_queue<span class="br0">(</span> <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, <span class="kw4">const</span> Container<span class="sy3">&amp;</span> cont <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+</tbody><tbody>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp">priority_queue<span class="br0">(</span> <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, Container<span class="sy3">&amp;&amp;</span> cont <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (4) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp">priority_queue<span class="br0">(</span> <span class="kw4">const</span> priority_queue<span class="sy3">&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (5) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp">priority_queue<span class="br0">(</span> priority_queue<span class="sy3">&amp;&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (6) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> InputIt first, InputIt last,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare <span class="sy1">=</span> Compare<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (7) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+</tbody>
+<tbody class="t-dcl-rev t-dcl-rev-num"><tr class="t-dcl-rev-aux">
+<td></td>
+<td rowspan="142">(8)</td>
+<td></td>
+</tr>
+<tr class="t-dcl t-until-cxx11">
+<td><div><span id="Version_8"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> InputIt first, InputIt last,<br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare <span class="sy1">=</span> Compare<span class="br0">(</span><span class="br0">)</span>,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Container<span class="sy3">&amp;</span> cont <span class="sy1">=</span> Container<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad"> </td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> InputIt first, InputIt last,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, <span class="kw4">const</span> Container<span class="sy3">&amp;</span> cont <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+</tbody><tbody>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> InputIt first, InputIt last,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, Container<span class="sy3">&amp;&amp;</span> cont <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (9) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+<span class="kw1">explicit</span> priority_queue<span class="br0">(</span> <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (10) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+priority_queue<span class="br0">(</span> <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (11) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, <span class="kw4">const</span> Container<span class="sy3">&amp;</span> cont,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (12) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, Container<span class="sy3">&amp;&amp;</span> cont,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (13) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+priority_queue<span class="br0">(</span> <span class="kw4">const</span> priority_queue<span class="sy3">&amp;</span> other, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (14) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+priority_queue<span class="br0">(</span> priority_queue<span class="sy3">&amp;&amp;</span> other, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (15) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt, <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+priority_queue<span class="br0">(</span> InputIt first, InputIt last, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (16) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt, <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> InputIt first, InputIt last, <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (17) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt, <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> InputIt first, InputIt last, <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Container<span class="sy3">&amp;</span> cont, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (18) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> InputIt, <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> InputIt first, InputIt last, <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Container<span class="sy3">&amp;&amp;</span> cont, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (19) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx23">
+<td><div><span id="Version_20"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/to.html"><span class="kw100">container-compatible-range</span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> R <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> <a href="../../ranges/from_range.html"><span class="kw3604">std::<span class="me2">from_range_t</span></span></a>, R<span class="sy3">&amp;&amp;</span> rg,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare <span class="sy1">=</span> Compare<span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (20)</td>
+<td><span class="t-mark-rev t-since-cxx23">(since C++23)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx23">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/to.html"><span class="kw100">container-compatible-range</span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> R, <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+<p>priority_queue<span class="br0">(</span> <a href="../../ranges/from_range.html"><span class="kw3604">std::<span class="me2">from_range_t</span></span></a>, R<span class="sy3">&amp;&amp;</span> rg,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">const</span> Compare<span class="sy3">&amp;</span> compare, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (21) </td>
+<td> <span class="t-mark-rev t-since-cxx23">(since C++23)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx23">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/to.html"><span class="kw100">container-compatible-range</span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> R, <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br><br>
+priority_queue<span class="br0">(</span> <a href="../../ranges/from_range.html"><span class="kw3604">std::<span class="me2">from_range_t</span></span></a>, R<span class="sy3">&amp;&amp;</span> rg, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> alloc <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (22) </td>
+<td> <span class="t-mark-rev t-since-cxx23">(since C++23)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Constructs new underlying container of the container adaptor from a variety of data sources.
+</p>
+<div class="t-li1"><span class="t-li">1)</span> Default constructor. Value-initializes the comparator and the underlying container.</div>
+<div class="t-li1"><span class="t-li">2)</span> Copy-constructs the comparison functor <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> with the contents of <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Value-initializes the underlying container <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span>.</div>
+<div class="t-li1"><span class="t-li">3)</span> Copy-constructs the underlying container <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> with the contents of <span class="t-c"><span class="mw-geshi cpp source-cpp">cont</span></span>. Copy-constructs the comparison functor <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> with the contents of <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span></span></span>. <span class="t-rev-inl t-until-cxx11"><span>This is also the default constructor.</span><span><span class="t-mark-rev t-until-cxx11">(until C++11)</span></span></span></div>
+<div class="t-li1"><span class="t-li">4)</span> Move-constructs the underlying container <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>cont<span class="br0">)</span></span></span>. Copy-constructs the comparison functor <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">5)</span> <a href="../../language/copy_constructor.html" title="cpp/language/copy constructor">Copy constructor</a>. The underlying container is copy-constructed with <span class="t-c"><span class="mw-geshi cpp source-cpp">other.<span class="me1">c</span></span></span>. The comparison functor is copy-constructed with <span class="t-c"><span class="mw-geshi cpp source-cpp">other.<span class="me1">comp</span></span></span>. <span class="t-mark">(implicitly declared)</span></div>
+<div class="t-li1"><span class="t-li">6)</span> <a href="../../language/move_constructor.html" title="cpp/language/move constructor">Move constructor</a>. The underlying container is constructed with <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>other.<span class="me1">c</span><span class="br0">)</span></span></span>. The comparison functor is constructed with <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>other.<span class="me1">comp</span><span class="br0">)</span></span></span>. <span class="t-mark">(implicitly declared)</span></div>
+<div class="t-li1"><span class="t-li">7-9)</span> Iterator-pair constructors. These overloads participate in overload resolution only if <code>InputIt</code> satisfies <a href="../../named_req/InputIterator.html" title="cpp/named req/InputIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyInputIterator</span></a>.</div>
+<div class="t-li1"><span class="t-li">7)</span> Constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="br0">(</span>first, last<span class="br0">)</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span><span class="sy4">;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">8)</span> Copy-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">cont</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp">c.<span class="me1">insert</span><span class="br0">(</span>c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, first, last<span class="br0">)</span><span class="sy4">;</span></span></span>, and then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span><span class="sy4">;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">9)</span> Move-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>cont<span class="br0">)</span></span></span> and copy-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp">c.<span class="me1">insert</span><span class="br0">(</span>c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, first, last<span class="br0">)</span><span class="sy4">;</span></span></span>, and then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span><span class="sy4">;</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">10-15)</span> Allocator-extended constructors. These overloads participate in overload resolution only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/uses_allocator.html"><span class="kw709">std::<span class="me2">uses_allocator</span></span></a><span class="sy1">&lt;</span>container_type, Alloc<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, that is, if the underlying container is an allocator-aware container (true for all standard library containers).</div>
+<div class="t-li1"><span class="t-li">10)</span> Constructs the underlying container using <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc</span></span> as allocator. Effectively calls <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="br0">(</span>alloc<span class="br0">)</span></span></span>. <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> is value-initialized.</div>
+<div class="t-li1"><span class="t-li">11)</span> Constructs the underlying container using <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc</span></span> as allocator. Effectively calls <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="br0">(</span>alloc<span class="br0">)</span></span></span>. Copy-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>.</div>
+<div class="t-li1"><span class="t-li">12)</span> Constructs the underlying container with the contents of <span class="t-c"><span class="mw-geshi cpp source-cpp">cont</span></span> and using <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc</span></span> as allocator, as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="br0">(</span>cont, alloc<span class="br0">)</span></span></span>. Copy-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">13)</span> Constructs the underlying container with the contents of <span class="t-c"><span class="mw-geshi cpp source-cpp">cont</span></span> using move semantics while using <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc</span></span> as allocator, as if by <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="br0">(</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>cont<span class="br0">)</span>, alloc<span class="br0">)</span></span></span>. Copy-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">14)</span> Constructs the underlying container with the contents of <span class="t-c"><span class="mw-geshi cpp source-cpp">other.<span class="me1">c</span></span></span> and using <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc</span></span> as allocator. Effectively calls <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="br0">(</span>other.<span class="me1">c</span>, alloc<span class="br0">)</span></span></span>. Copy-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">other.<span class="me1">comp</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">15)</span> Constructs the underlying container with the contents of <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span> using move semantics while utilizing <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc</span></span> as allocator. Effectively calls <span class="t-c"><span class="mw-geshi cpp source-cpp">c<span class="br0">(</span>std<span class="sy4">::</span><span class="me2">move</span><span class="br0">(</span>other.<span class="me1">c</span><span class="br0">)</span>, alloc<span class="br0">)</span></span></span>. Move-constructs <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> from <span class="t-c"><span class="mw-geshi cpp source-cpp">other.<span class="me1">comp</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">16-19)</span> Allocator-extended iterator-pair constructors. Same as <span class="t-v">(7-9)</span>, except that <span class="t-c"><span class="mw-geshi cpp source-cpp">alloc</span></span> is used for constructing the underlying container. These overloads participate in overload resolution only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/uses_allocator.html"><span class="kw709">std::<span class="me2">uses_allocator</span></span></a><span class="sy1">&lt;</span>container_type, Alloc<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">InputIt</span></span> satisfies <a href="../../named_req/InputIterator.html" title="cpp/named req/InputIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyInputIterator</span></a>.</div>
+<div class="t-li1"><span class="t-li">20)</span> Initializes <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/to.html"><span class="kw3712">ranges::<span class="me2">to</span></span></a><span class="sy1">&lt;</span>Container<span class="sy1">&gt;</span><span class="br0">(</span><a href="../../utility/forward.html"><span class="kw1126">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span><span class="br0">(</span>rg<span class="br0">)</span><span class="br0">)</span></span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">21)</span> Initializes <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp">compare</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/to.html"><span class="kw3712">ranges::<span class="me2">to</span></span></a><span class="sy1">&lt;</span>Container<span class="sy1">&gt;</span><span class="br0">(</span><a href="../../utility/forward.html"><span class="kw1126">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span><span class="br0">(</span>rg<span class="br0">)</span>, alloc<span class="br0">)</span></span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span></span></span>. </div>
+<div class="t-li1"><span class="t-li">22)</span> Initializes <span class="t-c"><span class="mw-geshi cpp source-cpp">c</span></span> with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/to.html"><span class="kw3712">ranges::<span class="me2">to</span></span></a><span class="sy1">&lt;</span>Container<span class="sy1">&gt;</span><span class="br0">(</span><a href="../../utility/forward.html"><span class="kw1126">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span><span class="br0">(</span>rg<span class="br0">)</span>, alloc<span class="br0">)</span></span></span>. Then calls <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../algorithm/make_heap.html"><span class="kw1649">std::<span class="me2">make_heap</span></span></a><span class="br0">(</span>c.<span class="me1">begin</span><span class="br0">(</span><span class="br0">)</span>, c.<span class="me1">end</span><span class="br0">(</span><span class="br0">)</span>, comp<span class="br0">)</span></span></span>.</div>
+<p>Note that how an implementation checks whether a type satisfies <a href="../../named_req/InputIterator.html" title="cpp/named req/InputIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyInputIterator</span></a> is unspecified, except that integral types are required to be rejected.
+</p>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="priority_queue.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="priority_queue.html#Complexity"><span class="tocnumber">2</span> <span class="toctext">Complexity</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="priority_queue.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="priority_queue.html#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="priority_queue.html#Defect_reports"><span class="tocnumber">5</span> <span class="toctext">Defect reports</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="priority_queue.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> alloc
+</td>
+<td> -
+</td>
+<td> allocator to use for all memory allocations of the underlying container
+</td></tr>
+<tr class="t-par">
+<td> other
+</td>
+<td> -
+</td>
+<td> another container adaptor to be used as source to initialize the underlying container
+</td></tr>
+<tr class="t-par">
+<td> cont
+</td>
+<td> -
+</td>
+<td> container to be used as source to initialize the underlying container
+</td></tr>
+<tr class="t-par">
+<td> compare
+</td>
+<td> -
+</td>
+<td> the comparison function object to initialize the underlying comparison functor
+</td></tr>
+<tr class="t-par">
+<td> first, last
+</td>
+<td> -
+</td>
+<td> the pair of iterators defining the  <a href="../../iterator.html#Ranges" title="cpp/iterator">range</a> of elements to initialize with
+</td></tr>
+<tr class="t-par">
+<td> rg
+</td>
+<td> -
+</td>
+<td> a <a href="../../ranges/to.html#container_compatible_range" title="cpp/ranges/to">container compatible range</a>, that is, an <a href="../../ranges/input_range.html" title="cpp/ranges/input range"><code>input_range</code></a> whose elements are convertible to <code>T</code>
+</td></tr>
+<tr class="t-par-hitem">
+<td colspan="3"> Type requirements
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>Alloc</code> must meet the requirements of <a href="../../named_req/Allocator.html" title="cpp/named req/Allocator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Allocator</span></a>.
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>Compare</code> must meet the requirements of <a href="../../named_req/Compare.html" title="cpp/named req/Compare"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Compare</span></a>.
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>Container</code> must meet the requirements of <a href="../../named_req/Container.html" title="cpp/named req/Container"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Container</span></a>. The allocator-extended constructors are only defined if <code>Container</code> meets the requirements of <a href="../../named_req/AllocatorAwareContainer.html" title="cpp/named req/AllocatorAwareContainer"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">AllocatorAwareContainer</span></a>.
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>InputIt</code> must meet the requirements of <a href="../../named_req/InputIterator.html" title="cpp/named req/InputIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyInputIterator</span></a>.
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;action=edit&amp;section=2" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
+<div class="t-li1"><span class="t-li">1,2)</span> Constant.</div>
+<div class="t-li1"><span class="t-li">3,5,12)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> comparisons and <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> calls to the constructor of <code>value_type</code>, where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp">cont.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">4)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> comparisons, where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp">cont.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">6)</span> Constant.</div>
+<div class="t-li1"><span class="t-li">7,16,17)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(M)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(M)</span> comparisons, where <span class="mjax" style="display:none">\(\scriptsize M\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">M</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw679">std::<span class="me2">distance</span></span></a><span class="br0">(</span>first, last<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">8,18)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N + M)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N + M)</span> comparisons and <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> calls to the constructor of <code>value_type</code>, where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp">cont.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span> and <span class="mjax" style="display:none">\(\scriptsize M\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">M</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw679">std::<span class="me2">distance</span></span></a><span class="br0">(</span>first, last<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">9)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N + M)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N + M)</span> comparisons, where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp">cont.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span> and <span class="mjax" style="display:none">\(\scriptsize M\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">M</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw679">std::<span class="me2">distance</span></span></a><span class="br0">(</span>first, last<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">10,11)</span> Constant.</div>
+<div class="t-li1"><span class="t-li">13)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> comparisons, where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp">cont.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">14)</span> Linear in size of <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span>.</div>
+<div class="t-li1"><span class="t-li">15)</span> Constant if <code>Alloc</code> compares equal to the allocator of <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span>. Linear in size of <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span> otherwise.</div>
+<div class="t-li1"><span class="t-li">19)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N + M)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N + M)</span> comparisons and possibly <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> calls to the constructor of <code>value_type</code> (present if <code>Alloc</code> does not compare equal to the allocator of <span class="t-c"><span class="mw-geshi cpp source-cpp">other</span></span>), where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp">cont.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span></span></span> and <span class="mjax" style="display:none">\(\scriptsize M\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">M</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/distance.html"><span class="kw679">std::<span class="me2">distance</span></span></a><span class="br0">(</span>first, last<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">20)</span> <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> comparisons and <span class="mjax" style="display:none">\(\scriptsize \mathcal{O}{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N)</span> calls to the constructor of <code>value_type</code>, where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/ranges/distance.html"><span class="kw3161">ranges::<span class="me2">distance</span></span></a><span class="br0">(</span>rg<span class="br0">)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">21,22)</span> <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tbody><tr><td class="mbox-empty-cell"></td><td class="mbox-text" style="">This section is incomplete </td></tr></tbody></table></div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;action=edit&amp;section=3" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<table class="wikitable ftm-begin">
+
+<tbody><tr>
+<th><a href="../../utility/feature_test.html" title="cpp/utility/feature test">Feature-test</a> macro</th>
+<th><abbr title="The year/month in which the feature was adopted. The hyperlink under each value opens a compiler support page with entry for given feature.">Value</abbr></th>
+<th><abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr></th>
+<th>Feature
+</th></tr>
+<tr>
+<td><a href="../../experimental/feature_test.html#cpp_lib_containers_ranges" title="cpp/feature test"><code>__cpp_lib_containers_ranges</code></a></td>
+<td><a href="../../compiler_support/23.html#cpp_lib_containers_ranges_202202L" title="cpp/compiler support/23"><code>202202L</code></a></td>
+<td><span class="t-mark">(C++23)</span></td>
+<td><a href="../../ranges/to.html#container_compatible_range" title="cpp/ranges/to">Ranges-aware</a> construction and insertion; overloads <span class="t-v">(<a href="priority_queue.html#Version_20">20-22</a>)</span>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;action=edit&amp;section=4" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;complex&gt;
+#include &lt;functional&gt;
+#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+&nbsp;
+int main()
+{
+    std::priority_queue&lt;int&gt; pq1;
+    pq1.push(5);
+    std::cout &lt;&lt; "pq1.size() = " &lt;&lt; pq1.size() &lt;&lt; '\n';
+&nbsp;
+    std::priority_queue&lt;int&gt; pq2 {pq1};
+    std::cout &lt;&lt; "pq2.size() = " &lt;&lt; pq2.size() &lt;&lt; '\n';
+&nbsp;
+    std::vector&lt;int&gt; vec {3, 1, 4, 1, 5};
+    std::priority_queue&lt;int&gt; pq3 {std::less&lt;int&gt;(), vec};
+    std::cout &lt;&lt; "pq3.size() = " &lt;&lt; pq3.size() &lt;&lt; '\n';
+&nbsp;
+    for (std::cout &lt;&lt; "pq3&nbsp;: "; !pq3.empty(); pq3.pop())
+        std::cout &lt;&lt; pq3.top() &lt;&lt; ' ';
+    std::cout &lt;&lt; '\n';
+&nbsp;
+    // Demo With Custom Comparator:
+&nbsp;
+    using my_value_t = std::complex&lt;double&gt;;
+    using my_container_t = std::vector&lt;my_value_t&gt;;
+&nbsp;
+    auto my_comp = [](const my_value_t&amp; z1, const my_value_t&amp; z2)
+    {
+        return z2.real() &lt; z1.real();
+    };
+&nbsp;
+    std::priority_queue&lt;my_value_t,
+                        my_container_t,
+                        decltype(my_comp)&gt; pq4{my_comp};
+&nbsp;
+    using namespace std::complex_literals;
+    pq4.push(5.0 + 1i);
+    pq4.push(3.0 + 2i);
+    pq4.push(7.0 + 3i);
+&nbsp;
+    for (; !pq4.empty(); pq4.pop())
+    {
+        const auto&amp; z = pq4.top();
+        std::cout &lt;&lt; "pq4.top() = " &lt;&lt; z &lt;&lt; '\n';
+    }
+&nbsp;
+    // TODO: C++23 range-aware ctors
+}</pre></div></div>
+<p>Output:
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">pq1.size() = 1
+pq2.size() = 1
+pq3.size() = 5
+pq3&nbsp;: 5 4 3 1 1
+pq4.top() = (3,2)
+pq4.top() = (5,1)
+pq4.top() = (7,3)</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;action=edit&amp;section=5" title="Edit section: Defect reports">edit</a>]</span> <span class="mw-headline" id="Defect_reports">Defect reports</span></h3>
+<p>The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tbody><tr>
+<th>DR
+</th>
+<th>Applied to
+</th>
+<th>Behavior as published
+</th>
+<th>Correct behavior
+</th></tr>
+<tr>
+<td><a class="external text" href="https://wg21.link/P0935R0" rel="nofollow">P0935R0</a>
+</td>
+<td>C++11
+</td>
+<td>default constructor and constructor <span class="t-v">(4)</span> were explicit
+</td>
+<td>made implicit
+</td></tr>
+<tr>
+<td><a class="external text" href="https://cplusplus.github.io/LWG/issue3506" rel="nofollow">LWG 3506</a>
+</td>
+<td>C++11
+</td>
+<td>allocator-extended iterator-pair constructors were missing
+</td>
+<td>added
+</td></tr>
+<tr>
+<td><a class="external text" href="https://cplusplus.github.io/LWG/issue3522" rel="nofollow">LWG 3522</a>
+</td>
+<td>C++11
+</td>
+<td>constraints on iterator-pair constructors were missing
+</td>
+<td>added
+</td></tr>
+<tr>
+<td><a class="external text" href="https://cplusplus.github.io/LWG/issue3529" rel="nofollow">LWG 3529</a>
+</td>
+<td>C++11
+</td>
+<td>construction from a pair of iterators called <code>insert</code>
+</td>
+<td>constructs the container from them
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;action=edit&amp;section=6" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="operator=.html" title="cpp/container/priority queue/operator="> <span class="t-lines"><span>operator=</span></span></a></div></div>
+</td>
+<td>  assigns values to the container adaptor <br><br> <span class="t-mark">(public member function)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/container/dsc_operator%3D&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;oldid=180831">https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;oldid=180831</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks" id="catlinks"><div class="mw-normal-catlinks" id="mw-normal-catlinks"><a href="https://en.cppreference.com/w/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="../../../Category%253ATodo_without_reason.html" title="Category:Todo without reason">Todo without reason</a></li></ul></div></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="priority_queue.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/container/priority_queue/priority_queue" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/container/priority_queue/priority_queue" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;oldid=180831" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/container/priority_queue/priority_queue&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="de" lang="de" title="cpp/container/priority queue/priority queue">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="es" lang="es" title="cpp/container/priority queue/priority queue">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="fr" lang="fr" title="cpp/container/priority queue/priority queue">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="it" lang="it" title="cpp/container/priority queue/priority queue">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="ja" lang="ja" title="cpp/container/priority queue/priority queue">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="pt" lang="pt" title="cpp/container/priority queue/priority queue">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="ru" lang="ru" title="cpp/container/priority queue/priority queue">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/container/priority_queue/priority_queue" hreflang="zh" lang="zh" title="cpp/container/priority queue/priority queue">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 17 February 2025, at 16:08.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
 
 </div><div>
         
