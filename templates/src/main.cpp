@@ -39,16 +39,16 @@ std::ostream &log_loc(std::ostream &os, const source_location loc = source_locat
     return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: ";
 }
 
+#ifdef LOCAL
+#define debug_assert(e) assert(e)
 #define dbg(val) \
     ([](const auto v, const source_location loc) { \
         log_loc(std::clog, loc) << ' ' << #val << " = " << v << '\n'; \
         return v; \
     })(val, source_location::current())
-
-#ifdef LOCAL
-#define debug_assert(e) assert(e)
 #else
 #define debug_assert(e) void
+#define dbg(val) val
 #endif
 
 namespace std {
@@ -65,7 +65,6 @@ class matrix {
     std::vector<std::vector<T, Allocator>> inner;
 
 public:
-matrix() {}
     using reference = decltype(inner)::reference;
     using const_reference = decltype(inner)::const_reference;
     matrix(const usize n, const usize m) : inner(n, std::vector(m)) { }
@@ -126,10 +125,10 @@ template <std::three_way_comparable W>
 class undirected_edge {
 public:
     usize u, v;
-    W cost;
+    W weight;
 
     std::weak_ordering operator<=>(const undirected_edge& rhs) const {
-        return rhs.cost <=> cost;
+        return rhs.weight <=> weight;
     }
 };
 
@@ -180,7 +179,7 @@ int main() {
     ifstream fin("in.txt");
     ofstream fout("out.txt");
     if (!fin.is_open() || !fout.is_open()) {
-        std::cerr << "files not opened\n";
+        cerr << "files not opened\n";
         return 1;
     }
     cin.rdbuf(fin.rdbuf());
