@@ -60,6 +60,23 @@ inline constexpr double inv_tau = inv_tau_v<double>;
 }
 }
 
+template<class T, class Allocator = std::allocator<T>>
+class matrix {
+    std::vector<std::vector<T, Allocator>> inner;
+
+public:
+matrix() {}
+    using reference = decltype(inner)::reference;
+    using const_reference = decltype(inner)::const_reference;
+    matrix(const usize n, const usize m) : inner(n, std::vector(m)) { }
+    reference operator[](usize pos) {
+        return inner[pos];
+    }
+    const_reference operator[](usize pos) const {
+        return inner[pos];
+    }
+};
+
 class disjoint_set {
     std::vector<isize> parent_or_neg_rank;
     uint8_t link(usize x, usize y) {
