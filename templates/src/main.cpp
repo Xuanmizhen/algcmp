@@ -105,11 +105,11 @@ public:
         }
         return root;
     }
-    struct link_res {
+    struct unite_result {
         usize union_repr;
         std::optional<usize> deleted_repr;
     };
-    link_res unite(usize x, usize y) {
+    unite_result unite(usize x, usize y) {
         if ((x = find_set(x)) == (y = find_set(y))) {
             return {x, {}};
         }
