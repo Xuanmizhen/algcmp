@@ -16,6 +16,9 @@
 
 // #include <bits/stdc++.h> // g++
 
+
+// 缩写和语法糖
+
 using i16 = int16_t;
 using i32 = int32_t;
 using i64 = int64_t;
@@ -32,8 +35,10 @@ using std::cin;
 using std::cout;
 using std::source_location;
 
-
 #define loop for (;;)
+
+
+// 调试工具
 
 std::ostream &log_loc(std::ostream &os, const source_location loc = source_location::current()) {
     return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: ";
@@ -51,6 +56,9 @@ std::ostream &log_loc(std::ostream &os, const source_location loc = source_locat
 #define dbg(val) val
 #endif
 
+
+// 圆周率
+
 namespace std {
 namespace numbers {
 template <class T> inline constexpr T tau_v = 2 * pi_v<T>;
@@ -60,12 +68,15 @@ inline constexpr double inv_tau = inv_tau_v<double>;
 }
 }
 
+
+// 线性代数
+
 template<class T, class Container = std::vector<std::vector<T>>>
 class matrix {
 public:
-    using value_type = T;
     using row_type = Container::value_type;
-    // TODO: statically assert that `row_type::value_type` equals `value_type`
+    using value_type = row_type::value_type;
+    static_assert(std::is_same<value_type, T>::value);
     Container inner;
 
     matrix() : matrix(Container()) { }
@@ -79,6 +90,9 @@ public:
     //     return inner[pos];
     // }
 };
+
+
+// 并查集
 
 class disjoint_set {
     std::vector<isize> parent_or_neg_rank;
@@ -125,6 +139,9 @@ public:
     }
 };
 
+
+// 图论
+
 template <std::three_way_comparable W>
 class undirected_edge {
 public:
@@ -165,6 +182,8 @@ public:
     directed_edge(const usize src, const usize dst, const W weight) : source(src), act(dst, weight) { }
 };
 
+
+// 任务
 
 void run() {
     u32 t;
