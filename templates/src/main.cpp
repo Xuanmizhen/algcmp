@@ -60,20 +60,24 @@ inline constexpr double inv_tau = inv_tau_v<double>;
 }
 }
 
-template<class T, class Allocator = std::allocator<T>>
+template<class T, class Container = std::vector<std::vector<T>>>
 class matrix {
-    std::vector<std::vector<T, Allocator>> inner;
-
 public:
-    using reference = decltype(inner)::reference;
-    using const_reference = decltype(inner)::const_reference;
-    matrix(const usize n, const usize m) : inner(n, std::vector(m)) { }
-    reference operator[](usize pos) {
-        return inner[pos];
-    }
-    const_reference operator[](usize pos) const {
-        return inner[pos];
-    }
+    using value_type = T;
+    using row_type = Container::value_type;
+    // TODO: statically assert that `row_type::value_type` equals `value_type`
+    Container inner;
+
+    matrix() : matrix(Container()) { }
+    explicit matrix(const Container &cont) : inner(cont) { }
+    explicit matrix(Container&& cont) : inner(cont) { }
+    matrix(const usize n, const usize m) : inner(n, row_type(m)) { }
+    // reference operator[](usize pos) {
+    //     return inner[pos];
+    // }
+    // const_reference operator[](usize pos) const {
+    //     return inner[pos];
+    // }
 };
 
 class disjoint_set {
