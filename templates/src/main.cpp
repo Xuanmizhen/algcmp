@@ -76,7 +76,7 @@ class matrix {
 public:
     using row_type = Container::value_type;
     using value_type = row_type::value_type;
-    static_assert(std::is_same<value_type, T>::value);
+    static_assert(std::is_same_v<value_type, T>);
     Container inner;
 
     matrix() : matrix(Container()) { }

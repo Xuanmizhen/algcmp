@@ -16,11 +16,6 @@
 | 无序映射/（可能是）哈希表 | [`std::unordered_map` (C++11)](https://en.cppreference.com/w/cpp/container/unordered_map.html) | |
 | 位集 | [`std::bitset`](https://en.cppreference.com/w/cpp/utility/bitset.html) | `java.util.BitSet` |
 
-### Views
-| Container | C++ |
-| --------- | --- |
-| | [`std::ranges::views::single` (C++20), `std::ranges::single_view` (C++20)](https://en.cppreference.com/w/cpp/ranges/single_view.html) |
-
 ### Interfaces
 | Interface | Java |
 | --------- | ---- |
