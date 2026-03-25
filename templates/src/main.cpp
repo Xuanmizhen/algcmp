@@ -17,6 +17,24 @@
 // #include <bits/stdc++.h> // g++
 
 
+// 向 C++26 看齐
+
+#if __cplusplus <= 202302L
+// Computes the addition `x + y` and stores the result into `*result`. The addition is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to *result is the mathematical result of the operation wrapped around to the width of `*result`.
+template<std::unsigned_integral type1>
+bool ckd_add(type1* result, type1 a, type1 b) {
+    return __builtin_add_overflow(a, b, result);
+}
+// Computes the multiplication `x × y` and stores the result into `*result`. The multiplication is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to `*result` is the mathematical result of the operation wrapped around to the width of `*result`.
+template<std::unsigned_integral type1>
+bool ckd_mul(type1* result, type1 a, type1 b) {
+    return __builtin_mul_overflow(a, b, result);
+}
+#else
+#include <stdckdint.h> // C++26
+#endif
+
+
 // 缩写和语法糖
 
 using i16 = int16_t;
@@ -48,11 +66,11 @@ std::ostream &log_loc(std::ostream &os, const source_location loc = source_locat
 #define debug_assert(e) assert(e)
 #define dbg(val) \
     ([](const auto v, const source_location loc) { \
-        log_loc(std::clog, loc) << ' ' << #val << " = " << v << '\n'; \
+        log_loc(std::clog, loc) << ' ' << #val << " = " << v << std::endl; \
         return v; \
     })(val, source_location::current())
 #else
-#define debug_assert(e) void
+#define debug_assert(e) ((void) 0)
 #define dbg(val) val
 #endif
 
@@ -183,6 +201,126 @@ public:
 };
 
 
+// 快速幂
+template<class T, std::unsigned_integral E>
+T powi(T base, E exp) {
+    T res{1};
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            res *= base;
+        }
+        base *= base;
+        exp /= 2;
+    }
+    return res;
+}
+
+
+// 溢出标记
+
+template<std::unsigned_integral I>
+class overflowable {
+    std::optional<I> inner;
+    overflowable() { }
+
+public:
+    overflowable(const I val) : inner(val) { }
+    bool overflowed() const {
+        return !inner.has_value();
+    }
+    std::optional<I> value() {
+        return inner;
+    }
+    overflowable operator+(const I val) {
+        if (inner.has_value()) {
+            I res;
+            return ckd_add(&res, inner.value(), val) ? overflowable() : overflowable(res);
+        }
+        return overflowable();
+    }
+    overflowable &operator+=(const I val) {
+        return *this = *this + val;
+    }
+    overflowable operator*(const I val) {
+        if (inner.has_value()) {
+            I res;
+            return ckd_mul(&res, inner.value(), val) ? overflowable() : overflowable(res);
+        }
+        return overflowable();
+    }
+    overflowable operator*(const overflowable& rhs) {
+        if (inner.has_value() && rhs.inner.has_value()) {
+            I res;
+            return ckd_mul(&res, inner.value(), rhs.inner.value()) ? overflowable() : overflowable(res);
+        }
+        return overflowable();
+    }
+    overflowable &operator*=(const I val) {
+        return *this = *this * val;
+    }
+    overflowable &operator*=(const overflowable& rhs) {
+        return *this = *this * rhs;
+    }
+    std::partial_ordering operator<=>(const overflowable& rhs) const {
+        if (!inner.has_value() && !rhs.inner.has_value()) {
+            // overflowable() cannot compare with itself
+            return std::partial_ordering::unordered;
+        }
+        if (!inner.has_value()) {
+            // this is overflowable(), greater than any I
+            return std::partial_ordering::greater;
+        }
+        if (!rhs.inner.has_value()) {
+            // rhs is overflowable(), less than overflowable()
+            return std::partial_ordering::less;
+        }
+        return std::partial_ordering(inner.value() <=> rhs.inner.value());
+    }
+    bool operator<(const overflowable& rhs) const {
+        return (*this <=> rhs) < 0;
+    }
+};
+
+
+// 模意义下的计算
+
+template<std::unsigned_integral Inner, Inner M>
+class mod_unsigned_unchecked {
+public:
+    Inner inner;
+
+    mod_unsigned_unchecked(const Inner val) : inner(val) {
+        debug_assert(val < M);
+    }
+
+    mod_unsigned_unchecked &operator+=(const mod_unsigned_unchecked<Inner, M> &&rhs) {
+        inner = (inner + rhs.inner) % M;
+        return *this;
+    }
+    mod_unsigned_unchecked &operator-=(const mod_unsigned_unchecked<Inner, M> &&rhs) {
+        inner = (inner - rhs.inner) % M;
+        return *this;
+    }
+    mod_unsigned_unchecked &operator*=(const mod_unsigned_unchecked<Inner, M> &&rhs) {
+        inner = (inner * rhs.inner) % M;
+        return *this;
+    }
+};
+
+
+// 测试
+
+void test() {
+    mod_unsigned_unchecked<u32, 2017> a = 5;
+    a *= 20;
+    assert(a.inner == 100);
+    a *= 21;
+    assert(a.inner == 2100 % 2017);
+    overflowable<uint8_t> b(255);
+    assert((b += static_cast<uint8_t>(1)).overflowed());
+}
+
+
 // 任务
 
 void run() {
@@ -195,18 +333,32 @@ void run() {
 
 int main() {
     using namespace std;
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
 
 #ifdef LOCAL
+    // 测试
+    test();
+    clog << "Test passed" << endl;
+#endif
+
+    ios_base::sync_with_stdio(false);
+
+#if defined(LOCAL) && defined(REDIRECT)
     ifstream fin("in.txt");
-    ofstream fout("out.txt");
-    if (!fin.is_open() || !fout.is_open()) {
-        cerr << "files not opened\n";
+    cin.rdbuf(fin.rdbuf());
+    if (!fin.is_open()) {
+        cerr << "in.txt not opened" << endl;
         return 1;
     }
-    cin.rdbuf(fin.rdbuf());
+    ofstream fout("out.txt");
+    if (!fout.is_open()) {
+        cerr << "out.txt not opened" << endl;
+        return 1;
+    }
     cout.rdbuf(fout.rdbuf());
+#endif
+
+#if !defined(LOCAL) || defined(REDIRECT)
+    cin.tie(nullptr);
 #endif
 
     run();
