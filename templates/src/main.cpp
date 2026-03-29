@@ -1,5 +1,7 @@
 // C++20
+// 牛客竞赛: C++ (clang++18) or C++ (g++ 13)
 // PTA: C++ (g++)
+// QOJ.ac: C++20 or C++23 or C++26
 
 #include <cassert> // assert
 #include <compare> // std::strong_ordering
