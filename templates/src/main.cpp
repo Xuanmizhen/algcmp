@@ -17,24 +17,6 @@
 // #include <bits/stdc++.h> // g++
 
 
-// 向 C++26 看齐
-
-#if __cplusplus <= 202302L
-// Computes the addition `x + y` and stores the result into `*result`. The addition is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to *result is the mathematical result of the operation wrapped around to the width of `*result`.
-template<std::unsigned_integral type1>
-bool ckd_add(type1* result, type1 a, type1 b) {
-    return __builtin_add_overflow(a, b, result);
-}
-// Computes the multiplication `x × y` and stores the result into `*result`. The multiplication is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to `*result` is the mathematical result of the operation wrapped around to the width of `*result`.
-template<std::unsigned_integral type1>
-bool ckd_mul(type1* result, type1 a, type1 b) {
-    return __builtin_mul_overflow(a, b, result);
-}
-#else
-#include <stdckdint.h> // C++26
-#endif
-
-
 // 缩写和语法糖
 
 using i16 = int16_t;
@@ -53,12 +35,32 @@ using std::cin;
 using std::cout;
 using std::source_location;
 
+// #define let auto
+#define fn auto
 #define loop for (;;)
+
+
+// 向 C++26 看齐
+
+#if __cplusplus <= 202302L
+// Computes the addition `x + y` and stores the result into `*result`. The addition is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to *result is the mathematical result of the operation wrapped around to the width of `*result`.
+template<std::unsigned_integral type1>
+fn ckd_add(type1* result, type1 a, type1 b) -> bool {
+    return __builtin_add_overflow(a, b, result);
+}
+// Computes the multiplication `x × y` and stores the result into `*result`. The multiplication is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to `*result` is the mathematical result of the operation wrapped around to the width of `*result`.
+template<std::unsigned_integral type1>
+fn ckd_mul(type1* result, type1 a, type1 b) -> bool {
+    return __builtin_mul_overflow(a, b, result);
+}
+#else
+#include <stdckdint.h> // C++26
+#endif
 
 
 // 调试工具
 
-std::ostream &log_loc(std::ostream &os, const source_location loc = source_location::current()) {
+fn log_loc(std::ostream &os, const source_location loc = source_location::current()) -> std::ostream & {
     return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: ";
 }
 
@@ -114,8 +116,8 @@ public:
 
 class disjoint_set {
     std::vector<isize> parent_or_neg_rank;
-    uint8_t link(usize x, usize y) {
-        const auto cmp{parent_or_neg_rank[x] <=> parent_or_neg_rank[y]};
+    fn link(usize x, usize y) -> uint8_t {
+        const auto cmp = parent_or_neg_rank[x] <=> parent_or_neg_rank[y];
         if (cmp < 0) {
             parent_or_neg_rank[y] = x;
             return 0;
@@ -129,7 +131,7 @@ class disjoint_set {
 
 public:
     explicit disjoint_set(const usize n) : parent_or_neg_rank(n, -1) { }
-    usize find_set(usize x) {
+    fn find_set(usize x) -> usize {
         auto root = x;
         while (parent_or_neg_rank[root] >= 0) {
             root = parent_or_neg_rank[root];
@@ -166,13 +168,13 @@ public:
     usize u, v;
     W weight;
 
-    std::weak_ordering operator<=>(const undirected_edge& rhs) const {
+    fn operator<=>(const undirected_edge& rhs) const -> std::weak_ordering {
         return rhs.weight <=> weight;
     }
 };
 
 template <std::three_way_comparable W>
-std::optional<undirected_edge<W>> kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_edge<W>> &q) {
+fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_edge<W>> &q) -> std::optional<undirected_edge<W>> {
     while (!q.empty()) {
         const auto e = q.top();
         q.pop();
@@ -203,7 +205,7 @@ public:
 
 // 快速幂
 template<class T, std::unsigned_integral E>
-T powi(T base, E exp) {
+fn powi(T base, E exp) -> T {
     T res{1};
     while (exp > 0) {
         if (exp % 2 == 1) {
@@ -225,43 +227,43 @@ class overflowable {
 
 public:
     overflowable(const I val) : inner(val) { }
-    bool overflowed() const {
+    fn overflowed() const -> bool {
         return !inner.has_value();
     }
-    std::optional<I> value() {
+    fn value() -> std::optional<I> {
         return inner;
     }
-    overflowable operator+(const I val) {
+    fn operator+(const I val) -> overflowable {
         if (inner.has_value()) {
             I res;
             return ckd_add(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    overflowable &operator+=(const I val) {
+    fn operator+=(const I val) -> overflowable & {
         return *this = *this + val;
     }
-    overflowable operator*(const I val) {
+    fn operator*(const I val) -> overflowable {
         if (inner.has_value()) {
             I res;
             return ckd_mul(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    overflowable operator*(const overflowable& rhs) {
+    fn operator*(const overflowable& rhs) -> overflowable {
         if (inner.has_value() && rhs.inner.has_value()) {
             I res;
             return ckd_mul(&res, inner.value(), rhs.inner.value()) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    overflowable &operator*=(const I val) {
+    fn operator*=(const I val) -> overflowable & {
         return *this = *this * val;
     }
-    overflowable &operator*=(const overflowable& rhs) {
+    fn operator*=(const overflowable& rhs) -> overflowable & {
         return *this = *this * rhs;
     }
-    std::partial_ordering operator<=>(const overflowable& rhs) const {
+    fn operator<=>(const overflowable& rhs) const -> std::partial_ordering {
         if (!inner.has_value() && !rhs.inner.has_value()) {
             // overflowable() cannot compare with itself
             return std::partial_ordering::unordered;
@@ -276,7 +278,7 @@ public:
         }
         return std::partial_ordering(inner.value() <=> rhs.inner.value());
     }
-    bool operator<(const overflowable& rhs) const {
+    fn operator<(const overflowable& rhs) const -> bool {
         return (*this <=> rhs) < 0;
     }
 };
@@ -293,15 +295,15 @@ public:
         debug_assert(val < M);
     }
 
-    mod_unsigned_unchecked &operator+=(const mod_unsigned_unchecked<Inner, M> &&rhs) {
+    fn operator+=(const mod_unsigned_unchecked<Inner, M> &&rhs) -> mod_unsigned_unchecked & {
         inner = (inner + rhs.inner) % M;
         return *this;
     }
-    mod_unsigned_unchecked &operator-=(const mod_unsigned_unchecked<Inner, M> &&rhs) {
+    fn operator-=(const mod_unsigned_unchecked<Inner, M> &&rhs) -> mod_unsigned_unchecked & {
         inner = (inner - rhs.inner) % M;
         return *this;
     }
-    mod_unsigned_unchecked &operator*=(const mod_unsigned_unchecked<Inner, M> &&rhs) {
+    fn operator*=(const mod_unsigned_unchecked<Inner, M> &&rhs) -> mod_unsigned_unchecked & {
         inner = (inner * rhs.inner) % M;
         return *this;
     }
@@ -331,7 +333,7 @@ void run() {
     }
 }
 
-int main() {
+fn main() -> int {
     using namespace std;
 
 #ifdef LOCAL
