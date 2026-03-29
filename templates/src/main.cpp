@@ -35,7 +35,8 @@ using std::cin;
 using std::cout;
 using std::source_location;
 
-// #define let auto
+#define let const auto
+#define var auto
 #define fn auto
 #define loop for (;;)
 
@@ -67,7 +68,7 @@ fn log_loc(std::ostream &os, const source_location loc = source_location::curren
 #ifdef LOCAL
 #define debug_assert(e) assert(e)
 #define dbg(val) \
-    ([](const auto v, const source_location loc) { \
+    ([](const var v, const source_location loc) { \
         log_loc(std::clog, loc) << ' ' << #val << " = " << v << std::endl; \
         return v; \
     })(val, source_location::current())
@@ -117,7 +118,7 @@ public:
 class disjoint_set {
     std::vector<isize> parent_or_neg_rank;
     fn link(usize x, usize y) -> uint8_t {
-        const auto cmp = parent_or_neg_rank[x] <=> parent_or_neg_rank[y];
+        let cmp = parent_or_neg_rank[x] <=> parent_or_neg_rank[y];
         if (cmp < 0) {
             parent_or_neg_rank[y] = x;
             return 0;
@@ -132,12 +133,12 @@ class disjoint_set {
 public:
     explicit disjoint_set(const usize n) : parent_or_neg_rank(n, -1) { }
     fn find_set(usize x) -> usize {
-        auto root = x;
+        var root = x;
         while (parent_or_neg_rank[root] >= 0) {
             root = parent_or_neg_rank[root];
         }
         while (x != root) {
-            const auto next = parent_or_neg_rank[x];
+            let next = parent_or_neg_rank[x];
             parent_or_neg_rank[x] = root;
             x = next;
         }
@@ -176,7 +177,7 @@ public:
 template <std::three_way_comparable W>
 fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_edge<W>> &q) -> std::optional<undirected_edge<W>> {
     while (!q.empty()) {
-        const auto e = q.top();
+        let e = q.top();
         q.pop();
         if (components.unite(e.u, e.v).deleted_repr.has_value()) {
             return e;
@@ -312,7 +313,7 @@ public:
 
 // 测试
 
-void test() {
+fn test() {
     mod_unsigned_unchecked<u32, 2017> a = 5;
     a *= 20;
     assert(a.inner == 100);
@@ -325,7 +326,7 @@ void test() {
 
 // 任务
 
-void run() {
+fn run() {
     u32 t;
     cin >> t;
     while (t-- > 0) {
