@@ -68,15 +68,17 @@ fn log_loc(std::ostream &os, const source_location loc = source_location::curren
 }
 
 #ifdef LOCAL
-#define debug_assert(e) assert(e)
 #define dbg(val) \
-    ([](const var v, const source_location loc) { \
-        log_loc(std::clog, loc) << ' ' << #val << " = " << v << std::endl; \
-        return v; \
-    })(val, source_location::current())
+    ([](const decltype((val)) v, const source_location loc) -> decltype((val)) { \
+        log_loc(std::clog, loc) << " (" << #val << ") = " << v << std::endl; \
+        return (v); \
+    })((val), source_location::current())
+#define debug_assert(e) assert(e)
+#define todo() (throw std::runtime_error("not yet implemented"))
 #else
-#define debug_assert(e) ((void) 0)
 #define dbg(val) val
+#define debug_assert(e) ((void) 0)
+#define todo() static_assert(false)
 #endif
 
 
@@ -313,14 +315,25 @@ public:
 };
 
 
+// 最长公共子序列
+
+// longest-common-subsequence problem
+template<std::ranges::input_range R>
+fn lcs(R&& a, R&& b) -> usize {
+    usize cnt{0};
+    todo();
+    return cnt;
+}
+
+
 // 测试
 
 fn test() {
     mod_unsigned_unchecked<u32, 2017> a = 5;
     a *= 20;
-    assert(a.inner == 100);
+    assert(dbg(a.inner == 100));
     a *= 21;
-    assert(a.inner == 2100 % 2017);
+    assert(dbg(dbg(a.inner) += 3) == 2103 % 2017);
     overflowable<uint8_t> b(255);
     assert((b += static_cast<uint8_t>(1)).overflowed());
 }

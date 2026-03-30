@@ -20,3 +20,9 @@
 | Interface | Java |
 | --------- | ---- |
 | 队列 | `java.util.Queue` |
+
+## Self-defined
+### Containers
+| Containers | C++ |
+| ---------- | --- |
+| 并查集 | `disjoint_set` |
