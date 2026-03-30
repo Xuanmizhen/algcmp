@@ -12132,6 +12132,292 @@ html { font-variant-ligatures: no-common-ligatures; }
 
   gtag('config', 'G-8HW0LXMYCY');
 </script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>random_access_iterator</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../iterator.html" title="cpp/iterator">iterator</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/iterator.html" title="cpp/header/iterator">&lt;iterator&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> I <span class="sy1">&gt;</span><br><br>
+<p>&nbsp; &nbsp; concept random_access_iterator <span class="sy1">=</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="bidirectional_iterator.html"><span class="kw2886">std::<span class="me2">bidirectional_iterator</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="../concepts/derived_from.html"><span class="kw2952">std::<span class="me2">derived_from</span></span></a><span class="sy1">&lt;</span><span class="coMULTI">/*ITER_CONCEPT*/</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span>, <a href="iterator_tags.html"><span class="kw662">std::<span class="me2">random_access_iterator_tag</span></span></a><span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="../concepts/totally_ordered.html"><span class="kw2970">std::<span class="me2">totally_ordered</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; <a href="sized_sentinel_for.html"><span class="kw2882">std::<span class="me2">sized_sentinel_for</span></span></a><span class="sy1">&lt;</span>I, I<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; requires<span class="br0">(</span>I i, <span class="kw4">const</span> I j, <span class="kw4">const</span> <a href="iter_t.html"><span class="kw2893">std::<span class="me2">iter_difference_t</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> n<span class="br0">)</span> <span class="br0">{</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">{</span> i <span class="sy2">+</span><span class="sy1">=</span> n <span class="br0">}</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <a href="../concepts/same_as.html"><span class="kw2951">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span>I<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="sy4">;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">{</span> j <span class="sy2">+</span> &nbsp;n <span class="br0">}</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <a href="../concepts/same_as.html"><span class="kw2951">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span><span class="sy4">;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">{</span> n <span class="sy2">+</span> &nbsp;j <span class="br0">}</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <a href="../concepts/same_as.html"><span class="kw2951">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span><span class="sy4">;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">{</span> i <span class="sy2">-</span><span class="sy1">=</span> n <span class="br0">}</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <a href="../concepts/same_as.html"><span class="kw2951">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span>I<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="sy4">;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">{</span> j <span class="sy2">-</span> &nbsp;n <span class="br0">}</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <a href="../concepts/same_as.html"><span class="kw2951">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span><span class="sy4">;</span><br><br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">{</span> &nbsp;j<span class="br0">[</span>n<span class="br0">]</span> &nbsp;<span class="br0">}</span> <span class="sy2">-</span><span class="sy1">&gt;</span> <a href="../concepts/same_as.html"><span class="kw2951">std::<span class="me2">same_as</span></span></a><span class="sy1">&lt;</span><a href="iter_t.html"><span class="kw2891">std::<span class="me2">iter_reference_t</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;&gt;</span><span class="sy4">;</span><br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">}</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>The concept <code>random_access_iterator</code> refines <a href="bidirectional_iterator.html" title="cpp/iterator/bidirectional iterator"><code>bidirectional_iterator</code></a> by adding support for constant time advancement with the <code><b>+=</b></code>, <code><b>+</b></code>, <code><b>-=</b></code>, and <code><b>-</b></code> operators, constant time computation of distance with <code><b>-</b></code>, and array notation with subscripting <code><b>[]</b></code>.
+</p>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="random_access_iterator.html#Iterator_concept_determination"><span class="tocnumber">1</span> <span class="toctext">Iterator concept determination</span></a></li>
+<li class="toclevel-1 tocsection-1"><a href="random_access_iterator.html#Semantic_requirements"><span class="tocnumber">2</span> <span class="toctext">Semantic requirements</span></a></li>
+<li class="toclevel-1"><a href="random_access_iterator.html#Equality_preservation"><span class="tocnumber">3</span> <span class="toctext">Equality preservation</span></a></li>
+<li class="toclevel-1"><a href="random_access_iterator.html#Implicit_expression_variations"><span class="tocnumber">4</span> <span class="toctext">Implicit expression variations</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="random_access_iterator.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="random_access_iterator.html#Example"><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="random_access_iterator.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/iter_concept&amp;action=edit&amp;section=T-1" title="Template:cpp/iterator/iter concept">edit</a>]</span> <span class="mw-headline" id="Iterator_concept_determination">Iterator concept determination</span></h3>
+<p>Definition of this concept is specified via an exposition-only alias template <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*ITER_CONCEPT*/</span></span></span>.
+</p><p>In order to determine <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*ITER_CONCEPT*/</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span>, let <span class="t-c"><span class="mw-geshi cpp source-cpp">ITER_TRAITS<span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> denote <span class="t-c"><span class="mw-geshi cpp source-cpp">I</span></span> if the specialization <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator_traits.html"><span class="kw657">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> is generated from the primary template, or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator_traits.html"><span class="kw657">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> otherwise:
+</p>
+<ul><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">ITER_TRAITS<span class="sy1">&lt;</span>I<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">iterator_concept</span></span></span> is valid and names a type, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*ITER_CONCEPT*/</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> denotes the type.
+</li><li> Otherwise, if <span class="t-c"><span class="mw-geshi cpp source-cpp">ITER_TRAITS<span class="sy1">&lt;</span>I<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">iterator_category</span></span></span> is valid and names a type, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*ITER_CONCEPT*/</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> denotes the type.
+</li><li> Otherwise, if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator_traits.html"><span class="kw657">std::<span class="me2">iterator_traits</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> is generated from the primary template, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*ITER_CONCEPT*/</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> denotes <span class="t-lc"><a href="iterator_tags.html" title="cpp/iterator/iterator tags">std::random_access_iterator_tag</a></span>.<br><br>(That is, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../concepts/derived_from.html"><span class="kw2952">std::<span class="me2">derived_from</span></span></a><span class="sy1">&lt;</span><span class="coMULTI">/*ITER_CONCEPT*/</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span>, <a href="iterator_tags.html"><span class="kw662">std::<span class="me2">random_access_iterator_tag</span></span></a><span class="sy1">&gt;</span></span></span> is assumed to be <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.)
+</li><li> Otherwise, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/*ITER_CONCEPT*/</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> does not denote a type and results in a substitution failure.
+</li></ul>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;action=edit&amp;section=1" title="Edit section: Semantic requirements">edit</a>]</span> <span class="mw-headline" id="Semantic_requirements">Semantic requirements</span></h3>
+<p>Let <span class="t-c"><span class="mw-geshi cpp source-cpp">a</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">b</span></span> be valid iterators of type <code>I</code> such that <span class="t-c"><span class="mw-geshi cpp source-cpp">b</span></span> is reachable from <span class="t-c"><span class="mw-geshi cpp source-cpp">a</span></span>, and let <span class="t-c"><span class="mw-geshi cpp source-cpp">n</span></span> be a value of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iter_t.html"><span class="kw2893">std::<span class="me2">iter_difference_t</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span></span> equal to <span class="t-c"><span class="mw-geshi cpp source-cpp">b <span class="sy2">-</span> a</span></span>. <span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">random_access_iterator</span><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span></span> is modeled only if all the concepts it subsumes are modeled and:
+</p>
+<ul><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>a <span class="sy2">+</span><span class="sy1">=</span> n<span class="br0">)</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp">b</span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/addressof.html"><span class="kw762">std::<span class="me2">addressof</span></span></a><span class="br0">(</span>a <span class="sy2">+</span><span class="sy1">=</span> n<span class="br0">)</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/addressof.html"><span class="kw762">std::<span class="me2">addressof</span></span></a><span class="br0">(</span>a<span class="br0">)</span></span></span>. <a href="random_access_iterator.html#addressof_note"><sup>[1]</sup></a>
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>a <span class="sy2">+</span> n<span class="br0">)</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>a <span class="sy2">+</span><span class="sy1">=</span> n<span class="br0">)</span></span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>a <span class="sy2">+</span> n<span class="br0">)</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>n <span class="sy2">+</span> a<span class="br0">)</span></span></span>.
+</li><li> For any two positive integers <code>x</code> and <code>y</code>, if <span class="t-c"><span class="mw-geshi cpp source-cpp">a <span class="sy2">+</span> <span class="br0">(</span>x <span class="sy2">+</span> y<span class="br0">)</span></span></span> is valid, then <span class="t-c"><span class="mw-geshi cpp source-cpp">a <span class="sy2">+</span> <span class="br0">(</span>x <span class="sy2">+</span> y<span class="br0">)</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>a <span class="sy2">+</span> x<span class="br0">)</span> <span class="sy2">+</span> y</span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp">a <span class="sy2">+</span> <span class="nu0">0</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp">a</span></span>.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>a <span class="sy2">+</span> <span class="br0">(</span>n <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span></span></span> is valid, then <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">--</span>b</span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>a <span class="sy2">+</span> <span class="br0">(</span>n <span class="sy2">-</span> <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span></span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>b <span class="sy2">+</span><span class="sy1">=</span> <span class="sy2">-</span>n<span class="br0">)</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>b <span class="sy2">-</span><span class="sy1">=</span> n<span class="br0">)</span></span></span> are both equal to <span class="t-c"><span class="mw-geshi cpp source-cpp">a</span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/addressof.html"><span class="kw762">std::<span class="me2">addressof</span></span></a><span class="br0">(</span>b <span class="sy2">-</span><span class="sy1">=</span> n<span class="br0">)</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/addressof.html"><span class="kw762">std::<span class="me2">addressof</span></span></a><span class="br0">(</span>b<span class="br0">)</span></span></span>. <a href="random_access_iterator.html#addressof_note"><sup>[1]</sup></a>
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>b <span class="sy2">-</span> n<span class="br0">)</span></span></span> is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>b <span class="sy2">-</span><span class="sy1">=</span> n<span class="br0">)</span></span></span>.
+</li><li> If <span class="t-c"><span class="mw-geshi cpp source-cpp">b</span></span> is dereferenceable, then <span class="t-c"><span class="mw-geshi cpp source-cpp">a<span class="br0">[</span>n<span class="br0">]</span></span></span> is valid and is equal to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>b</span></span>.
+</li><li> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span><span class="br0">(</span>a <span class="sy1">&lt;=</span> b<span class="br0">)</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.
+</li><li> Every required operation has constant time complexity.
+</li></ul>
+<p><span id="addressof_note"></span>
+<small>Note that <span class="t-lc"><a href="../memory/addressof.html" title="cpp/memory/addressof">std::addressof</a></span> returns the address of the iterator object, not the address of the object the iterator points to. I.e. <code>operator+=</code> and <code>operator-=</code> must return a reference to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span>.</small>
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/concepts/equality_preservation&amp;action=edit&amp;section=T-1" title="Template:cpp/concepts/equality preservation">edit</a>]</span> <span class="mw-headline" id="Equality_preservation">Equality preservation</span></h3>
+<p>Expressions declared in <a href="../language/requires.html" title="cpp/language/requires"><span class="mw-geshi cpp source-cpp">requires</span> expressions</a> of the standard library concepts are required to be <a href="../concepts.html#Equality_preservation" title="cpp/concepts">equality-preserving</a> (except where stated otherwise).
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/concepts/implicit_expression_variations&amp;action=edit&amp;section=T-1" title="Template:cpp/concepts/implicit expression variations">edit</a>]</span> <span class="mw-headline" id="Implicit_expression_variations">Implicit expression variations</span></h3>
+<p>A <a href="../language/requires.html" title="cpp/language/requires"><span class="mw-geshi cpp source-cpp">requires</span> expression</a> that uses an expression that is non-modifying for some constant lvalue operand also requires <a href="../concepts.html#Implicit_expression_variations" title="cpp/concepts">implicit expression variations</a>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;action=edit&amp;section=2" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>Unlike the <a href="../named_req/RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a> requirements, the <code>random_access_iterator</code> concept does not require dereference to return an lvalue.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;action=edit&amp;section=3" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><p>Demonstrates a possible implementation of <span class="t-lc"><a href="distance.html" title="cpp/iterator/distance">std::distance</a></span> via C++20 concepts.</p><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;iterator&gt;
+&nbsp;
+namespace cxx20
+{
+    template&lt;std::input_or_output_iterator Iter&gt;
+    constexpr std::iter_difference_t&lt;Iter&gt; distance(Iter first, Iter last)
+    {
+        if constexpr(std::random_access_iterator&lt;Iter&gt;)
+            return last - first;
+        else
+        {
+            std::iter_difference_t&lt;Iter&gt; result{};
+            for (; first != last; ++first)
+                ++result;
+            return result;
+        }
+    }
+}
+&nbsp;
+int main()
+{
+    static constexpr auto il = {3, 1, 4};
+&nbsp;
+    static_assert(std::random_access_iterator&lt;decltype(il.begin())&gt; &amp;&amp;
+                  cxx20::distance(il.begin(), il.end()) == 3 &amp;&amp;
+                  cxx20::distance(il.end(), il.begin()) == -3);
+}</pre></div></div>
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;action=edit&amp;section=4" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="bidirectional_iterator.html" title="cpp/iterator/bidirectional iterator"> <span class="t-lines"><span>bidirectional_iterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a <a href="forward_iterator.html" title="cpp/iterator/forward iterator"><code>forward_iterator</code></a> is a bidirectional iterator, supporting movement backwards <br><br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_bidirectional_iterator&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="contiguous_iterator.html" title="cpp/iterator/contiguous iterator"> <span class="t-lines"><span>contiguous_iterator</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a <strong class="selflink"><code>random_access_iterator</code></strong> is a contiguous iterator, referring to elements that are contiguous in memory <br><br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/iterator/dsc_contiguous_iterator&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;oldid=159953">https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;oldid=159953</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="random_access_iterator.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/iterator/random_access_iterator" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/iterator/random_access_iterator" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;oldid=159953" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/iterator/random_access_iterator&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/iterator/random_access_iterator" hreflang="de" lang="de" title="cpp/iterator/random access iterator">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/iterator/random_access_iterator" hreflang="es" lang="es" title="cpp/iterator/random access iterator">Español</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/iterator/random_access_iterator" hreflang="ja" lang="ja" title="cpp/iterator/random access iterator">日本語</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/iterator/random_access_iterator" hreflang="ru" lang="ru" title="cpp/iterator/random access iterator">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/iterator/random_access_iterator" hreflang="zh" lang="zh" title="cpp/iterator/random access iterator">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 1 October 2023, at 12:04.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
+
+</div><div>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
                 <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::ranges::</span>binary_search</h1>
                 
                 
@@ -15908,6 +16194,1065 @@ html { font-variant-ligatures: no-common-ligatures; }
 
   gtag('config', 'G-8HW0LXMYCY');
 </script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::ranges::</span>random_access_range</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../ranges.html" title="cpp/ranges">ranges</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/ranges.html" title="cpp/header/ranges">&lt;ranges&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span><br><br>
+<p>concept random_access_range <span class="sy1">=</span><br><br>
+</p>
+&nbsp; &nbsp; <a href="bidirectional_range.html"><span class="kw2924">ranges::<span class="me2">bidirectional_range</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="sy3">&amp;&amp;</span> <a href="../iterator/random_access_iterator.html"><span class="kw2887">std::<span class="me2">random_access_iterator</span></span></a><span class="sy1">&lt;</span><a href="iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;&gt;</span><span class="sy4">;</span></span></div></td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>The <code>random_access_range</code> concept is a refinement of <a href="range.html" title="cpp/ranges/range"><code>range</code></a> for which <span class="t-lc">ranges::begin</span> returns a model of <a href="../iterator/random_access_iterator.html" title="cpp/iterator/random access iterator"><code>random_access_iterator</code></a>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges/random_access_range&amp;action=edit&amp;section=1" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;array&gt;
+#include &lt;deque&gt;
+#include &lt;list&gt;
+#include &lt;ranges&gt;
+#include &lt;set&gt;
+#include &lt;valarray&gt;
+#include &lt;vector&gt;
+&nbsp;
+template&lt;typename T&gt; concept RAR = std::ranges::random_access_range&lt;T&gt;;
+&nbsp;
+int main()
+{
+    int a[4];
+    static_assert(
+            RAR&lt;std::vector&lt;int&gt;&gt; and
+            RAR&lt;std::vector&lt;bool&gt;&gt; and
+            RAR&lt;std::deque&lt;int&gt;&gt; and
+            RAR&lt;std::valarray&lt;int&gt;&gt; and
+            RAR&lt;decltype(a)&gt; and
+        not RAR&lt;std::list&lt;int&gt;&gt; and
+        not RAR&lt;std::set&lt;int&gt;&gt; and
+            RAR&lt;std::array&lt;std::list&lt;int&gt;,42&gt;&gt;
+    );
+}</pre></div></div>
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges/random_access_range&amp;action=edit&amp;section=2" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="sized_range.html" title="cpp/ranges/sized range"> <span class="t-lines"><span>ranges::sized_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies that a range knows its size in constant time <br><br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_sized_range&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="contiguous_range.html" title="cpp/ranges/contiguous range"> <span class="t-lines"><span>ranges::contiguous_range</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td>  specifies a range whose iterator type satisfies <a href="../iterator/contiguous_iterator.html" title="cpp/iterator/contiguous iterator"><code>contiguous_iterator</code></a> <br><br> <span class="t-mark">(concept)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/ranges/dsc_contiguous_range&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges/random_access_range&amp;oldid=172808">https://en.cppreference.com/mwiki/index.php?title=cpp/ranges/random_access_range&amp;oldid=172808</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="random_access_range.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/ranges/random_access_range" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/ranges/random_access_range" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges/random_access_range&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges/random_access_range&amp;oldid=172808" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/ranges/random_access_range&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/ranges/random_access_range" hreflang="es" lang="es" title="cpp/ranges/random access range">Español</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/ranges/random_access_range" hreflang="ja" lang="ja" title="cpp/ranges/random access range">日本語</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/ranges/random_access_range" hreflang="zh" lang="zh" title="cpp/ranges/random access range">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 24 June 2024, at 21:51.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
+
+</div><div>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::ranges::</span>sort</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../algorithm.html" title="cpp/algorithm">algorithm</a>‎ | <a href="../ranges.html" title="cpp/algorithm/ranges">ranges</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/algorithm.html" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div>Call signature</div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../iterator/random_access_iterator.html"><span class="kw2887">std::<span class="me2">random_access_iterator</span></span></a> I, <a href="../../iterator/sentinel_for.html"><span class="kw2881">std::<span class="me2">sentinel_for</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S,<br><br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">class</span> Comp <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/less"><span class="kw2863">ranges::<span class="me2">less</span></span></a>, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a> <span class="sy1">&gt;</span><br><br>
+requires <a href="../../iterator/sortable.html"><span class="kw3157">std::<span class="me2">sortable</span></span></a><span class="sy1">&lt;</span>I, Comp, Proj<span class="sy1">&gt;</span><br><br>
+<span class="kw4">constexpr</span> I <br><br>
+</p>
+&nbsp; &nbsp; sort<span class="br0">(</span> I first, S last, Comp comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/random_access_range.html"><span class="kw2925">ranges::<span class="me2">random_access_range</span></span></a> R, <span class="kw1">class</span> Comp <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/less"><span class="kw2863">ranges::<span class="me2">less</span></span></a>,<br><br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a> <span class="sy1">&gt;</span><br><br>
+requires <a href="../../iterator/sortable.html"><span class="kw3157">std::<span class="me2">sortable</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, Comp, Proj<span class="sy1">&gt;</span><br><br>
+<span class="kw4">constexpr</span> <a href="../../ranges/borrowed_iterator_t.html"><span class="kw2874">ranges::<span class="me2">borrowed_iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span><br><br>
+</p>
+&nbsp; &nbsp; sort<span class="br0">(</span> R<span class="sy3">&amp;&amp;</span> r, Comp comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx20">(since C++20)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Sorts the elements in the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> in non-descending order. The order of equivalent elements is not guaranteed to be preserved.
+</p><p>A sequence is sorted with respect to a comparator <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> if for any iterator <code>it</code> pointing to the sequence and any non-negative integer <code>n</code> such that <code>it + n</code> is a valid iterator pointing to an element of the sequence, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>comp, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span><span class="br0">(</span>it <span class="sy2">+</span> n<span class="br0">)</span><span class="br0">)</span>, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span>it<span class="br0">)</span><span class="br0">)</span></span></span> evaluates to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>.
+</p>
+<div class="t-li1"><span class="t-li">1)</span> Elements are compared using the given binary comparison function <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span>.</div>
+<div class="t-li1"><span class="t-li">2)</span> Same as <span class="t-v">(1)</span>, but uses <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span> as the source range, as if using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/begin.html"><span class="kw2901">ranges::<span class="me2">begin</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/end.html"><span class="kw2903">ranges::<span class="me2">end</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span>.</div>
+<p>The function-like entities described on this page are <a href="../ranges.html#Algorithm_function_objects" title="cpp/algorithm/ranges"><i>algorithm function objects</i></a> (informally known as <i>niebloids</i>), that is:
+</p>
+<ul><li> Explicit template argument lists cannot be specified when calling any of them.
+</li><li> None of them are visible to <a href="../../language/adl.html" title="cpp/language/adl">argument-dependent lookup</a>.
+</li><li> When any of them are found by <a href="../../language/unqualified_lookup.html" title="cpp/language/unqualified lookup">normal unqualified lookup</a> as the name to the left of the function-call operator, <a href="../../language/adl.html" title="cpp/language/adl">argument-dependent lookup</a> is inhibited.
+</li></ul>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="sort.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="sort.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="sort.html#Complexity"><span class="tocnumber">3</span> <span class="toctext">Complexity</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="sort.html#Possible_implementation"><span class="tocnumber">4</span> <span class="toctext">Possible implementation</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="sort.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="sort.html#Example"><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="sort.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> first, last
+</td>
+<td> -
+</td>
+<td> the iterator-sentinel pair defining the  <a href="../../iterator.html#Ranges" title="cpp/iterator">range</a> of elements to sort
+</td></tr>
+<tr class="t-par">
+<td> r
+</td>
+<td> -
+</td>
+<td> the range to sort
+</td></tr>
+<tr class="t-par">
+<td> comp
+</td>
+<td> -
+</td>
+<td> comparison to apply to the projected elements
+</td></tr>
+<tr class="t-par">
+<td> proj
+</td>
+<td> -
+</td>
+<td> projection to apply to the elements
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>An iterator equal to <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=edit&amp;section=3" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
+<p><span class="mjax" style="display:none">\(\scriptsize \mathcal{O}(N\cdot\log{(N)})\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">𝓞(N·log(N))</span> comparisons and projections, where <span class="t-c"><span class="mw-geshi cpp source-cpp">N <span class="sy1">=</span> <a href="../../iterator/ranges/distance.html"><span class="kw3161">ranges::<span class="me2">distance</span></span></a><span class="br0">(</span>first, last<span class="br0">)</span></span></span>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=edit&amp;section=4" title="Edit section: Possible implementation">edit</a>]</span> <span class="mw-headline" id="Possible_implementation">Possible implementation</span></h3>
+<p>Note that typical implementations use <a class="extiw" href="https://en.wikipedia.org/wiki/Introsort" title="enwiki:Introsort">Introsort</a>. See also the implementation in <a class="external text" href="https://github.com/microsoft/STL/blob/e745bad3b1d05b5b19ec652d68abb37865ffa454/stl/inc/algorithm#L7575-L7641" rel="nofollow">MSVC STL</a> and <a class="external text" href="https://github.com/gcc-mirror/gcc/blob/54258e22b0846aaa6bd3265f592feb161eecda75/libstdc%2B%2B-v3/include/bits/ranges_algo.h#L1808-L1834" rel="nofollow">libstdc++</a>.
+</p>
+<table class="eq-fun-cpp-table">
+
+
+<tbody><tr>
+<td>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">struct sort_fn
+{
+    template&lt;std::random_access_iterator I, std::sentinel_for&lt;I&gt; S,
+             class Comp = ranges::less, class Proj = std::identity&gt;
+    requires std::sortable&lt;I, Comp, Proj&gt;
+    constexpr I
+        operator()(I first, S last, Comp comp = {}, Proj proj = {}) const
+    {
+        if (first == last)
+            return first;
+&nbsp;
+        I last_iter = ranges::next(first, last);
+        ranges::make_heap(first, last_iter, std::ref(comp), std::ref(proj));
+        ranges::sort_heap(first, last_iter, std::ref(comp), std::ref(proj));
+&nbsp;
+        return last_iter;
+    }
+&nbsp;
+    template&lt;ranges::random_access_range R, class Comp = ranges::less,
+             class Proj = std::identity&gt;
+    requires std::sortable&lt;ranges::iterator_t&lt;R&gt;, Comp, Proj&gt;
+    constexpr ranges::borrowed_iterator_t&lt;R&gt;
+        operator()(R&amp;&amp; r, Comp comp = {}, Proj proj = {}) const
+    {
+        return (*this)(ranges::begin(r), ranges::end(r), std::move(comp), std::move(proj));
+    }
+};
+&nbsp;
+inline constexpr sort_fn sort {};</pre></div></div>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p><span class="t-lc"><a href="../sort.html" title="cpp/algorithm/sort">std::sort</a></span> uses <span class="t-lc"><a href="../iter_swap.html" title="cpp/algorithm/iter swap">std::iter_swap</a></span> to swap elements, whereas <code>ranges::sort</code> instead uses <span class="t-lc"><a href="../../iterator/ranges/iter_swap.html" title="cpp/iterator/ranges/iter swap">ranges::iter_swap</a></span> (which performs ADL for <code>iter_swap</code>, unlike <span class="t-lc"><a href="../iter_swap.html" title="cpp/algorithm/iter swap">std::iter_swap</a></span>)
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=edit&amp;section=6" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;algorithm&gt;
+#include &lt;array&gt;
+#include &lt;functional&gt;
+#include &lt;iomanip&gt;
+#include &lt;iostream&gt;
+&nbsp;
+void print(auto comment, auto const&amp; seq, char term = ' ')
+{
+    for (std::cout &lt;&lt; comment &lt;&lt; '\n'; auto const&amp; elem : seq)
+        std::cout &lt;&lt; elem &lt;&lt; term;
+    std::cout &lt;&lt; '\n';
+}
+&nbsp;
+struct Particle
+{
+    std::string name; double mass; // MeV
+    template&lt;class Os&gt; friend
+    Os&amp; operator&lt;&lt;(Os&amp; os, Particle const&amp; p)
+    {
+        return os &lt;&lt; std::left &lt;&lt; std::setw(8) &lt;&lt; p.name &lt;&lt; "&nbsp;: " &lt;&lt; p.mass &lt;&lt; ' ';
+    }
+};
+&nbsp;
+int main()
+{
+    std::array s {5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
+&nbsp;
+    namespace ranges = std::ranges;
+&nbsp;
+    ranges::sort(s);
+    print("Sort using the default operator&lt;", s);
+&nbsp;
+    ranges::sort(s, ranges::greater());
+    print("Sort using a standard library compare function object", s);
+&nbsp;
+    struct
+    {
+        bool operator()(int a, int b) const { return a &lt; b; }
+    } customLess;
+    ranges::sort(s.begin(), s.end(), customLess);
+    print("Sort using a custom function object", s);
+&nbsp;
+    ranges::sort(s, [](int a, int b) { return a &gt; b; });
+    print("Sort using a lambda expression", s);
+&nbsp;
+    Particle particles[]
+    {
+        {"Electron", 0.511}, {"Muon", 105.66}, {"Tau", 1776.86},
+        {"Positron", 0.511}, {"Proton", 938.27}, {"Neutron", 939.57}
+    };
+    ranges::sort(particles, {}, &amp;Particle::name);
+    print("\nSort by name using a projection", particles, '\n');
+    ranges::sort(particles, {}, &amp;Particle::mass);
+    print("Sort by mass using a projection", particles, '\n');
+}</pre></div></div>
+<p>Output:
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">Sort using the default operator&lt;
+0 1 2 3 4 5 6 7 8 9
+Sort using a standard library compare function object
+9 8 7 6 5 4 3 2 1 0
+Sort using a custom function object
+0 1 2 3 4 5 6 7 8 9
+Sort using a lambda expression
+9 8 7 6 5 4 3 2 1 0
+&nbsp;
+Sort by name using a projection
+Electron&nbsp;: 0.511
+Muon    &nbsp;: 105.66
+Neutron &nbsp;: 939.57
+Positron&nbsp;: 0.511
+Proton  &nbsp;: 938.27
+Tau     &nbsp;: 1776.86
+&nbsp;
+Sort by mass using a projection
+Electron&nbsp;: 0.511
+Positron&nbsp;: 0.511
+Muon    &nbsp;: 105.66
+Proton  &nbsp;: 938.27
+Neutron &nbsp;: 939.57
+Tau     &nbsp;: 1776.86</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=edit&amp;section=7" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="partial_sort.html" title="cpp/algorithm/ranges/partial sort"> <span class="t-lines"><span>ranges::partial_sort</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> sorts the first N elements of a range<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_partial_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="stable_sort.html" title="cpp/algorithm/ranges/stable sort"> <span class="t-lines"><span>ranges::stable_sort</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> sorts a range of elements while preserving order between equal elements<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_stable_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="partition.html" title="cpp/algorithm/ranges/partition"> <span class="t-lines"><span>ranges::partition</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> divides a range of elements into two groups<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_partition&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../sort.html" title="cpp/algorithm/sort"> <span class="t-lines"><span>sort</span></span></a></div></div>
+</td>
+<td>  sorts a range into ascending order <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;oldid=180547">https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;oldid=180547</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="sort.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/algorithm/ranges/sort" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/algorithm/ranges/sort" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;oldid=180547" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/sort&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="de" lang="de" title="cpp/algorithm/ranges/sort">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="es" lang="es" title="cpp/algorithm/ranges/sort">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="fr" lang="fr" title="cpp/algorithm/ranges/sort">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="it" lang="it" title="cpp/algorithm/ranges/sort">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="ja" lang="ja" title="cpp/algorithm/ranges/sort">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="pt" lang="pt" title="cpp/algorithm/ranges/sort">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="ru" lang="ru" title="cpp/algorithm/ranges/sort">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm/ranges/sort" hreflang="zh" lang="zh" title="cpp/algorithm/ranges/sort">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 12 February 2025, at 01:39.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
+
+</div><div>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::ranges::</span>stable_sort</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../algorithm.html" title="cpp/algorithm">algorithm</a>‎ | <a href="../ranges.html" title="cpp/algorithm/ranges">ranges</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/algorithm.html" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div>Call signature</div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../iterator/random_access_iterator.html"><span class="kw2887">std::<span class="me2">random_access_iterator</span></span></a> I, <a href="../../iterator/sentinel_for.html"><span class="kw2881">std::<span class="me2">sentinel_for</span></span></a><span class="sy1">&lt;</span>I<span class="sy1">&gt;</span> S,<br><br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">class</span> Comp <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/less"><span class="kw2863">ranges::<span class="me2">less</span></span></a>, <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a> <span class="sy1">&gt;</span><br><br>
+requires <a href="../../iterator/sortable.html"><span class="kw3156">std::<span class="me2">sortable</span></span></a><span class="sy1">&lt;</span>I, Comp, Proj<span class="sy1">&gt;</span><br><br>
+</p>
+&nbsp; &nbsp; I stable_sort<span class="br0">(</span> I first, S last, Comp comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (1)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span> <br><br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx20">
+<td><div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <a href="../../ranges/random_access_range.html"><span class="kw2925">ranges::<span class="me2">random_access_range</span></span></a> R, <span class="kw1">class</span> Comp <span class="sy1">=</span> <a href="http://en.cppreference.com/w/cpp/ranges-functional-placeholder/less"><span class="kw2863">ranges::<span class="me2">less</span></span></a>,<br><br>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">class</span> Proj <span class="sy1">=</span> <a href="../../utility/functional/identity.html"><span class="kw2742">std::<span class="me2">identity</span></span></a> <span class="sy1">&gt;</span><br><br>
+requires <a href="../../iterator/sortable.html"><span class="kw3156">std::<span class="me2">sortable</span></span></a><span class="sy1">&lt;</span><a href="../../ranges/iterator_t.html"><span class="kw2909">ranges::<span class="me2">iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span>, Comp, Proj<span class="sy1">&gt;</span><br><br>
+<a href="../../ranges/borrowed_iterator_t.html"><span class="kw2874">ranges::<span class="me2">borrowed_iterator_t</span></span></a><span class="sy1">&lt;</span>R<span class="sy1">&gt;</span><br><br>
+</p>
+&nbsp; &nbsp; stable_sort<span class="br0">(</span> R<span class="sy3">&amp;&amp;</span> r, Comp comp <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span>, Proj proj <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2)</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span> <br><br><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Sorts the elements in the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> in non-descending order. The order of equivalent elements is <i>stable</i>, i.e. guaranteed to be preserved.
+</p><p>A sequence is sorted with respect to a comparator <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> if for any iterator <code>it</code> pointing to the sequence and any non-negative integer <code>n</code> such that <code>it + n</code> is a valid iterator pointing to an element of the sequence, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>comp, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span><span class="br0">(</span>it <span class="sy2">+</span> n<span class="br0">)</span><span class="br0">)</span>, <a href="../../utility/functional/invoke.html"><span class="kw1066">std::<span class="me2">invoke</span></span></a><span class="br0">(</span>proj, <span class="sy2">*</span>it<span class="br0">)</span></span></span> evaluates to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>.
+</p>
+<div class="t-li1"><span class="t-li">1)</span> Elements are compared using the given binary comparison function <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span>.</div>
+<div class="t-li1"><span class="t-li">2)</span> Same as <span class="t-v">(1)</span>, but uses <span class="t-c"><span class="mw-geshi cpp source-cpp">r</span></span> as the range, as if using <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/begin.html"><span class="kw2901">ranges::<span class="me2">begin</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../ranges/end.html"><span class="kw2903">ranges::<span class="me2">end</span></span></a><span class="br0">(</span>r<span class="br0">)</span></span></span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span>.</div>
+<p>The function-like entities described on this page are <a href="../ranges.html#Algorithm_function_objects" title="cpp/algorithm/ranges"><i>algorithm function objects</i></a> (informally known as <i>niebloids</i>), that is:
+</p>
+<ul><li> Explicit template argument lists cannot be specified when calling any of them.
+</li><li> None of them are visible to <a href="../../language/adl.html" title="cpp/language/adl">argument-dependent lookup</a>.
+</li><li> When any of them are found by <a href="../../language/unqualified_lookup.html" title="cpp/language/unqualified lookup">normal unqualified lookup</a> as the name to the left of the function-call operator, <a href="../../language/adl.html" title="cpp/language/adl">argument-dependent lookup</a> is inhibited.
+</li></ul>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="stable_sort.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="stable_sort.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="stable_sort.html#Complexity"><span class="tocnumber">3</span> <span class="toctext">Complexity</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="stable_sort.html#Notes"><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="stable_sort.html#Possible_implementation"><span class="tocnumber">5</span> <span class="toctext">Possible implementation</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="stable_sort.html#Example"><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="stable_sort.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> first, last
+</td>
+<td> -
+</td>
+<td> the iterator-sentinel pair defining the  <a href="../../iterator.html#Ranges" title="cpp/iterator">range</a> of elements to sort
+</td></tr>
+<tr class="t-par">
+<td> r
+</td>
+<td> -
+</td>
+<td> the range to sort
+</td></tr>
+<tr class="t-par">
+<td> comp
+</td>
+<td> -
+</td>
+<td> comparison to apply to the projected elements
+</td></tr>
+<tr class="t-par">
+<td> proj
+</td>
+<td> -
+</td>
+<td> projection to apply to the elements
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=edit&amp;section=2" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span></h3>
+<p>An iterator equal to <span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=edit&amp;section=3" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
+<p><span class="mjax" style="display:none">\(\scriptsize N\cdot\log{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N·log(N)</span> comparisons, if extra memory is available; where <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../iterator/ranges/distance.html"><span class="kw3160">ranges::<span class="me2">distance</span></span></a><span class="br0">(</span>first, last<span class="br0">)</span></span></span>. <span class="mjax" style="display:none">\(\scriptsize N\cdot\log^2{(N)}\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N·log²(N)</span> comparisons otherwise. Twice as many projections as the number of comparisons in both cases.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=edit&amp;section=4" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<table class="wikitable ftm-begin">
+
+<tbody><tr>
+<th><a href="../../utility/feature_test.html" title="cpp/utility/feature test">Feature-test</a> macro</th>
+<th><abbr title="The year/month in which the feature was adopted. The hyperlink under each value opens a compiler support page with entry for given feature.">Value</abbr></th>
+<th><abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr></th>
+<th>Feature
+</th></tr>
+<tr>
+<td><a href="../../experimental/feature_test.html#cpp_lib_constexpr_algorithms" title="cpp/feature test"><code>__cpp_lib_constexpr_algorithms</code></a></td>
+<td><a href="../../compiler_support/26.html#cpp_lib_constexpr_algorithms_202306L" title="cpp/compiler support/26"><code>202306L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span> stable sorting
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=edit&amp;section=5" title="Edit section: Possible implementation">edit</a>]</span> <span class="mw-headline" id="Possible_implementation">Possible implementation</span></h3>
+<p>This implementation only shows the slower algorithm used when no additional memory is available. See also implementation in <a class="external text" href="https://github.com/microsoft/STL/blob/e745bad3b1d05b5b19ec652d68abb37865ffa454/stl/inc/algorithm#L7842-L8094" rel="nofollow">MSVC STL</a> and <a class="external text" href="https://github.com/gcc-mirror/gcc/blob/54258e22b0846aaa6bd3265f592feb161eecda75/libstdc%2B%2B-v3/include/bits/ranges_algo.h#L1836-L1862" rel="nofollow">libstdc++</a>.
+</p>
+<table class="eq-fun-cpp-table">
+
+
+<tbody><tr>
+<td>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">struct stable_sort_fn
+{
+    template&lt;std::random_access_iterator I, std::sentinel_for&lt;I&gt; S,
+             class Comp = ranges::less, class Proj = std::identity&gt;
+    requires std::sortable&lt;I, Comp, Proj&gt;
+    constexpr //&lt; since C++26
+    I operator()(I first, S last, Comp comp = {}, Proj proj = {}) const
+    {
+        auto count = ranges::distance(first, last);
+        auto mid = first + count / 2;
+        auto last_it = first + count;
+&nbsp;
+        if (count &lt;= 1)
+            return last_it;
+&nbsp;
+        (*this)(first, mid, std::ref(comp), std::ref(proj));
+        (*this)(mid, last_it, std::ref(comp), std::ref(proj));
+&nbsp;
+        ranges::inplace_merge(first, mid, last_it);
+&nbsp;
+        return last_it;
+    }
+&nbsp;
+    template&lt;ranges::random_access_range R, class Comp = ranges::less,
+             class Proj = std::identity&gt;
+    requires std::sortable&lt;ranges::iterator_t&lt;R&gt;, Comp, Proj&gt;
+    constexpr //&lt; since C++26
+    ranges::borrowed_iterator_t&lt;R&gt; operator()(R&amp;&amp; r, Comp comp = {}, Proj proj = {}) const
+    {
+        return (*this)(ranges::begin(r), ranges::end(r), std::move(comp), std::move(proj));
+    }
+};
+&nbsp;
+inline constexpr stable_sort_fn stable_sort{};</pre></div></div>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=edit&amp;section=6" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;algorithm&gt;
+#include &lt;array&gt;
+#include &lt;functional&gt;
+#include &lt;iomanip&gt;
+#include &lt;iostream&gt;
+&nbsp;
+void print(const auto&amp; seq)
+{
+    for (const auto&amp; elem : seq)
+        std::cout &lt;&lt; elem &lt;&lt; ' ';
+    std::cout &lt;&lt; '\n';
+}
+&nbsp;
+struct Particle
+{
+    std::string name; double mass; // MeV
+    friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Particle&amp; p)
+    {
+        return os &lt;&lt; '\n' &lt;&lt; std::left &lt;&lt; std::setw(8) &lt;&lt; p.name &lt;&lt; "&nbsp;: " &lt;&lt; p.mass;
+    }
+};
+&nbsp;
+int main()
+{
+    std::array s{5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
+&nbsp;
+    // sort using the default operator&lt;
+    std::ranges::stable_sort(s);
+    print(s);
+&nbsp;
+    // sort using a standard library compare function object
+    std::ranges::stable_sort(s, std::ranges::greater());
+    print(s);
+&nbsp;
+    // sort using a custom function object
+    struct
+    {
+        bool operator()(int a, int b) const { return a &lt; b; }
+    } customLess;
+    std::ranges::stable_sort(s.begin(), s.end(), customLess);
+    print(s);
+&nbsp;
+    // sort using a lambda expression
+    std::ranges::stable_sort(s, [](int a, int b) { return a &gt; b; });
+    print(s);
+&nbsp;
+    // sort with projection
+    Particle particles[]
+    {
+        {"Electron", 0.511}, {"Muon", 105.66}, {"Tau", 1776.86},
+        {"Positron", 0.511}, {"Proton", 938.27}, {"Neutron", 939.57}
+    };
+    print(particles);
+    std::ranges::stable_sort(particles, {}, &amp;Particle::name); //&lt; sorts by name
+    print(particles);
+    std::ranges::stable_sort(particles, {}, &amp;Particle::mass); //&lt; sorts by mass
+    print(particles);
+}</pre></div></div>
+<p>Output:
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">0 1 2 3 4 5 6 7 8 9
+9 8 7 6 5 4 3 2 1 0
+0 1 2 3 4 5 6 7 8 9
+9 8 7 6 5 4 3 2 1 0
+&nbsp;
+Electron&nbsp;: 0.511
+Muon    &nbsp;: 105.66
+Tau     &nbsp;: 1776.86
+Positron&nbsp;: 0.511
+Proton  &nbsp;: 938.27
+Neutron &nbsp;: 939.57
+&nbsp;
+Electron&nbsp;: 0.511
+Muon    &nbsp;: 105.66
+Neutron &nbsp;: 939.57
+Positron&nbsp;: 0.511
+Proton  &nbsp;: 938.27
+Tau     &nbsp;: 1776.86
+&nbsp;
+Electron&nbsp;: 0.511
+Positron&nbsp;: 0.511
+Muon    &nbsp;: 105.66
+Proton  &nbsp;: 938.27
+Neutron &nbsp;: 939.57
+Tau     &nbsp;: 1776.86</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=edit&amp;section=7" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="sort.html" title="cpp/algorithm/ranges/sort"> <span class="t-lines"><span>ranges::sort</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> sorts a range into ascending order<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="partial_sort.html" title="cpp/algorithm/ranges/partial sort"> <span class="t-lines"><span>ranges::partial_sort</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> sorts the first N elements of a range<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_partial_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="stable_partition.html" title="cpp/algorithm/ranges/stable partition"> <span class="t-lines"><span>ranges::stable_partition</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> divides elements into two groups while preserving their relative order<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_stable_partition&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../stable_sort.html" title="cpp/algorithm/stable sort"> <span class="t-lines"><span>stable_sort</span></span></a></div></div>
+</td>
+<td>  sorts a range of elements while preserving order between equal elements <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_stable_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;oldid=180666">https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;oldid=180666</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="stable_sort.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/algorithm/ranges/stable_sort" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/algorithm/ranges/stable_sort" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;oldid=180666" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/ranges/stable_sort&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="de" lang="de" title="cpp/algorithm/ranges/stable sort">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="es" lang="es" title="cpp/algorithm/ranges/stable sort">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="fr" lang="fr" title="cpp/algorithm/ranges/stable sort">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="it" lang="it" title="cpp/algorithm/ranges/stable sort">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="ja" lang="ja" title="cpp/algorithm/ranges/stable sort">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="pt" lang="pt" title="cpp/algorithm/ranges/stable sort">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="ru" lang="ru" title="cpp/algorithm/ranges/stable sort">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm/ranges/stable_sort" hreflang="zh" lang="zh" title="cpp/algorithm/ranges/stable sort">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 14 February 2025, at 08:35.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
+
+</div><div>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
                 <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::ranges::</span>unique</h1>
                 
                 
@@ -19409,6 +20754,786 @@ mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
 mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
 }</script>
 <script src="../../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
+
+</div><div>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>sort</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../algorithm.html" title="cpp/algorithm">algorithm</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/algorithm.html" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> RandomIt <span class="sy1">&gt;</span><br><br>
+<span class="kw4">void</span> sort<span class="br0">(</span> RandomIt first, RandomIt last <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (1) </td>
+<td> <span class="t-mark-rev t-since-cxx20">(constexpr since C++20)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> ExecutionPolicy, <span class="kw1">class</span> RandomIt <span class="sy1">&gt;</span><br><br>
+<p><span class="kw4">void</span> sort<span class="br0">(</span> ExecutionPolicy<span class="sy3">&amp;&amp;</span> policy,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RandomIt first, RandomIt last <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> RandomIt, <span class="kw1">class</span> Compare <span class="sy1">&gt;</span><br><br>
+<span class="kw4">void</span> sort<span class="br0">(</span> RandomIt first, RandomIt last, Compare comp <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (3) </td>
+<td> <span class="t-mark-rev t-since-cxx20">(constexpr since C++20)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> ExecutionPolicy, <span class="kw1">class</span> RandomIt, <span class="kw1">class</span> Compare <span class="sy1">&gt;</span><br><br>
+<p><span class="kw4">void</span> sort<span class="br0">(</span> ExecutionPolicy<span class="sy3">&amp;&amp;</span> policy,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;RandomIt first, RandomIt last, Compare comp <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (4) </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Sorts the elements in the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> in non-descending order. The order of equal elements is not guaranteed to be preserved.
+</p>
+<div class="t-li1"><span class="t-li">1)</span> Elements are <a href="../algorithm.html#Requirements" title="cpp/algorithm">sorted</a> with respect to <span class="t-rev-inl t-until-cxx20"><span><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;</span></span></span><span><span class="t-mark-rev t-until-cxx20">(until C++20)</span></span></span><span class="t-rev-inl t-since-cxx20"><span><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/functional/less.html"><span class="kw1047">std::<span class="me2">less</span></span></a><span class="br0">{</span><span class="br0">}</span></span></span></span><span><span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3)</span> Elements are sorted with respect to <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span>.</div>
+<div class="t-li1"><span class="t-li">2,4)</span> Same as <span class="t-v">(1,3)</span>, but executed according to <span class="t-c"><span class="mw-geshi cpp source-cpp">policy</span></span>.</div>
+<div class="t-li1"><span class="t-li"></span> These overloads participate in overload resolution only if all following conditions are satisfied:
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-until-cxx20"><td>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_execution_policy.html"><span class="kw1577">std::<span class="me2">is_execution_policy_v</span></span></a><span class="sy1">&lt;</span><a href="../types/decay.html"><span class="kw635">std::<span class="me2">decay_t</span></span></a><span class="sy1">&lt;</span>ExecutionPolicy<span class="sy1">&gt;&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx20">(until C++20)</span></td></tr>
+<tr class="t-rev t-since-cxx20"><td>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_execution_policy.html"><span class="kw1577">std::<span class="me2">is_execution_policy_v</span></span></a><span class="sy1">&lt;</span><a href="../types/remove_cvref.html"><span class="kw2661">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span>ExecutionPolicy<span class="sy1">&gt;&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td></tr>
+</tbody></table></div>
+<p>If any of the following conditions is satisfied, the behavior is undefined:
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-until-cxx11"><td>
+<ul><li> The type of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>first</span></span> is not <a href="../named_req/Swappable.html" title="cpp/named req/Swappable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Swappable</span></a>.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td></tr>
+<tr class="t-rev t-since-cxx11"><td>
+<ul><li> <code>RandomIt</code> is not <a href="../named_req/ValueSwappable.html" title="cpp/named req/ValueSwappable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">ValueSwappable</span></a>.
+</li><li> The type of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>first</span></span> is not <a href="../named_req/MoveConstructible.html" title="cpp/named req/MoveConstructible"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">MoveConstructible</span></a>.
+</li><li> The type of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>first</span></span> is not <a href="../named_req/MoveAssignable.html" title="cpp/named req/MoveAssignable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">MoveAssignable</span></a>.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td></tr>
+</tbody></table>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="sort.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="sort.html#Complexity"><span class="tocnumber">2</span> <span class="toctext">Complexity</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="sort.html#Exceptions"><span class="tocnumber">3</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="sort.html#Possible_implementation"><span class="tocnumber">4</span> <span class="toctext">Possible implementation</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="sort.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="sort.html#Example"><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="sort.html#Defect_reports"><span class="tocnumber">7</span> <span class="toctext">Defect reports</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="sort.html#See_also"><span class="tocnumber">8</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> first, last
+</td>
+<td> -
+</td>
+<td> the pair of iterators defining the  <a href="../iterator.html#Ranges" title="cpp/iterator">range</a> of elements to sort
+</td></tr>
+<tr class="t-par">
+<td> policy
+</td>
+<td> -
+</td>
+<td> the <a href="execution_policy_tag_t.html" title="cpp/algorithm/execution policy tag t">execution policy</a> to use
+</td></tr>
+<tr class="t-par">
+<td> comp
+</td>
+<td> -
+</td>
+<td> comparison function object (i.e. an object that satisfies the requirements of <a href="../named_req/Compare.html" title="cpp/named req/Compare"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Compare</span></a>) which returns ​<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if the first argument is <i>less</i> than (i.e. is ordered <i>before</i>) the second. <br><br>
+<p>The signature of the comparison function should be equivalent to the following:
+</p><p><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> cmp<span class="br0">(</span><span class="kw4">const</span> Type1<span class="sy3">&amp;</span> a, <span class="kw4">const</span> Type2<span class="sy3">&amp;</span> b<span class="br0">)</span><span class="sy4">;</span></span></span>
+</p><p>While the signature does not need to have <span class="mw-geshi cpp source-cpp"><span class="kw4">const</span><span class="sy3">&amp;</span></span>, the function must not modify the objects passed to it and must be able to accept all values of type (possibly const) <code>Type1</code> and <code>Type2</code> regardless of <a href="../language/value_category.html" title="cpp/language/value category">value category</a> (thus, <code>Type1&amp;</code> is not allowed<span class="t-rev-inl t-since-cxx11"><span>, nor is <code>Type1</code> unless for <code>Type1</code> a move is equivalent to a copy</span><span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span>).<br><br>
+The types <span class="mw-geshi cpp source-cpp">Type1</span> and <span class="mw-geshi cpp source-cpp">Type2</span> must be such that an object of type <span class="mw-geshi cpp source-cpp">RandomIt</span> can be dereferenced and then implicitly converted to both of them.
+​
+</p>
+</td></tr>
+<tr class="t-par-hitem">
+<td colspan="3"> Type requirements
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>RandomIt</code> must meet the requirements of <a href="../named_req/RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a>.
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>Compare</code> must meet the requirements of <a href="../named_req/Compare.html" title="cpp/named req/Compare"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Compare</span></a>.
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=2" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
+<p>Given <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">last <span class="sy2">-</span> first</span></span>:
+</p>
+<div class="t-li1"><span class="t-li">1,2)</span> <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log(N))</span> comparisons using <span class="t-rev-inl t-until-cxx20"><span><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;</span></span></span><span><span class="t-mark-rev t-until-cxx20">(until C++20)</span></span></span><span class="t-rev-inl t-since-cxx20"><span><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/functional/less.html"><span class="kw1047">std::<span class="me2">less</span></span></a><span class="br0">{</span><span class="br0">}</span></span></span></span><span><span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3,4)</span> <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log(N))</span> applications of the comparator <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span>.</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
+<p>The overloads with a template parameter named <code>ExecutionPolicy</code> report errors as follows:
+</p>
+<ul><li> If execution of a function invoked as part of the algorithm throws an exception and <code>ExecutionPolicy</code> is one of the <a href="execution_policy_tag_t.html" title="cpp/algorithm/execution policy tag t">standard policies</a>, <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> is called. For any other <code>ExecutionPolicy</code>, the behavior is implementation-defined.
+</li><li> If the algorithm fails to allocate memory, <span class="t-lc"><a href="../memory/new/bad_alloc.html" title="cpp/memory/new/bad alloc">std::bad_alloc</a></span> is thrown.
+</li></ul>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=4" title="Edit section: Possible implementation">edit</a>]</span> <span class="mw-headline" id="Possible_implementation">Possible implementation</span></h3>
+<p>See also the implementations in <a class="external text" href="https://github.com/gcc-mirror/gcc/blob/d9375e490072d1aae73a93949aa158fcd2a27018/libstdc%2B%2B-v3/include/bits/stl_algo.h#L1950" rel="nofollow">libstdc++</a> and <a class="external text" href="https://github.com/llvm/llvm-project/blob/e7fc254875ca9e82b899d5354fae9b5b779ff485/libcxx/include/__algorithm/sort.h#L264" rel="nofollow">libc++</a>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>Before <a class="external text" href="https://cplusplus.github.io/LWG/issue713" rel="nofollow">LWG713</a>, the complexity requirement allowed <code>sort()</code> to be implemented using only <a class="extiw" href="https://en.wikipedia.org/wiki/Quicksort" title="enwiki:Quicksort">Quicksort</a>, which may need <span class="mjax" style="display:none">\(\scriptsize O(N^2)\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N<span class="t-su">2<br><br></span>)</span> comparisons in the worst case.
+</p><p><a class="extiw" href="https://en.wikipedia.org/wiki/Introsort" title="enwiki:Introsort">Introsort</a> can handle all cases with <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log(N))</span> comparisons (without incurring additional overhead in the average case), and thus is usually used for implementing <code>sort()</code>.
+</p><p>libc++ has not implemented the corrected time complexity requirement <a class="external text" href="https://reviews.llvm.org/D113413" rel="nofollow">until LLVM 14</a>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=6" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;algorithm&gt;
+#include &lt;array&gt;
+#include &lt;functional&gt;
+#include &lt;iostream&gt;
+#include &lt;string_view&gt;
+&nbsp;
+int main()
+{
+    std::array&lt;int, 10&gt; s{5, 7, 4, 2, 8, 6, 1, 9, 0, 3};
+&nbsp;
+    auto print = [&amp;s](std::string_view const rem)
+    {
+        for (auto a : s)
+            std::cout &lt;&lt; a &lt;&lt; ' ';
+        std::cout &lt;&lt; ": " &lt;&lt; rem &lt;&lt; '\n';
+    };
+&nbsp;
+    std::sort(s.begin(), s.end());
+    print("sorted with the default operator&lt;");
+&nbsp;
+    std::sort(s.begin(), s.end(), std::greater&lt;int&gt;());
+    print("sorted with the standard library compare function object");
+&nbsp;
+    struct
+    {
+        bool operator()(int a, int b) const { return a &lt; b; }
+    }
+    customLess;
+&nbsp;
+    std::sort(s.begin(), s.end(), customLess);
+    print("sorted with a custom function object");
+&nbsp;
+    std::sort(s.begin(), s.end(), [](int a, int b)
+                                  {
+                                      return a &gt; b;
+                                  });
+    print("sorted with a lambda expression");
+}</pre></div></div>
+<p>Output:
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">0 1 2 3 4 5 6 7 8 9&nbsp;: sorted with the default operator&lt;
+9 8 7 6 5 4 3 2 1 0&nbsp;: sorted with the standard library compare function object
+0 1 2 3 4 5 6 7 8 9&nbsp;: sorted with a custom function object
+9 8 7 6 5 4 3 2 1 0&nbsp;: sorted with a lambda expression</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=7" title="Edit section: Defect reports">edit</a>]</span> <span class="mw-headline" id="Defect_reports">Defect reports</span></h3>
+<p>The following behavior-changing defect reports were applied retroactively to previously published C++ standards.
+</p>
+<table class="dsctable" style="font-size:0.8em">
+<tbody><tr>
+<th>DR
+</th>
+<th>Applied to
+</th>
+<th>Behavior as published
+</th>
+<th>Correct behavior
+</th></tr>
+<tr>
+<td><a class="external text" href="https://cplusplus.github.io/LWG/issue713" rel="nofollow">LWG 713</a>
+</td>
+<td>C++98
+</td>
+<td>the <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log(N))</span> time complexity was only required on the average
+</td>
+<td>it is required for the worst case
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=edit&amp;section=8" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="partial_sort.html" title="cpp/algorithm/partial sort"> <span class="t-lines"><span>partial_sort</span></span></a></div></div>
+</td>
+<td>  sorts the first N elements of a range <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_partial_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="stable_sort.html" title="cpp/algorithm/stable sort"> <span class="t-lines"><span>stable_sort</span></span></a></div></div>
+</td>
+<td>  sorts a range of elements while preserving order between equal elements <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_stable_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="ranges/sort.html" title="cpp/algorithm/ranges/sort"> <span class="t-lines"><span>ranges::sort</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> sorts a range into ascending order<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;oldid=180389">https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;oldid=180389</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="sort.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/algorithm/sort" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/algorithm/sort" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;oldid=180389" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/sort&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/algorithm/sort" hreflang="de" lang="de" title="cpp/algorithm/sort">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm/sort" hreflang="es" lang="es" title="cpp/algorithm/sort">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm/sort" hreflang="fr" lang="fr" title="cpp/algorithm/sort">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm/sort" hreflang="it" lang="it" title="cpp/algorithm/sort">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm/sort" hreflang="ja" lang="ja" title="cpp/algorithm/sort">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm/sort" hreflang="pt" lang="pt" title="cpp/algorithm/sort">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm/sort" hreflang="ru" lang="ru" title="cpp/algorithm/sort">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm/sort" hreflang="zh" lang="zh" title="cpp/algorithm/sort">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 10 February 2025, at 00:33.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+
+	
+
+
+</div><div>
+        
+        
+        
+        
+<style type="text/css">
+#carbonads {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  left: -170px;
+  max-width: 150px;
+  border-radius: 4px;
+  border: solid 1px hsla(0, 0%, 0%, .1);
+  background-color: hsl(0, 0%, 98%);
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu,
+  Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#carbonads a:hover {
+  color: inherit;
+}
+
+#carbonads span {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin-bottom: 8px;
+  max-width: 150px;
+  line-height: 1;
+}
+
+.carbon-img img {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px !important;
+  width: 150px;
+  height: auto;
+}
+
+.carbon-text {
+  display: block;
+  padding: 0 1em 8px;
+}
+
+.carbon-poweredby {
+  display: block;
+  padding: 8px 12px;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px, hsla(0, 0%, 0%, .025) 5px, hsla(0, 0%, 0%, .025) 10px) hsla(203, 11%, 95%, .4);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 600;
+  font-size: 9px;
+  line-height: 1;
+}
+html { font-variant-ligatures: no-common-ligatures; }
+</style>
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                
+<script async="" id="_carbonads_js" src="https://cdn.carbonads.com/carbon.js?serve=CKYITK7M&amp;placement=cppreferencecom" type="text/javascript"></script>
+
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8HW0LXMYCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8HW0LXMYCY');
+</script>
+                <h1 class="firstHeading" id="firstHeading"><span style="font-size:0.7em; line-height:130%">std::</span>stable_sort</h1>
+                
+                
+                <div id="bodyContent">
+                                        
+                    <div id="siteSub">From cppreference.com</div>
+                    
+                                        
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../algorithm.html" title="cpp/algorithm">algorithm</a></span></div>
+                    
+                                                            
+                    <div class="mw-content-ltr" dir="ltr" id="mw-content-text" lang="en">
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/algorithm.html" title="cpp/header/algorithm">&lt;algorithm&gt;</a></code>
+ </div></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="Version_1"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> RandomIt <span class="sy1">&gt;</span><br><br>
+<span class="kw4">void</span> stable_sort<span class="br0">(</span> RandomIt first, RandomIt last <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (1)</td>
+<td><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> ExecutionPolicy, <span class="kw1">class</span> RandomIt <span class="sy1">&gt;</span><br><br>
+<p><span class="kw4">void</span> stable_sort<span class="br0">(</span> ExecutionPolicy<span class="sy3">&amp;&amp;</span> policy,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RandomIt first, RandomIt last <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+<tr class="t-dcl">
+<td><div><span id="Version_3"></span><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> RandomIt, <span class="kw1">class</span> Compare <span class="sy1">&gt;</span><br><br>
+<span class="kw4">void</span> stable_sort<span class="br0">(</span> RandomIt first, RandomIt last, Compare comp <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (3)</td>
+<td><span class="t-mark-rev t-since-cxx26">(constexpr since C++26)</span></td>
+</tr>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> ExecutionPolicy, <span class="kw1">class</span> RandomIt, <span class="kw1">class</span> Compare <span class="sy1">&gt;</span><br><br>
+<p><span class="kw4">void</span> stable_sort<span class="br0">(</span> ExecutionPolicy<span class="sy3">&amp;&amp;</span> policy,<br><br>
+</p>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RandomIt first, RandomIt last, Compare comp <span class="br0">)</span><span class="sy4">;</span></span></div></td>
+<td> (4) </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+<tr class="t-dcl-sep"><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>Sorts the elements in the range <span style="display: inline-block;"><code>[</code><span class="t-c"><span class="mw-geshi cpp source-cpp">first</span></span><code>,&nbsp;</code><span class="t-c"><span class="mw-geshi cpp source-cpp">last</span></span><code>)</code></span> in non-descending order. The order of equivalent elements is guaranteed to be preserved.
+</p>
+<div class="t-li1"><span class="t-li">1)</span> Elements are <a href="../algorithm.html#Requirements" title="cpp/algorithm">sorted</a> with respect to <span class="t-rev-inl t-until-cxx20"><span><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;</span></span></span><span><span class="t-mark-rev t-until-cxx20">(until C++20)</span></span></span><span class="t-rev-inl t-since-cxx20"><span><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/functional/less.html"><span class="kw1047">std::<span class="me2">less</span></span></a><span class="br0">{</span><span class="br0">}</span></span></span></span><span><span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></span>.</div>
+<div class="t-li1"><span class="t-li">3)</span> Elements are sorted with respect to <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span>.</div>
+<div class="t-li1"><span class="t-li">2,4)</span> Same as <span class="t-v">(1,3)</span>, but executed according to <span class="t-c"><span class="mw-geshi cpp source-cpp">policy</span></span>.</div>
+<div class="t-li1"><span class="t-li"></span> These overloads participate in overload resolution only if all following conditions are satisfied:
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-until-cxx20"><td>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_execution_policy.html"><span class="kw1577">std::<span class="me2">is_execution_policy_v</span></span></a><span class="sy1">&lt;</span><a href="../types/decay.html"><span class="kw635">std::<span class="me2">decay_t</span></span></a><span class="sy1">&lt;</span>ExecutionPolicy<span class="sy1">&gt;&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx20">(until C++20)</span></td></tr>
+<tr class="t-rev t-since-cxx20"><td>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="is_execution_policy.html"><span class="kw1577">std::<span class="me2">is_execution_policy_v</span></span></a><span class="sy1">&lt;</span><a href="../types/remove_cvref.html"><span class="kw2661">std::<span class="me2">remove_cvref_t</span></span></a><span class="sy1">&lt;</span>ExecutionPolicy<span class="sy1">&gt;&gt;</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx20">(since C++20)</span></td></tr>
+</tbody></table></div>
+<p>If any of the following conditions is satisfied, the behavior is undefined:
+</p>
+<table class="t-rev-begin">
+<tbody><tr class="t-rev t-until-cxx11"><td>
+<ul><li> The type of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>first</span></span> is not <a href="../named_req/Swappable.html" title="cpp/named req/Swappable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Swappable</span></a>.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td></tr>
+<tr class="t-rev t-since-cxx11"><td>
+<ul><li> <code>RandomIt</code> is not <a href="../named_req/ValueSwappable.html" title="cpp/named req/ValueSwappable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">ValueSwappable</span></a>.
+</li><li> The type of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>first</span></span> is not <a href="../named_req/MoveConstructible.html" title="cpp/named req/MoveConstructible"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">MoveConstructible</span></a>.
+</li><li> The type of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>first</span></span> is not <a href="../named_req/MoveAssignable.html" title="cpp/named req/MoveAssignable"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">MoveAssignable</span></a>.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td></tr>
+</tbody></table>
+<table class="toc" id="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="stable_sort.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="stable_sort.html#Complexity"><span class="tocnumber">2</span> <span class="toctext">Complexity</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="stable_sort.html#Exceptions"><span class="tocnumber">3</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="stable_sort.html#Possible_implementation"><span class="tocnumber">4</span> <span class="toctext">Possible implementation</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="stable_sort.html#Notes"><span class="tocnumber">5</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="stable_sort.html#Example"><span class="tocnumber">6</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="stable_sort.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=edit&amp;section=1" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span></h3>
+<table class="t-par-begin">
+
+
+<tbody><tr class="t-par">
+<td> first, last
+</td>
+<td> -
+</td>
+<td> the pair of iterators defining the  <a href="../iterator.html#Ranges" title="cpp/iterator">range</a> of elements to sort
+</td></tr>
+<tr class="t-par">
+<td> policy
+</td>
+<td> -
+</td>
+<td> the <a href="execution_policy_tag_t.html" title="cpp/algorithm/execution policy tag t">execution policy</a> to use
+</td></tr>
+<tr class="t-par">
+<td> comp
+</td>
+<td> -
+</td>
+<td> comparison function object (i.e. an object that satisfies the requirements of <a href="../named_req/Compare.html" title="cpp/named req/Compare"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Compare</span></a>) which returns ​<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> if the first argument is <i>less</i> than (i.e. is ordered <i>before</i>) the second. <br><br>
+<p>The signature of the comparison function should be equivalent to the following:
+</p><p><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span> cmp<span class="br0">(</span><span class="kw4">const</span> Type1<span class="sy3">&amp;</span> a, <span class="kw4">const</span> Type2<span class="sy3">&amp;</span> b<span class="br0">)</span><span class="sy4">;</span></span></span>
+</p><p>While the signature does not need to have <span class="mw-geshi cpp source-cpp"><span class="kw4">const</span><span class="sy3">&amp;</span></span>, the function must not modify the objects passed to it and must be able to accept all values of type (possibly const) <code>Type1</code> and <code>Type2</code> regardless of <a href="../language/value_category.html" title="cpp/language/value category">value category</a> (thus, <code>Type1&amp;</code> is not allowed<span class="t-rev-inl t-since-cxx11"><span>, nor is <code>Type1</code> unless for <code>Type1</code> a move is equivalent to a copy</span><span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span>).<br><br>
+The types <span class="mw-geshi cpp source-cpp">Type1</span> and <span class="mw-geshi cpp source-cpp">Type2</span> must be such that an object of type <span class="mw-geshi cpp source-cpp">RandomIt</span> can be dereferenced and then implicitly converted to both of them.
+​
+</p>
+</td></tr>
+<tr class="t-par-hitem">
+<td colspan="3"> Type requirements
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>RandomIt</code> must meet the requirements of <a href="../named_req/RandomAccessIterator.html" title="cpp/named req/RandomAccessIterator"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">LegacyRandomAccessIterator</span></a>.
+</td></tr>
+<tr class="t-par-req">
+<td colspan="3"> -<div class="spacer"></div><code>Compare</code> must meet the requirements of <a href="../named_req/Compare.html" title="cpp/named req/Compare"><span style="font-family: Georgia, 'DejaVu Serif', serif; font-style:italic">Compare</span></a>.
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=edit&amp;section=2" title="Edit section: Complexity">edit</a>]</span> <span class="mw-headline" id="Complexity">Complexity</span></h3>
+<p>Given <span class="mjax" style="display:none">\(\scriptsize N\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">N</span> as <span class="t-c"><span class="mw-geshi cpp source-cpp">last <span class="sy2">-</span> first</span></span>:
+</p>
+<div class="t-li1"><span class="t-li">1,2)</span> <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log(N))</span> comparisons using <span class="t-rev-inl t-until-cxx20"><span><span class="mw-geshi cpp source-cpp">operator<span class="sy1">&lt;</span></span></span><span><span class="t-mark-rev t-until-cxx20">(until C++20)</span></span></span><span class="t-rev-inl t-since-cxx20"><span><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../utility/functional/less.html"><span class="kw1047">std::<span class="me2">less</span></span></a><span class="br0">{</span><span class="br0">}</span></span></span></span><span><span class="t-mark-rev t-since-cxx20">(since C++20)</span></span></span> if enough extra memory is available, otherwise <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log^{2}(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log<span class="t-su">2<br><br></span>(N))</span> comparisons.</div>
+<div class="t-li1"><span class="t-li">3,4)</span> <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log(N))</span> applications of the comparator <span class="t-c"><span class="mw-geshi cpp source-cpp">comp</span></span> if enough extra memory is available, otherwise <span class="mjax" style="display:none">\(\scriptsize O(N \cdot \log^{2}(N))\)</span><span class="mjax-fallback texhtml" style="white-space: nowrap;">O(N·log<span class="t-su">2<br><br></span>(N))</span> applications.</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=edit&amp;section=3" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span></h3>
+<p>The overloads with a template parameter named <code>ExecutionPolicy</code> report errors as follows:
+</p>
+<ul><li> If execution of a function invoked as part of the algorithm throws an exception and <code>ExecutionPolicy</code> is one of the <a href="execution_policy_tag_t.html" title="cpp/algorithm/execution policy tag t">standard policies</a>, <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> is called. For any other <code>ExecutionPolicy</code>, the behavior is implementation-defined.
+</li><li> If the algorithm fails to allocate memory, <span class="t-lc"><a href="../memory/new/bad_alloc.html" title="cpp/memory/new/bad alloc">std::bad_alloc</a></span> is thrown.
+</li></ul>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=edit&amp;section=4" title="Edit section: Possible implementation">edit</a>]</span> <span class="mw-headline" id="Possible_implementation">Possible implementation</span></h3>
+<p>See also the implementations in <a class="external text" href="https://github.com/gcc-mirror/gcc/blob/d9375e490072d1aae73a93949aa158fcd2a27018/libstdc%2B%2B-v3/include/bits/stl_algo.h#L4977" rel="nofollow">libstdc++</a> and <a class="external text" href="https://github.com/llvm-mirror/libcxx/blob/a12cb9d211019d99b5875b6d8034617cbc24c2cc/include/algorithm#L4696" rel="nofollow">libc++</a>.
+</p>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=edit&amp;section=5" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span></h3>
+<p>This function attempts to allocate a temporary buffer equal in size to the sequence to be sorted. If the allocation fails, the less efficient algorithm is chosen.
+</p>
+<table class="wikitable ftm-begin">
+
+<tbody><tr>
+<th><a href="../utility/feature_test.html" title="cpp/utility/feature test">Feature-test</a> macro</th>
+<th><abbr title="The year/month in which the feature was adopted. The hyperlink under each value opens a compiler support page with entry for given feature.">Value</abbr></th>
+<th><abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr></th>
+<th>Feature
+</th></tr>
+<tr>
+<td><a href="../experimental/feature_test.html#cpp_lib_constexpr_algorithms" title="cpp/feature test"><code>__cpp_lib_constexpr_algorithms</code></a></td>
+<td><a href="../compiler_support/26.html#cpp_lib_constexpr_algorithms_202306L" title="cpp/compiler support/26"><code>202306L</code></a></td>
+<td><span class="t-mark">(C++26)</span></td>
+<td><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span> stable sorting, overloads <span class="t-v">(<a href="stable_sort.html#Version_1">1</a>)</span>, <span class="t-v">(<a href="stable_sort.html#Version_3">3</a>)</span>
+</td></tr></tbody></table>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=edit&amp;section=6" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span></h3>
+<div class="t-example"><div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">#include &lt;algorithm&gt;
+#include &lt;array&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+&nbsp;
+struct Employee
+{
+    int age;
+    std::string name; // Does not participate in comparisons
+};
+&nbsp;
+bool operator&lt;(const Employee&amp; lhs, const Employee&amp; rhs)
+{
+    return lhs.age &lt; rhs.age;
+}
+&nbsp;
+#if __cpp_lib_constexpr_algorithms &gt;= 202306L
+consteval auto get_sorted()
+{
+    auto v = std::array{3, 1, 4, 1, 5, 9};
+    std::stable_sort(v.begin(), v.end());
+    return v;
+}
+static_assert(std::ranges::is_sorted(get_sorted()));
+#endif
+&nbsp;
+int main()
+{
+    std::vector&lt;Employee&gt; v{{108, "Zaphod"}, {32, "Arthur"}, {108, "Ford"}};
+&nbsp;
+    std::stable_sort(v.begin(), v.end());
+&nbsp;
+    for (const Employee&amp; e : v)
+        std::cout &lt;&lt; e.age &lt;&lt; ", " &lt;&lt; e.name &lt;&lt; '\n';
+}</pre></div></div>
+<p>Output:
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="text source-text"><pre class="de1">32, Arthur
+108, Zaphod
+108, Ford</pre></div></div> 
+</div>
+<h3><span class="editsection">[<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=edit&amp;section=7" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span></h3>
+<table class="t-dsc-begin">
+
+<tbody><tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="sort.html" title="cpp/algorithm/sort"> <span class="t-lines"><span>sort</span></span></a></div></div>
+</td>
+<td>  sorts a range into ascending order <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="partial_sort.html" title="cpp/algorithm/partial sort"> <span class="t-lines"><span>partial_sort</span></span></a></div></div>
+</td>
+<td>  sorts the first N elements of a range <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_partial_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="stable_partition.html" title="cpp/algorithm/stable partition"> <span class="t-lines"><span>stable_partition</span></span></a></div></div>
+</td>
+<td>  divides elements into two groups while preserving their relative order <br><br> <span class="t-mark">(function template)</span> <span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/dsc_stable_partition&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+
+<tr class="t-dsc">
+<td> <div class="t-dsc-member-div"><div><a href="ranges/stable_sort.html" title="cpp/algorithm/ranges/stable sort"> <span class="t-lines"><span>ranges::stable_sort</span></span></a></div><div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx20">(C++20)</span></span></span></div></div>
+</td>
+<td> sorts a range of elements while preserving order between equal elements<br><br><span class="t-mark">(algorithm function object)</span><span class="editsection noprint plainlinks" title="Edit this template"><a class="external text" href="https://en.cppreference.com/mwiki/index.php?title=Template:cpp/algorithm/ranges/dsc_stable_sort&amp;action=edit" rel="nofollow">[edit]</a></span>
+</td></tr>
+</tbody></table>
+
+
+
+
+</div>                    
+                                        
+                    <div class="printfooter">
+                    Retrieved from "<a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;oldid=180390">https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;oldid=180390</a>"                    </div>
+                    
+                                                            
+                    <div class="catlinks catlinks-allhidden" id="catlinks"></div>                    
+                                                            <div class="visualClear"></div>
+                    
+                                        
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="noprint" id="cpp-footer-base">
+            <div hidden="" id="footer">
+                        <div hidden="" id="cpp-navigationn">
+            <h5>Navigation</h5>
+            <ul>
+<li id="n-Support-us"><a href="http://www.cppreference.com/support" rel="nofollow">Support us</a></li><li id="n-recentchanges"><a accesskey="r" href="https://en.cppreference.com/w/Special:RecentChanges" title="A list of recent changes in the wiki [r]">Recent changes</a></li><li id="n-FAQ"><a href="../../Cppreference%253AAbout.html">FAQ</a></li><li id="n-Offline-version"><a href="../../Cppreference%253AArchives.html">Offline version</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-toolbox">
+            <h5><span>Toolbox</span><a href="stable_sort.html#"></a></h5>
+            <ul>
+<li id="t-whatlinkshere"><a accesskey="j" href="https://en.cppreference.com/w/Special:WhatLinksHere/cpp/algorithm/stable_sort" title="A list of all wiki pages that link here [j]">What links here</a></li><li id="t-recentchangeslinked"><a accesskey="k" href="https://en.cppreference.com/w/Special:RecentChangesLinked/cpp/algorithm/stable_sort" title="Recent changes in pages linked from this page [k]">Related changes</a></li><li id="t-upload"><a accesskey="u" href="http://upload.cppreference.com/w/Special:Upload" title="Upload files [u]">Upload file</a></li><li id="t-specialpages"><a accesskey="q" href="https://en.cppreference.com/w/Special:SpecialPages" title="A list of all special pages [q]">Special pages</a></li><li id="t-print"><a accesskey="p" href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;printable=yes" rel="alternate" title="Printable version of this page [p]">Printable version</a></li><li id="t-permalink"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;oldid=180390" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.cppreference.com/mwiki/index.php?title=cpp/algorithm/stable_sort&amp;action=info">Page information</a></li>            </ul>
+        </div>
+                        <div hidden="" id="cpp-languagess">
+            <div><ul><li>In other languages</li></ul></div>
+            <div><ul>
+<li class="interwiki-de"><a href="http://de.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="de" lang="de" title="cpp/algorithm/stable sort">Deutsch</a></li><li class="interwiki-es"><a href="http://es.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="es" lang="es" title="cpp/algorithm/stable sort">Español</a></li><li class="interwiki-fr"><a href="http://fr.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="fr" lang="fr" title="cpp/algorithm/stable sort">Français</a></li><li class="interwiki-it"><a href="http://it.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="it" lang="it" title="cpp/algorithm/stable sort">Italiano</a></li><li class="interwiki-ja"><a href="http://ja.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="ja" lang="ja" title="cpp/algorithm/stable sort">日本語</a></li><li class="interwiki-pt"><a href="http://pt.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="pt" lang="pt" title="cpp/algorithm/stable sort">Português</a></li><li class="interwiki-ru"><a href="http://ru.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="ru" lang="ru" title="cpp/algorithm/stable sort">Русский</a></li><li class="interwiki-zh"><a href="http://zh.cppreference.com/w/cpp/algorithm/stable_sort" hreflang="zh" lang="zh" title="cpp/algorithm/stable sort">中文</a></li>            </ul></div>
+        </div>
+            <ul id="footer-info">
+                                    <li id="footer-info-lastmod"> This page was last modified on 10 February 2025, at 00:34.</li>
+                            </ul>
+                    <ul id="footer-places">
+                                    <li id="footer-places-privacy"><a href="../../Cppreference%253APrivacy_policy.html" title="Cppreference:Privacy policy">Privacy policy</a></li>
+                                    <li id="footer-places-about"><a href="../../Cppreference%253AAbout.html" title="Cppreference:About">About cppreference.com</a></li>
+                                    <li id="footer-places-disclaimer"><a href="../../Cppreference%253AGeneral_disclaimer.html" title="Cppreference:General disclaimer">Disclaimers</a></li>
+                            </ul>
+                                    <ul class="noprint" id="footer-icons">
+                                    <li id="footer-poweredbyico">
+                                            <a href="https://www.mediawiki.org/"><img alt="Powered by MediaWiki" height="31" src="../../../mwiki/skins/common/images/poweredby_mediawiki_88x31.png" width="88"></a>                                            <a href="http://qbnz.com/highlighter/"><img alt="Powered by GeSHi" height="31" src="https://upload.cppreference.com/mwiki/images/2/2b/powered_by_geshi_88x31.png" width="88"></a>                                            <a href="http://www.tigertech.net/referral/cppreference.com"><img alt="Hosted by Tiger Technologies" height="31" src="https://upload.cppreference.com/mwiki/images/9/94/powered_by_tigertech_88x31.png" width="88"></a>                                        </li>
+                                </ul>
+                        <div style="clear:both">
+            </div>
+            </div>
+        </div>
+        
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=skins.cppreference2&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler","ext.gadget.StandardRevisions","ext.gadget.MathJax"], null, true);
+}</script>
+<script src="../../../mwiki/load.php@debug=false&amp;lang=en&amp;modules=site&amp;only=scripts&amp;skin=cppreference2&amp;%252A"></script>
 
 	
 
