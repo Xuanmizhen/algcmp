@@ -329,14 +329,14 @@ fn lcs(R&& a, R&& b) -> usize {
 // 测试
 
 fn test() {
-    var a = mod_unsigned_unchecked<u32, 2017>(5);
+    var a = mod_unsigned_unchecked<u32, 2017>{5};
     a *= 20;
     assert(dbg(a.inner == 100));
     a *= 21;
     assert(dbg(dbg(a.inner) += 3) == 2103 % 2017);
-    var b = overflowable<uint8_t>(255);
-    assert((b += static_cast<uint8_t>(1)).overflowed());
-    assert(powi(-3, static_cast<u16>(3)) == -27);
+    var b = overflowable<uint8_t>{255};
+    assert((b += uint8_t{1}).overflowed());
+    assert(powi(-3, u16{3}) == -27);
 }
 
 
