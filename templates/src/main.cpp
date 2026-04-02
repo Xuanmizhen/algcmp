@@ -209,9 +209,9 @@ public:
 
 
 // 快速幂
-template<class T, std::unsigned_integral E>
+template<std::integral T, std::unsigned_integral E>
 fn powi(T base, E exp) -> T {
-    T res{1};
+    var res = T(1);
     while (exp > 0) {
         if (exp % 2 == 1) {
             res *= base;
@@ -329,13 +329,14 @@ fn lcs(R&& a, R&& b) -> usize {
 // 测试
 
 fn test() {
-    mod_unsigned_unchecked<u32, 2017> a = 5;
+    var a = mod_unsigned_unchecked<u32, 2017>(5);
     a *= 20;
     assert(dbg(a.inner == 100));
     a *= 21;
     assert(dbg(dbg(a.inner) += 3) == 2103 % 2017);
-    overflowable<uint8_t> b(255);
+    var b = overflowable<uint8_t>(255);
     assert((b += static_cast<uint8_t>(1)).overflowed());
+    assert(powi(-3, static_cast<u16>(3)) == -27);
 }
 
 
