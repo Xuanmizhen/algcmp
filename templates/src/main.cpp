@@ -48,26 +48,12 @@ using std::views::iota;
 // 向 C++26 看齐
 
 #if __cplusplus <= 202302L
-// Computes the addition `x + y` and stores the result into `*result`. The
-// addition is performed as if both operands were represented in a signed
-// integer type with infinite range, and the result was then converted from this
-// integer type to `type1`. If the value assigned to `*result` correctly
-// represents the mathematical result of the operation, it returns `false`.
-// Otherwise, it returns `true`. In this case, the value assigned to *result is
-// the mathematical result of the operation wrapped around to the width of
-// `*result`.
+// Computes the addition `x + y` and stores the result into `*result`. The addition is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to *result is the mathematical result of the operation wrapped around to the width of `*result`.
 template <std::unsigned_integral type1>
 fn ckd_add(type1 *result, type1 a, type1 b) -> bool {
     return __builtin_add_overflow(a, b, result);
 }
-// Computes the multiplication `x × y` and stores the result into `*result`. The
-// multiplication is performed as if both operands were represented in a signed
-// integer type with infinite range, and the result was then converted from this
-// integer type to `type1`. If the value assigned to `*result` correctly
-// represents the mathematical result of the operation, it returns `false`.
-// Otherwise, it returns `true`. In this case, the value assigned to `*result`
-// is the mathematical result of the operation wrapped around to the width of
-// `*result`.
+// Computes the multiplication `x × y` and stores the result into `*result`. The multiplication is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to `*result` is the mathematical result of the operation wrapped around to the width of `*result`.
 template <std::unsigned_integral type1>
 fn ckd_mul(type1 *result, type1 a, type1 b) -> bool {
     return __builtin_mul_overflow(a, b, result);
@@ -78,13 +64,15 @@ fn ckd_mul(type1 *result, type1 a, type1 b) -> bool {
 
 // 调试工具
 
-fn log_loc(std::ostream &os, const source_location loc = source_location::current()) -> std::ostream & { return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: "; }
+fn log_loc(std::ostream &os, const source_location loc = source_location::current()) -> std::ostream & {
+    return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: ";
+}
 
 #ifdef LOCAL
-#define dbg(val)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \
-    ([](const decltype((val)) v, const source_location loc) -> decltype((val)) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \
-        log_loc(std::clog, loc) << " (" << #val << ") = " << v << std::endl;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \
-        return (v);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \
+#define dbg(val) \
+    ([](const decltype((val)) v, const source_location loc) -> decltype((val)) { \
+        log_loc(std::clog, loc) << " (" << #val << ") = " << v << std::endl; \
+        return (v); \
     })((val), source_location::current())
 #define debug_assert(e) assert(e)
 #define todo() (throw std::runtime_error("not yet implemented"))
@@ -184,7 +172,9 @@ public:
     usize u, v;
     W weight;
 
-    fn operator<=>(const undirected_edge &rhs) const ->std::weak_ordering { return rhs.weight <=> weight; }
+    fn operator<=>(const undirected_edge &rhs) const -> std::weak_ordering {
+        return rhs.weight <=> weight;
+    }
 };
 
 template <std::three_way_comparable W>
@@ -254,31 +244,37 @@ public:
         ++*this;
         return original;
     }
-    fn operator+(const I val) const ->overflowable {
+    fn operator+(const I val) const -> overflowable {
         if (!overflowed()) {
             I res;
             return ckd_add(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    fn operator+=(const I val) -> overflowable & { return *this = *this + val; }
-    fn operator*(const I val) const ->overflowable {
+    fn operator+=(const I val) -> overflowable & {
+        return *this = *this + val;
+    }
+    fn operator*(const I val) const -> overflowable {
         if (!overflowed()) {
             I res;
             return ckd_mul(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    fn operator*(const overflowable &rhs) const ->overflowable {
+    fn operator*(const overflowable &rhs) const -> overflowable {
         if (inner.has_value() && rhs.inner.has_value()) {
             I res;
             return ckd_mul(&res, inner.value(), rhs.inner.value()) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    fn operator*=(const I val) -> overflowable & { return *this = *this * val; }
-    fn operator*=(const overflowable &rhs) -> overflowable & { return *this = *this * rhs; }
-    fn operator<=>(const overflowable &rhs) const ->std::partial_ordering {
+    fn operator*=(const I val) -> overflowable & {
+        return *this = *this * val;
+    }
+    fn operator*=(const overflowable &rhs) -> overflowable & {
+        return *this = *this * rhs;
+    }
+    fn operator<=>(const overflowable &rhs) const -> std::partial_ordering {
         if (overflowed() && rhs.overflowed()) {
             // overflowable() cannot compare with itself
             return std::partial_ordering::unordered;
@@ -293,9 +289,6 @@ public:
         }
         return std::partial_ordering(inner.value() <=> rhs.inner.value());
     }
-    // fn operator<(const overflowable& rhs) const -> bool {
-    //     return (*this <=> rhs) < 0;
-    // }
 };
 
 // 模意义下的计算
@@ -308,7 +301,9 @@ public:
     mod_unsigned_unchecked() : inner({}) { }
     mod_unsigned_unchecked(const I val) : inner(val) { debug_assert(val < M); }
 
-    fn operator==(const mod_unsigned_unchecked &rhs) const ->bool { return inner == rhs.inner; }
+    fn operator==(const mod_unsigned_unchecked &rhs) const -> bool {
+        return inner == rhs.inner;
+    }
 
     fn operator++() -> mod_unsigned_unchecked & {
         inner = (++inner) % M;
@@ -323,26 +318,34 @@ public:
         inner = (inner + rhs.inner) % M;
         return *this;
     }
-    fn operator+(const mod_unsigned_unchecked &rhs) const ->mod_unsigned_unchecked { return mod_unsigned_unchecked((inner + rhs.inner) % M); }
+    fn operator+(const mod_unsigned_unchecked &rhs) const -> mod_unsigned_unchecked {
+        return mod_unsigned_unchecked((inner + rhs.inner) % M);
+    }
 
     fn operator-=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
         inner = (inner - rhs.inner) % M;
         return *this;
     }
-    fn operator-(const mod_unsigned_unchecked &rhs) const ->mod_unsigned_unchecked { return mod_unsigned_unchecked((inner - rhs.inner) % M); }
+    fn operator-(const mod_unsigned_unchecked &rhs) const -> mod_unsigned_unchecked {
+        return mod_unsigned_unchecked((inner - rhs.inner) % M);
+    }
 
     fn operator*=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
         inner = (inner * rhs.inner) % M;
         return *this;
     }
-    fn operator*(const mod_unsigned_unchecked &rhs) const ->mod_unsigned_unchecked { return mod_unsigned_unchecked((inner * rhs.inner) % M); }
+    fn operator*(const mod_unsigned_unchecked &rhs) const -> mod_unsigned_unchecked {
+        return mod_unsigned_unchecked((inner * rhs.inner) % M);
+    }
 };
 
 template <std::unsigned_integral I, I M>
-fn factorial(const I n) -> mod_unsigned_unchecked<I, M> {
+fn factorial_mod(const I n) -> mod_unsigned_unchecked<I, M> {
     using result_t = mod_unsigned_unchecked<I, M>;
     let view = iota(I{1}, n + 1);
-    return std::accumulate(view.begin(), view.end(), result_t{1}, [](const var acc, const var x) { return acc * result_t{x}; });
+    return std::accumulate(view.begin(), view.end(), result_t{1}, [](const var acc, const var x) {
+        return acc * result_t{x};
+    });
 }
 
 // 最长公共子序列
@@ -370,7 +373,7 @@ fn test() {
     var d = overflowable<uint8_t>{255};
     assert(!(d++).overflowed());
     assert(powi(-3, u16{3}) == -27);
-    assert((factorial<u32, 2017>(5).inner) == 120);
+    assert((factorial_mod<u32, 105>(5).inner) == 15);
 }
 
 // 任务
