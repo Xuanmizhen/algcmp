@@ -8,9 +8,12 @@
 #include <cstdint>
 #include <fstream>
 #include <iostream>
+#include <limits> // std::numeric_limits
 #include <numbers> // std::numbers::pi_v, std::numbers::pi, std::numbers::inv_pi_v, std::numbers::inv_pi
+#include <numeric> // std::accumulate
 #include <optional> // std::optional
 #include <queue> // std::priority_queue
+#include <ranges> // std::views::iota
 #include <source_location>
 #include <string_view>
 #include <type_traits> // std::make_signed_t
@@ -35,6 +38,7 @@ using u128 = __uint128_t;
 
 using std::cin;
 using std::cout;
+using std::views::iota;
 using std::source_location;
 
 #define let const auto
@@ -238,8 +242,23 @@ public:
     fn value() -> std::optional<I> {
         return inner;
     }
-    fn operator+(const I val) -> overflowable {
-        if (inner.has_value()) {
+    fn operator++() -> overflowable& {
+        if (!overflowed()) {
+            if (inner.value() == std::numeric_limits<I>::max()) {
+                inner.reset();
+            } else {
+                ++inner.value();
+            }
+        }
+        return *this;
+    }
+    fn operator++(int) -> overflowable {
+        let original = *this;
+        ++*this;
+        return original;
+    }
+    fn operator+(const I val) const -> overflowable {
+        if (!overflowed()) {
             I res;
             return ckd_add(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
@@ -248,14 +267,14 @@ public:
     fn operator+=(const I val) -> overflowable & {
         return *this = *this + val;
     }
-    fn operator*(const I val) -> overflowable {
-        if (inner.has_value()) {
+    fn operator*(const I val) const -> overflowable {
+        if (!overflowed()) {
             I res;
             return ckd_mul(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    fn operator*(const overflowable& rhs) -> overflowable {
+    fn operator*(const overflowable& rhs) const -> overflowable {
         if (inner.has_value() && rhs.inner.has_value()) {
             I res;
             return ckd_mul(&res, inner.value(), rhs.inner.value()) ? overflowable() : overflowable(res);
@@ -269,23 +288,23 @@ public:
         return *this = *this * rhs;
     }
     fn operator<=>(const overflowable& rhs) const -> std::partial_ordering {
-        if (!inner.has_value() && !rhs.inner.has_value()) {
+        if (overflowed() && rhs.overflowed()) {
             // overflowable() cannot compare with itself
             return std::partial_ordering::unordered;
         }
-        if (!inner.has_value()) {
+        if (overflowed()) {
             // this is overflowable(), greater than any I
             return std::partial_ordering::greater;
         }
-        if (!rhs.inner.has_value()) {
+        if (rhs.overflowed()) {
             // rhs is overflowable(), less than overflowable()
             return std::partial_ordering::less;
         }
         return std::partial_ordering(inner.value() <=> rhs.inner.value());
     }
-    fn operator<(const overflowable& rhs) const -> bool {
-        return (*this <=> rhs) < 0;
-    }
+    // fn operator<(const overflowable& rhs) const -> bool {
+    //     return (*this <=> rhs) < 0;
+    // }
 };
 
 
@@ -296,23 +315,69 @@ class mod_unsigned_unchecked {
 public:
     Inner inner;
 
+    mod_unsigned_unchecked() : inner({}) { }
     mod_unsigned_unchecked(const Inner val) : inner(val) {
         debug_assert(val < M);
     }
 
-    fn operator+=(const mod_unsigned_unchecked<Inner, M> &&rhs) -> mod_unsigned_unchecked & {
+    fn operator==(const mod_unsigned_unchecked& rhs) const -> bool {
+        return inner == rhs.inner;
+    }
+
+    fn operator++() -> mod_unsigned_unchecked& {
+        inner = (++inner) % M;
+        return *this;
+    }
+    fn operator++(int) -> mod_unsigned_unchecked {
+        let original = *this;
+        ++*this;
+        return original;
+    }
+    fn operator+=(const mod_unsigned_unchecked<Inner, M>& rhs) -> mod_unsigned_unchecked & {
         inner = (inner + rhs.inner) % M;
         return *this;
     }
-    fn operator-=(const mod_unsigned_unchecked<Inner, M> &&rhs) -> mod_unsigned_unchecked & {
+    fn operator+(const mod_unsigned_unchecked<Inner, M>& rhs) const -> mod_unsigned_unchecked {
+        return mod_unsigned_unchecked((inner + rhs.inner) % M);
+    }
+
+    fn operator-=(const mod_unsigned_unchecked<Inner, M>& rhs) -> mod_unsigned_unchecked & {
         inner = (inner - rhs.inner) % M;
         return *this;
     }
-    fn operator*=(const mod_unsigned_unchecked<Inner, M> &&rhs) -> mod_unsigned_unchecked & {
+    fn operator-(const mod_unsigned_unchecked<Inner, M>& rhs) const -> mod_unsigned_unchecked {
+        return mod_unsigned_unchecked((inner - rhs.inner) % M);
+    }
+
+    fn operator*=(const mod_unsigned_unchecked<Inner, M>& rhs) -> mod_unsigned_unchecked & {
         inner = (inner * rhs.inner) % M;
         return *this;
     }
+    fn operator*(const mod_unsigned_unchecked<Inner, M>& rhs) const -> mod_unsigned_unchecked {
+        return mod_unsigned_unchecked((inner * rhs.inner) % M);
+    }
 };
+
+// // CRITICAL: Specialize incrementable_traits so mod_unsigned_unchecked satisfies weakly_incrementable
+// namespace std {
+// template<std::unsigned_integral Inner, Inner M>
+// struct incrementable_traits<mod_unsigned_unchecked<Inner, M>> {
+//     using difference_type = std::make_signed_t<Inner>;
+// };
+// }
+
+
+using num_t = mod_unsigned_unchecked<u64, 998244353>;
+
+template<std::unsigned_integral I>
+fn factorial(const I n) -> num_t {
+    var result = num_t{1};
+    let view = iota(u64{1}, n + 1);
+    std::accumulate(view.begin(), view.end(), result, [](num_t acc, u64 x) {
+        return acc * num_t{x};
+    });
+    return result;
+}
 
 
 // 最长公共子序列
@@ -336,6 +401,10 @@ fn test() {
     assert(dbg(dbg(a.inner) += 3) == 2103 % 2017);
     var b = overflowable<uint8_t>{255};
     assert((b += uint8_t{1}).overflowed());
+    var c = overflowable<uint8_t>{255};
+    assert((++c).overflowed());
+    var d = overflowable<uint8_t>{255};
+    assert(!(d++).overflowed());
     assert(powi(-3, u16{3}) == -27);
 }
 
