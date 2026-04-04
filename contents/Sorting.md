@@ -4,10 +4,8 @@
 ### Functions
 | Functionality | C++ | Python |
 | ------------- | --- | ------ |
-| 排序 | [`std::sort`](https://en.cppreference.com/w/cpp/algorithm/sort.html) | |
-| 基于范围排序 | [`std::ranges::sort` (C++20)](https://en.cppreference.com/w/cpp/algorithm/ranges/sort.html) | |
-| 稳定排序 | [`std::stable_sort`](https://en.cppreference.com/w/cpp/algorithm/stable_sort.html) | |
-| 基于范围稳定排序 | [`std::ranges::stable_sort` (C++20)](https://en.cppreference.com/w/cpp/algorithm/ranges/stable_sort.html) | |
+| 非稳定排序 | [`std::ranges::sort` (C++20)](https://en.cppreference.com/w/cpp/algorithm/ranges/sort.html) | |
+| 稳定排序 | [`std::ranges::stable_sort` (C++20)](https://en.cppreference.com/w/cpp/algorithm/ranges/stable_sort.html) | `sorted` |
 | 对前 n 大的元素排序 | | `heapq.nlargest` |
 | 对前 n 小的元素排序 | | `heapq.nsmallest` |
 

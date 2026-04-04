@@ -4,6 +4,12 @@ BasedOnStyle: LLVM
 IndentWidth: 4
 UseTab: Never
 InsertNewlineAtEOF: true
+ColumnLimit: 1000
 AccessModifierOffset: -4
+EmptyLineBeforeAccessModifier: Always
 BreakBeforeBraces: Attach
+BreakTemplateDeclarations: Yes
 AlignAfterOpenBracket: false
+AlignArrayOfStructures: None
+SpaceInEmptyBraces: Block
+PenaltyBreakBeforeMemberAccess: 0

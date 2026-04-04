@@ -8,9 +8,9 @@
 #include <cstdint>
 #include <fstream>
 #include <iostream>
-#include <limits>  // std::numeric_limits
-#include <numbers> // std::numbers::pi_v, std::numbers::pi, std::numbers::inv_pi_v, std::numbers::inv_pi
-#include <numeric> // std::accumulate
+#include <limits>   // std::numeric_limits
+#include <numbers>  // std::numbers::pi_v, std::numbers::pi, std::numbers::inv_pi_v, std::numbers::inv_pi
+#include <numeric>  // std::accumulate
 #include <optional> // std::optional
 #include <queue>    // std::priority_queue
 #include <ranges>   // std::views::iota
@@ -78,18 +78,13 @@ fn ckd_mul(type1 *result, type1 a, type1 b) -> bool {
 
 // 调试工具
 
-fn log_loc(std::ostream &os,
-    const source_location loc = source_location::current()) -> std::ostream & {
-    return os << '[' << loc.file_name() << ':' << loc.line() << ':'
-              << loc.column() << "] `" << loc.function_name() << "`: ";
-}
+fn log_loc(std::ostream &os, const source_location loc = source_location::current()) -> std::ostream & { return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: "; }
 
 #ifdef LOCAL
-#define dbg(val)                                                               \
-    ([](const decltype((val)) v,                                               \
-         const source_location loc) -> decltype((val)) {                       \
-        log_loc(std::clog, loc) << " (" << #val << ") = " << v << std::endl;   \
-        return (v);                                                            \
+#define dbg(val)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \
+    ([](const decltype((val)) v, const source_location loc) -> decltype((val)) {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       \
+        log_loc(std::clog, loc) << " (" << #val << ") = " << v << std::endl;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           \
+        return (v);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    \
     })((val), source_location::current())
 #define debug_assert(e) assert(e)
 #define todo() (throw std::runtime_error("not yet implemented"))
@@ -103,7 +98,8 @@ fn log_loc(std::ostream &os,
 
 namespace std {
 namespace numbers {
-template <class T> inline constexpr T tau_v = 2 * pi_v<T>;
+template <class T>
+inline constexpr T tau_v = 2 * pi_v<T>;
 template <class T>
 inline constexpr T inv_tau_v = inv_pi_v<T> / static_cast<T>(2.0);
 inline constexpr double tau = tau_v<double>;
@@ -113,17 +109,18 @@ inline constexpr double inv_tau = inv_tau_v<double>;
 
 // 线性代数
 
-template <class T, class Container = std::vector<std::vector<T>>> class matrix {
+template <class T, class Container = std::vector<std::vector<T>>>
+class matrix {
 public:
     using row_type = Container::value_type;
     using value_type = row_type::value_type;
     static_assert(std::is_same_v<value_type, T>);
     Container inner;
 
-    matrix() : matrix(Container()) {}
-    explicit matrix(const Container &cont) : inner(cont) {}
-    explicit matrix(Container &&cont) : inner(cont) {}
-    matrix(const usize n, const usize m) : inner(n, row_type(m)) {}
+    matrix() : matrix(Container()) { }
+    explicit matrix(const Container &cont) : inner(cont) { }
+    explicit matrix(Container &&cont) : inner(cont) { }
+    matrix(const usize n, const usize m) : inner(n, row_type(m)) { }
     // reference operator[](usize pos) {
     //     return inner[pos];
     // }
@@ -150,7 +147,7 @@ class disjoint_set {
     }
 
 public:
-    explicit disjoint_set(const usize n) : parent_or_neg_rank(n, -1) {}
+    explicit disjoint_set(const usize n) : parent_or_neg_rank(n, -1) { }
     fn find_set(usize x) -> usize {
         var root = x;
         while (parent_or_neg_rank[root] >= 0) {
@@ -181,20 +178,17 @@ public:
 
 // 图论
 
-template <std::three_way_comparable W> class undirected_edge {
+template <std::three_way_comparable W>
+class undirected_edge {
 public:
     usize u, v;
     W weight;
 
-    fn operator<=>(const undirected_edge &rhs) const->std::weak_ordering {
-        return rhs.weight <=> weight;
-    }
+    fn operator<=>(const undirected_edge &rhs) const ->std::weak_ordering { return rhs.weight <=> weight; }
 };
 
 template <std::three_way_comparable W>
-fn kruskal_safe_edge(
-    disjoint_set &components, std::priority_queue<undirected_edge<W>> &q)
-    -> std::optional<undirected_edge<W>> {
+fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_edge<W>> &q) -> std::optional<undirected_edge<W>> {
     while (!q.empty()) {
         let e = q.top();
         q.pop();
@@ -205,18 +199,19 @@ fn kruskal_safe_edge(
     return {};
 }
 
-template <typename C> struct action {
+template <typename C>
+struct action {
     usize dest;
     C cost;
 };
 
-template <typename W> class directed_edge {
+template <typename W>
+class directed_edge {
 public:
     usize source;
     action<W> act;
 
-    directed_edge(const usize src, const usize dst, const W weight)
-        : source(src), act(dst, weight) {}
+    directed_edge(const usize src, const usize dst, const W weight) : source(src), act(dst, weight) { }
 };
 
 // 快速幂
@@ -235,15 +230,16 @@ fn powi(T base, E exp) -> T {
 
 // 溢出标记
 
-template <std::unsigned_integral I> class overflowable {
+template <std::unsigned_integral I>
+class overflowable {
     std::optional<I> inner;
-    overflowable() {}
+    overflowable() { }
 
 public:
-    overflowable(const I val) : inner(val) {}
+    overflowable(const I val) : inner(val) { }
     fn overflowed() const -> bool { return !inner.has_value(); }
     fn value() -> std::optional<I> { return inner; }
-    fn operator++()->overflowable & {
+    fn operator++() -> overflowable & {
         if (!overflowed()) {
             if (inner.value() == std::numeric_limits<I>::max()) {
                 inner.reset();
@@ -253,42 +249,36 @@ public:
         }
         return *this;
     }
-    fn operator++(int)->overflowable {
+    fn operator++(int) -> overflowable {
         let original = *this;
         ++*this;
         return original;
     }
-    fn operator+(const I val) const->overflowable {
+    fn operator+(const I val) const ->overflowable {
         if (!overflowed()) {
             I res;
-            return ckd_add(&res, inner.value(), val) ? overflowable()
-                                                     : overflowable(res);
+            return ckd_add(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    fn operator+=(const I val)->overflowable & { return *this = *this + val; }
-    fn operator*(const I val) const->overflowable {
+    fn operator+=(const I val) -> overflowable & { return *this = *this + val; }
+    fn operator*(const I val) const ->overflowable {
         if (!overflowed()) {
             I res;
-            return ckd_mul(&res, inner.value(), val) ? overflowable()
-                                                     : overflowable(res);
+            return ckd_mul(&res, inner.value(), val) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    fn operator*(const overflowable &rhs) const->overflowable {
+    fn operator*(const overflowable &rhs) const ->overflowable {
         if (inner.has_value() && rhs.inner.has_value()) {
             I res;
-            return ckd_mul(&res, inner.value(), rhs.inner.value())
-                       ? overflowable()
-                       : overflowable(res);
+            return ckd_mul(&res, inner.value(), rhs.inner.value()) ? overflowable() : overflowable(res);
         }
         return overflowable();
     }
-    fn operator*=(const I val)->overflowable & { return *this = *this * val; }
-    fn operator*=(const overflowable &rhs)->overflowable & {
-        return *this = *this * rhs;
-    }
-    fn operator<=>(const overflowable &rhs) const->std::partial_ordering {
+    fn operator*=(const I val) -> overflowable & { return *this = *this * val; }
+    fn operator*=(const overflowable &rhs) -> overflowable & { return *this = *this * rhs; }
+    fn operator<=>(const overflowable &rhs) const ->std::partial_ordering {
         if (overflowed() && rhs.overflowed()) {
             // overflowable() cannot compare with itself
             return std::partial_ordering::unordered;
@@ -310,66 +300,56 @@ public:
 
 // 模意义下的计算
 
-template <std::unsigned_integral I, I M> class mod_unsigned_unchecked {
+template <std::unsigned_integral I, I M>
+class mod_unsigned_unchecked {
 public:
     I inner;
 
-    mod_unsigned_unchecked() : inner({}) {}
+    mod_unsigned_unchecked() : inner({}) { }
     mod_unsigned_unchecked(const I val) : inner(val) { debug_assert(val < M); }
 
-    fn operator==(const mod_unsigned_unchecked &rhs) const->bool {
-        return inner == rhs.inner;
-    }
+    fn operator==(const mod_unsigned_unchecked &rhs) const ->bool { return inner == rhs.inner; }
 
-    fn operator++()->mod_unsigned_unchecked & {
+    fn operator++() -> mod_unsigned_unchecked & {
         inner = (++inner) % M;
         return *this;
     }
-    fn operator++(int)->mod_unsigned_unchecked {
+    fn operator++(int) -> mod_unsigned_unchecked {
         let original = *this;
         ++*this;
         return original;
     }
-    fn operator+=(const mod_unsigned_unchecked &rhs)->mod_unsigned_unchecked & {
+    fn operator+=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
         inner = (inner + rhs.inner) % M;
         return *this;
     }
-    fn operator+(
-        const mod_unsigned_unchecked &rhs) const->mod_unsigned_unchecked {
-        return mod_unsigned_unchecked((inner + rhs.inner) % M);
-    }
+    fn operator+(const mod_unsigned_unchecked &rhs) const ->mod_unsigned_unchecked { return mod_unsigned_unchecked((inner + rhs.inner) % M); }
 
-    fn operator-=(const mod_unsigned_unchecked &rhs)->mod_unsigned_unchecked & {
+    fn operator-=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
         inner = (inner - rhs.inner) % M;
         return *this;
     }
-    fn operator-(
-        const mod_unsigned_unchecked &rhs) const->mod_unsigned_unchecked {
-        return mod_unsigned_unchecked((inner - rhs.inner) % M);
-    }
+    fn operator-(const mod_unsigned_unchecked &rhs) const ->mod_unsigned_unchecked { return mod_unsigned_unchecked((inner - rhs.inner) % M); }
 
-    fn operator*=(const mod_unsigned_unchecked &rhs)->mod_unsigned_unchecked & {
+    fn operator*=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
         inner = (inner * rhs.inner) % M;
         return *this;
     }
-    fn operator*(
-        const mod_unsigned_unchecked &rhs) const->mod_unsigned_unchecked {
-        return mod_unsigned_unchecked((inner * rhs.inner) % M);
-    }
+    fn operator*(const mod_unsigned_unchecked &rhs) const ->mod_unsigned_unchecked { return mod_unsigned_unchecked((inner * rhs.inner) % M); }
 };
 
 template <std::unsigned_integral I, I M>
 fn factorial(const I n) -> mod_unsigned_unchecked<I, M> {
     using result_t = mod_unsigned_unchecked<I, M>;
     let view = iota(I{1}, n + 1);
-    return std::accumulate(view.begin(), view.end(), result_t{1},
-        [](const var acc, const var x) { return acc * result_t{x}; });
+    return std::accumulate(view.begin(), view.end(), result_t{1}, [](const var acc, const var x) { return acc * result_t{x}; });
 }
 
 // 最长公共子序列
 
 // longest-common-subsequence problem
-template <std::ranges::input_range R> fn lcs(R &&a, R &&b) -> usize {
+template <std::ranges::input_range R>
+fn lcs(R &&a, R &&b) -> usize {
     usize cnt{0};
     todo();
     return cnt;
