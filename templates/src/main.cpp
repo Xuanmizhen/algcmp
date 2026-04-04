@@ -8,12 +8,12 @@
 #include <cstdint>
 #include <fstream>
 #include <iostream>
-#include <limits> // std::numeric_limits
+#include <limits>  // std::numeric_limits
 #include <numbers> // std::numbers::pi_v, std::numbers::pi, std::numbers::inv_pi_v, std::numbers::inv_pi
 #include <numeric> // std::accumulate
 #include <optional> // std::optional
-#include <queue> // std::priority_queue
-#include <ranges> // std::views::iota
+#include <queue>    // std::priority_queue
+#include <ranges>   // std::views::iota
 #include <source_location>
 #include <string_view>
 #include <type_traits> // std::make_signed_t
@@ -21,97 +21,109 @@
 
 // #include <bits/stdc++.h> // g++
 
-
 // 缩写和语法糖
 
-using i16 = int16_t;
-using i32 = int32_t;
-using i64 = int64_t;
-using isize = std::make_signed_t<size_t>;
-using i128 = __int128;
-
 using u16 = uint16_t;
+using i16 = int16_t;
 using u32 = uint32_t;
+using i32 = int32_t;
 using u64 = uint64_t;
-using usize = size_t;
+using i64 = int64_t;
 using u128 = __uint128_t;
+using i128 = __int128;
+using usize = size_t;
+using isize = std::make_signed_t<usize>;
 
 using std::cin;
 using std::cout;
-using std::views::iota;
 using std::source_location;
+using std::views::iota;
 
 #define let const auto
 #define var auto
 #define fn auto
 #define loop for (;;)
-
+#define in :
 
 // 向 C++26 看齐
 
 #if __cplusplus <= 202302L
-// Computes the addition `x + y` and stores the result into `*result`. The addition is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to *result is the mathematical result of the operation wrapped around to the width of `*result`.
-template<std::unsigned_integral type1>
-fn ckd_add(type1* result, type1 a, type1 b) -> bool {
+// Computes the addition `x + y` and stores the result into `*result`. The
+// addition is performed as if both operands were represented in a signed
+// integer type with infinite range, and the result was then converted from this
+// integer type to `type1`. If the value assigned to `*result` correctly
+// represents the mathematical result of the operation, it returns `false`.
+// Otherwise, it returns `true`. In this case, the value assigned to *result is
+// the mathematical result of the operation wrapped around to the width of
+// `*result`.
+template <std::unsigned_integral type1>
+fn ckd_add(type1 *result, type1 a, type1 b) -> bool {
     return __builtin_add_overflow(a, b, result);
 }
-// Computes the multiplication `x × y` and stores the result into `*result`. The multiplication is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to `*result` is the mathematical result of the operation wrapped around to the width of `*result`.
-template<std::unsigned_integral type1>
-fn ckd_mul(type1* result, type1 a, type1 b) -> bool {
+// Computes the multiplication `x × y` and stores the result into `*result`. The
+// multiplication is performed as if both operands were represented in a signed
+// integer type with infinite range, and the result was then converted from this
+// integer type to `type1`. If the value assigned to `*result` correctly
+// represents the mathematical result of the operation, it returns `false`.
+// Otherwise, it returns `true`. In this case, the value assigned to `*result`
+// is the mathematical result of the operation wrapped around to the width of
+// `*result`.
+template <std::unsigned_integral type1>
+fn ckd_mul(type1 *result, type1 a, type1 b) -> bool {
     return __builtin_mul_overflow(a, b, result);
 }
 #else
 #include <stdckdint.h> // C++26
 #endif
 
-
 // 调试工具
 
-fn log_loc(std::ostream &os, const source_location loc = source_location::current()) -> std::ostream & {
-    return os << '[' << loc.file_name() << ':' << loc.line() << ':' << loc.column() << "] `" << loc.function_name() << "`: ";
+fn log_loc(std::ostream &os,
+    const source_location loc = source_location::current()) -> std::ostream & {
+    return os << '[' << loc.file_name() << ':' << loc.line() << ':'
+              << loc.column() << "] `" << loc.function_name() << "`: ";
 }
 
 #ifdef LOCAL
-#define dbg(val) \
-    ([](const decltype((val)) v, const source_location loc) -> decltype((val)) { \
-        log_loc(std::clog, loc) << " (" << #val << ") = " << v << std::endl; \
-        return (v); \
+#define dbg(val)                                                               \
+    ([](const decltype((val)) v,                                               \
+         const source_location loc) -> decltype((val)) {                       \
+        log_loc(std::clog, loc) << " (" << #val << ") = " << v << std::endl;   \
+        return (v);                                                            \
     })((val), source_location::current())
 #define debug_assert(e) assert(e)
 #define todo() (throw std::runtime_error("not yet implemented"))
 #else
 #define dbg(val) val
-#define debug_assert(e) ((void) 0)
+#define debug_assert(e) ((void)0)
 #define todo() static_assert(false)
 #endif
-
 
 // 圆周率
 
 namespace std {
 namespace numbers {
 template <class T> inline constexpr T tau_v = 2 * pi_v<T>;
-template <class T> inline constexpr T inv_tau_v = inv_pi_v<T> / static_cast<T>(2.0);
+template <class T>
+inline constexpr T inv_tau_v = inv_pi_v<T> / static_cast<T>(2.0);
 inline constexpr double tau = tau_v<double>;
 inline constexpr double inv_tau = inv_tau_v<double>;
-}
-}
-
+} // namespace numbers
+} // namespace std
 
 // 线性代数
 
-template<class T, class Container = std::vector<std::vector<T>>>
-class matrix {
+template <class T, class Container = std::vector<std::vector<T>>> class matrix {
 public:
     using row_type = Container::value_type;
     using value_type = row_type::value_type;
     static_assert(std::is_same_v<value_type, T>);
     Container inner;
 
-    matrix() : matrix(Container()) { }
-    explicit matrix(const Container &cont) : inner(cont) { }
-    explicit matrix(Container&& cont) : inner(cont) { }
-    matrix(const usize n, const usize m) : inner(n, row_type(m)) { }
+    matrix() : matrix(Container()) {}
+    explicit matrix(const Container &cont) : inner(cont) {}
+    explicit matrix(Container &&cont) : inner(cont) {}
+    matrix(const usize n, const usize m) : inner(n, row_type(m)) {}
     // reference operator[](usize pos) {
     //     return inner[pos];
     // }
@@ -119,7 +131,6 @@ public:
     //     return inner[pos];
     // }
 };
-
 
 // 并查集
 
@@ -139,7 +150,7 @@ class disjoint_set {
     }
 
 public:
-    explicit disjoint_set(const usize n) : parent_or_neg_rank(n, -1) { }
+    explicit disjoint_set(const usize n) : parent_or_neg_rank(n, -1) {}
     fn find_set(usize x) -> usize {
         var root = x;
         while (parent_or_neg_rank[root] >= 0) {
@@ -168,22 +179,22 @@ public:
     }
 };
 
-
 // 图论
 
-template <std::three_way_comparable W>
-class undirected_edge {
+template <std::three_way_comparable W> class undirected_edge {
 public:
     usize u, v;
     W weight;
 
-    fn operator<=>(const undirected_edge& rhs) const -> std::weak_ordering {
+    fn operator<=>(const undirected_edge &rhs) const->std::weak_ordering {
         return rhs.weight <=> weight;
     }
 };
 
 template <std::three_way_comparable W>
-fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_edge<W>> &q) -> std::optional<undirected_edge<W>> {
+fn kruskal_safe_edge(
+    disjoint_set &components, std::priority_queue<undirected_edge<W>> &q)
+    -> std::optional<undirected_edge<W>> {
     while (!q.empty()) {
         let e = q.top();
         q.pop();
@@ -194,26 +205,22 @@ fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_ed
     return {};
 }
 
-template<typename C>
-struct action
-{
+template <typename C> struct action {
     usize dest;
     C cost;
 };
 
-template<typename W>
-class directed_edge
-{
+template <typename W> class directed_edge {
 public:
     usize source;
     action<W> act;
 
-    directed_edge(const usize src, const usize dst, const W weight) : source(src), act(dst, weight) { }
+    directed_edge(const usize src, const usize dst, const W weight)
+        : source(src), act(dst, weight) {}
 };
 
-
 // 快速幂
-template<std::integral T, std::unsigned_integral E>
+template <std::integral T, std::unsigned_integral E>
 fn powi(T base, E exp) -> T {
     var res = T(1);
     while (exp > 0) {
@@ -226,23 +233,17 @@ fn powi(T base, E exp) -> T {
     return res;
 }
 
-
 // 溢出标记
 
-template<std::unsigned_integral I>
-class overflowable {
+template <std::unsigned_integral I> class overflowable {
     std::optional<I> inner;
-    overflowable() { }
+    overflowable() {}
 
 public:
-    overflowable(const I val) : inner(val) { }
-    fn overflowed() const -> bool {
-        return !inner.has_value();
-    }
-    fn value() -> std::optional<I> {
-        return inner;
-    }
-    fn operator++() -> overflowable& {
+    overflowable(const I val) : inner(val) {}
+    fn overflowed() const -> bool { return !inner.has_value(); }
+    fn value() -> std::optional<I> { return inner; }
+    fn operator++()->overflowable & {
         if (!overflowed()) {
             if (inner.value() == std::numeric_limits<I>::max()) {
                 inner.reset();
@@ -252,42 +253,42 @@ public:
         }
         return *this;
     }
-    fn operator++(int) -> overflowable {
+    fn operator++(int)->overflowable {
         let original = *this;
         ++*this;
         return original;
     }
-    fn operator+(const I val) const -> overflowable {
+    fn operator+(const I val) const->overflowable {
         if (!overflowed()) {
             I res;
-            return ckd_add(&res, inner.value(), val) ? overflowable() : overflowable(res);
+            return ckd_add(&res, inner.value(), val) ? overflowable()
+                                                     : overflowable(res);
         }
         return overflowable();
     }
-    fn operator+=(const I val) -> overflowable & {
-        return *this = *this + val;
-    }
-    fn operator*(const I val) const -> overflowable {
+    fn operator+=(const I val)->overflowable & { return *this = *this + val; }
+    fn operator*(const I val) const->overflowable {
         if (!overflowed()) {
             I res;
-            return ckd_mul(&res, inner.value(), val) ? overflowable() : overflowable(res);
+            return ckd_mul(&res, inner.value(), val) ? overflowable()
+                                                     : overflowable(res);
         }
         return overflowable();
     }
-    fn operator*(const overflowable& rhs) const -> overflowable {
+    fn operator*(const overflowable &rhs) const->overflowable {
         if (inner.has_value() && rhs.inner.has_value()) {
             I res;
-            return ckd_mul(&res, inner.value(), rhs.inner.value()) ? overflowable() : overflowable(res);
+            return ckd_mul(&res, inner.value(), rhs.inner.value())
+                       ? overflowable()
+                       : overflowable(res);
         }
         return overflowable();
     }
-    fn operator*=(const I val) -> overflowable & {
-        return *this = *this * val;
-    }
-    fn operator*=(const overflowable& rhs) -> overflowable & {
+    fn operator*=(const I val)->overflowable & { return *this = *this * val; }
+    fn operator*=(const overflowable &rhs)->overflowable & {
         return *this = *this * rhs;
     }
-    fn operator<=>(const overflowable& rhs) const -> std::partial_ordering {
+    fn operator<=>(const overflowable &rhs) const->std::partial_ordering {
         if (overflowed() && rhs.overflowed()) {
             // overflowable() cannot compare with itself
             return std::partial_ordering::unordered;
@@ -307,89 +308,72 @@ public:
     // }
 };
 
-
 // 模意义下的计算
 
-template<std::unsigned_integral Inner, Inner M>
-class mod_unsigned_unchecked {
+template <std::unsigned_integral I, I M> class mod_unsigned_unchecked {
 public:
-    Inner inner;
+    I inner;
 
-    mod_unsigned_unchecked() : inner({}) { }
-    mod_unsigned_unchecked(const Inner val) : inner(val) {
-        debug_assert(val < M);
-    }
+    mod_unsigned_unchecked() : inner({}) {}
+    mod_unsigned_unchecked(const I val) : inner(val) { debug_assert(val < M); }
 
-    fn operator==(const mod_unsigned_unchecked& rhs) const -> bool {
+    fn operator==(const mod_unsigned_unchecked &rhs) const->bool {
         return inner == rhs.inner;
     }
 
-    fn operator++() -> mod_unsigned_unchecked& {
+    fn operator++()->mod_unsigned_unchecked & {
         inner = (++inner) % M;
         return *this;
     }
-    fn operator++(int) -> mod_unsigned_unchecked {
+    fn operator++(int)->mod_unsigned_unchecked {
         let original = *this;
         ++*this;
         return original;
     }
-    fn operator+=(const mod_unsigned_unchecked<Inner, M>& rhs) -> mod_unsigned_unchecked & {
+    fn operator+=(const mod_unsigned_unchecked &rhs)->mod_unsigned_unchecked & {
         inner = (inner + rhs.inner) % M;
         return *this;
     }
-    fn operator+(const mod_unsigned_unchecked<Inner, M>& rhs) const -> mod_unsigned_unchecked {
+    fn operator+(
+        const mod_unsigned_unchecked &rhs) const->mod_unsigned_unchecked {
         return mod_unsigned_unchecked((inner + rhs.inner) % M);
     }
 
-    fn operator-=(const mod_unsigned_unchecked<Inner, M>& rhs) -> mod_unsigned_unchecked & {
+    fn operator-=(const mod_unsigned_unchecked &rhs)->mod_unsigned_unchecked & {
         inner = (inner - rhs.inner) % M;
         return *this;
     }
-    fn operator-(const mod_unsigned_unchecked<Inner, M>& rhs) const -> mod_unsigned_unchecked {
+    fn operator-(
+        const mod_unsigned_unchecked &rhs) const->mod_unsigned_unchecked {
         return mod_unsigned_unchecked((inner - rhs.inner) % M);
     }
 
-    fn operator*=(const mod_unsigned_unchecked<Inner, M>& rhs) -> mod_unsigned_unchecked & {
+    fn operator*=(const mod_unsigned_unchecked &rhs)->mod_unsigned_unchecked & {
         inner = (inner * rhs.inner) % M;
         return *this;
     }
-    fn operator*(const mod_unsigned_unchecked<Inner, M>& rhs) const -> mod_unsigned_unchecked {
+    fn operator*(
+        const mod_unsigned_unchecked &rhs) const->mod_unsigned_unchecked {
         return mod_unsigned_unchecked((inner * rhs.inner) % M);
     }
 };
 
-// // CRITICAL: Specialize incrementable_traits so mod_unsigned_unchecked satisfies weakly_incrementable
-// namespace std {
-// template<std::unsigned_integral Inner, Inner M>
-// struct incrementable_traits<mod_unsigned_unchecked<Inner, M>> {
-//     using difference_type = std::make_signed_t<Inner>;
-// };
-// }
-
-
-using num_t = mod_unsigned_unchecked<u64, 998244353>;
-
-template<std::unsigned_integral I>
-fn factorial(const I n) -> num_t {
-    var result = num_t{1};
-    let view = iota(u64{1}, n + 1);
-    std::accumulate(view.begin(), view.end(), result, [](num_t acc, u64 x) {
-        return acc * num_t{x};
-    });
-    return result;
+template <std::unsigned_integral I, I M>
+fn factorial(const I n) -> mod_unsigned_unchecked<I, M> {
+    using result_t = mod_unsigned_unchecked<I, M>;
+    let view = iota(I{1}, n + 1);
+    return std::accumulate(view.begin(), view.end(), result_t{1},
+        [](const var acc, const var x) { return acc * result_t{x}; });
 }
-
 
 // 最长公共子序列
 
 // longest-common-subsequence problem
-template<std::ranges::input_range R>
-fn lcs(R&& a, R&& b) -> usize {
+template <std::ranges::input_range R> fn lcs(R &&a, R &&b) -> usize {
     usize cnt{0};
     todo();
     return cnt;
 }
-
 
 // 测试
 
@@ -406,8 +390,8 @@ fn test() {
     var d = overflowable<uint8_t>{255};
     assert(!(d++).overflowed());
     assert(powi(-3, u16{3}) == -27);
+    assert((factorial<u32, 2017>(5).inner) == 120);
 }
-
 
 // 任务
 
