@@ -310,6 +310,8 @@ public:
 
 template<std::unsigned_integral I, I M>
 class mod_unsigned {
+    static_assert(M > 0, "M must be positive");
+
 public:
     I inner;
 

@@ -20,4 +20,3 @@ BreakTemplateDeclarations: Yes
 AlignAfterOpenBracket: false
 AlignArrayOfStructures: None
 SpaceInEmptyBraces: Block
-PenaltyBreakBeforeMemberAccess: 0

@@ -20,7 +20,18 @@
 | 判断谓词可满足性 | [`std::ranges::all_of` (C++20), `std::ranges::any_of` (C++20), `std::ranges::none_of` (C++20)](https://en.cppreference.com/w/cpp/algorithm/ranges/all_any_none_of.html) | |
 | 判断存在性 | [`std::ranges::contains` (C++23), `std::ranges::contains_subrange` (C++23)](https://en.cppreference.com/w/cpp/algorithm/ranges/contains.html) | |
 
+### 链式调用
+| Operation | C++ | Python |
+| --------- | --- | ------ |
+| 截断 | [`std::ranges::take_view` (C++20), `std::views::take` (C++20)](https://en.cppreference.com/w/cpp/ranges/take_view.html) | |
+| 反转 | [`std::ranges::reverse_view` (C++20), `std::views::reverse` (C++20)](https://en.cppreference.com/w/cpp/ranges/reverse_view.html) | `reversed` |
+| 过滤 | [`std::ranges::filter_view` (C++20), `std::views::filter` (C++20)](https://en.cppreference.com/w/cpp/ranges/filter_view.html) | `filter` |
+| 映射 | [`std::ranges::transform_view` (C++20), `std::views::transform` (C++20)](https://en.cppreference.com/w/cpp/ranges/transform_view.html) | `map` |
+| 取键 | [`std::ranges::keys_view` (C++20), `std::views::keys` (C++20)](https://en.cppreference.com/w/cpp/ranges/keys_view.html) | |
+| 取值 | [`std::ranges::values_view` (C++20), `std::views::values` (C++20)](https://en.cppreference.com/w/cpp/ranges/values_view.html) | |
+
 ### Concepts
 | Concept | C++ |
 | ------- | --- |
 | 随机访问迭代器 | [`std::random_access_iterator` (C++20)](https://en.cppreference.com/w/cpp/iterator/random_access_iterator.html) |
+| 随机访问范围 | [`std::random_access_range` (C++20)](https://en.cppreference.com/w/cpp/ranges/random_access_range.html) |
