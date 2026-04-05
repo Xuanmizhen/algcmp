@@ -3,6 +3,7 @@
 // PTA: C++ (g++)
 // QOJ.ac: C++20 or C++23 or C++26
 
+
 #include <cassert> // assert
 #include <compare> // std::strong_ordering
 #include <cstdint>
@@ -20,6 +21,7 @@
 #include <vector>
 
 // #include <bits/stdc++.h> // g++
+
 
 // 缩写和语法糖
 
@@ -45,22 +47,24 @@ using std::views::iota;
 #define loop for (;;)
 #define in :
 
+
 // 向 C++26 看齐
 
 #if __cplusplus <= 202302L
 // Computes the addition `x + y` and stores the result into `*result`. The addition is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to *result is the mathematical result of the operation wrapped around to the width of `*result`.
-template <std::unsigned_integral type1>
+template<std::unsigned_integral type1>
 fn ckd_add(type1 *result, type1 a, type1 b) -> bool {
     return __builtin_add_overflow(a, b, result);
 }
 // Computes the multiplication `x × y` and stores the result into `*result`. The multiplication is performed as if both operands were represented in a signed integer type with infinite range, and the result was then converted from this integer type to `type1`. If the value assigned to `*result` correctly represents the mathematical result of the operation, it returns `false`. Otherwise, it returns `true`. In this case, the value assigned to `*result` is the mathematical result of the operation wrapped around to the width of `*result`.
-template <std::unsigned_integral type1>
+template<std::unsigned_integral type1>
 fn ckd_mul(type1 *result, type1 a, type1 b) -> bool {
     return __builtin_mul_overflow(a, b, result);
 }
-#else
-#include <stdckdint.h> // C++26
+#else // C++26
+#include <stdckdint.h>
 #endif
+
 
 // 调试工具
 
@@ -82,22 +86,24 @@ fn log_loc(std::ostream &os, const source_location loc = source_location::curren
 #define todo() static_assert(false)
 #endif
 
+
 // 圆周率
 
 namespace std {
-namespace numbers {
-template <class T>
-inline constexpr T tau_v = 2 * pi_v<T>;
-template <class T>
-inline constexpr T inv_tau_v = inv_pi_v<T> / static_cast<T>(2.0);
-inline constexpr double tau = tau_v<double>;
-inline constexpr double inv_tau = inv_tau_v<double>;
-} // namespace numbers
-} // namespace std
+    namespace numbers {
+        template<typename T>
+        inline constexpr T tau_v = 2 * pi_v<T>;
+        template<typename T>
+        inline constexpr T inv_tau_v = inv_pi_v<T> / static_cast<T>(2.0);
+        inline constexpr double tau = tau_v<double>;
+        inline constexpr double inv_tau = inv_tau_v<double>;
+    }
+}
+
 
 // 线性代数
 
-template <class T, class Container = std::vector<std::vector<T>>>
+template<typename T, typename Container = std::vector<std::vector<T>>>
 class matrix {
 public:
     using row_type = Container::value_type;
@@ -116,6 +122,7 @@ public:
     //     return inner[pos];
     // }
 };
+
 
 // 并查集
 
@@ -164,9 +171,10 @@ public:
     }
 };
 
+
 // 图论
 
-template <std::three_way_comparable W>
+template<std::three_way_comparable W>
 class undirected_edge {
 public:
     usize u, v;
@@ -177,7 +185,7 @@ public:
     }
 };
 
-template <std::three_way_comparable W>
+template<std::three_way_comparable W>
 fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_edge<W>> &q) -> std::optional<undirected_edge<W>> {
     while (!q.empty()) {
         let e = q.top();
@@ -189,13 +197,13 @@ fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_ed
     return {};
 }
 
-template <typename C>
+template<typename C>
 struct action {
     usize dest;
     C cost;
 };
 
-template <typename W>
+template<typename W>
 class directed_edge {
 public:
     usize source;
@@ -204,8 +212,9 @@ public:
     directed_edge(const usize src, const usize dst, const W weight) : source(src), act(dst, weight) { }
 };
 
+
 // 快速幂
-template <std::integral T, std::unsigned_integral E>
+template<std::integral T, std::unsigned_integral E>
 fn powi(T base, E exp) -> T {
     var res = T(1);
     while (exp > 0) {
@@ -218,17 +227,22 @@ fn powi(T base, E exp) -> T {
     return res;
 }
 
+
 // 溢出标记
 
-template <std::unsigned_integral I>
+template<std::unsigned_integral I>
 class overflowable {
     std::optional<I> inner;
     overflowable() { }
 
 public:
     overflowable(const I val) : inner(val) { }
-    fn overflowed() const -> bool { return !inner.has_value(); }
-    fn value() -> std::optional<I> { return inner; }
+    fn overflowed() const -> bool {
+        return !inner.has_value();
+    }
+    fn value() -> std::optional<I> {
+        return inner;
+    }
     fn operator++() -> overflowable & {
         if (!overflowed()) {
             if (inner.value() == std::numeric_limits<I>::max()) {
@@ -291,77 +305,128 @@ public:
     }
 };
 
+
 // 模意义下的计算
 
-template <std::unsigned_integral I, I M>
-class mod_unsigned_unchecked {
+template<std::unsigned_integral I, I M>
+class mod_unsigned {
 public:
     I inner;
 
-    mod_unsigned_unchecked() : inner({}) { }
-    mod_unsigned_unchecked(const I val) : inner(val) { debug_assert(val < M); }
+    mod_unsigned() : inner({}) { }
+    mod_unsigned(const I val) : inner(val) {
+        debug_assert(val < M);
+    }
 
-    fn operator==(const mod_unsigned_unchecked &rhs) const -> bool {
+    fn operator==(const mod_unsigned &rhs) const -> bool {
         return inner == rhs.inner;
     }
 
-    fn operator++() -> mod_unsigned_unchecked & {
-        inner = (++inner) % M;
+    fn operator++() -> mod_unsigned & {
+        if (++inner == M) {
+            inner = 0;
+        }
         return *this;
     }
-    fn operator++(int) -> mod_unsigned_unchecked {
+    fn operator++(int) -> mod_unsigned {
         let original = *this;
         ++*this;
         return original;
     }
-    fn operator+=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
-        inner = (inner + rhs.inner) % M;
-        return *this;
+    fn operator+(const mod_unsigned &rhs) const -> mod_unsigned {
+        static_assert(std::bit_width(M) + 1 <= std::numeric_limits<I>::digits, "M may be too large for +");
+        return mod_unsigned{(inner + rhs.inner) % M};
     }
-    fn operator+(const mod_unsigned_unchecked &rhs) const -> mod_unsigned_unchecked {
-        return mod_unsigned_unchecked((inner + rhs.inner) % M);
-    }
-
-    fn operator-=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
-        inner = (inner - rhs.inner) % M;
-        return *this;
-    }
-    fn operator-(const mod_unsigned_unchecked &rhs) const -> mod_unsigned_unchecked {
-        return mod_unsigned_unchecked((inner - rhs.inner) % M);
+    fn operator+=(const mod_unsigned &rhs) -> mod_unsigned & {
+        return *this = *this + rhs;
     }
 
-    fn operator*=(const mod_unsigned_unchecked &rhs) -> mod_unsigned_unchecked & {
-        inner = (inner * rhs.inner) % M;
+    fn operator--() -> mod_unsigned & {
+        if (inner == 0) {
+            inner = M - 1;
+        } else {
+            --inner;
+        }
         return *this;
     }
-    fn operator*(const mod_unsigned_unchecked &rhs) const -> mod_unsigned_unchecked {
-        return mod_unsigned_unchecked((inner * rhs.inner) % M);
+    fn operator--(int) -> mod_unsigned {
+        let original = *this;
+        --*this;
+        return original;
+    }
+    fn operator-() const -> mod_unsigned {
+        return inner == 0 ? *this : mod_unsigned{M - inner};
+    }
+    fn operator-(const mod_unsigned &rhs) const -> mod_unsigned {
+        return *this + -rhs;
+    }
+    fn operator-=(const mod_unsigned &rhs) -> mod_unsigned & {
+        return *this += -rhs;
+    }
+
+    fn operator*(const mod_unsigned &rhs) const -> mod_unsigned {
+        static_assert(std::bit_width(M) * 2 <= std::numeric_limits<I>::digits, "M may be too large for *");
+        return mod_unsigned{(inner * rhs.inner) % M};
+    }
+    fn operator*=(const mod_unsigned &rhs) -> mod_unsigned & {
+        return *this = *this * rhs;
+    }
+
+    fn multiplicative_inverse() const -> mod_unsigned {
+        // FIXME: Assert M to be prime.
+        return powi(*this, M - I{2});
+    }
+    fn operator/=(const mod_unsigned &rhs) -> mod_unsigned & {
+        return *this *= rhs.multiplicative_inverse();
+    }
+    fn operator/(const mod_unsigned &rhs) const -> mod_unsigned {
+        return *this * rhs.multiplicative_inverse();
     }
 };
 
-template <std::unsigned_integral I, I M>
-fn factorial_mod(const I n) -> mod_unsigned_unchecked<I, M> {
-    using result_t = mod_unsigned_unchecked<I, M>;
-    let view = iota(I{1}, n + 1);
-    return std::accumulate(view.begin(), view.end(), result_t{1}, [](const var acc, const var x) {
-        return acc * result_t{x};
+
+// 组合数学
+
+template<std::unsigned_integral I, typename R>
+fn factorial(const I n) -> R {
+    let view = iota(I{1}, n + I{1});
+    return std::accumulate(view.begin(), view.end(), R{1}, [](const var acc, const var x) {
+        return acc * R{x};
     });
 }
+
+template<std::unsigned_integral I, typename R>
+fn perm(const I n, const I k) -> R {
+    if (k > n) {
+        return R{0};
+    }
+    let view = iota(n - k + I{1}, n + I{1});
+    return std::accumulate(view.begin(), view.end(), R{1}, [](const var acc, const var x) {
+        return acc * R{x};
+    });
+}
+
+template<std::unsigned_integral I, typename R>
+fn comb(const I n, const I k) -> R {
+    return perm<I, R>(n, k) / factorial<I, R>(k);
+}
+
 
 // 最长公共子序列
 
 // longest-common-subsequence problem
-template <std::ranges::input_range R>
+template<std::ranges::input_range R>
 fn lcs(R &&a, R &&b) -> usize {
     usize cnt{0};
     todo();
     return cnt;
 }
 
+
 // 测试
 
 fn test() {
-    var a = mod_unsigned_unchecked<u32, 2017>{5};
+    var a = mod_unsigned<u32, 2017>{5};
     a *= 20;
     assert(dbg(a.inner == 100));
     a *= 21;
@@ -373,8 +438,11 @@ fn test() {
     var d = overflowable<uint8_t>{255};
     assert(!(d++).overflowed());
     assert(powi(-3, u16{3}) == -27);
-    assert((factorial_mod<u32, 105>(5).inner) == 15);
+    var e = mod_unsigned<u32, 10>{0};
+    assert((--e).inner == 9);
+    assert((factorial<u32, mod_unsigned<u32, 105>>(5).inner) == 15);
 }
+
 
 // 任务
 

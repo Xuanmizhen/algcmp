@@ -4,6 +4,14 @@ BasedOnStyle: LLVM
 IndentWidth: 4
 UseTab: Never
 InsertNewlineAtEOF: true
+MaxEmptyLinesToKeep: 3
+FixNamespaceComments: false
+NamespaceIndentation: All
+AllowShortBlocksOnASingleLine: Empty
+SpaceAfterTemplateKeyword: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: Empty
+AlignEscapedNewlines: DontAlign
 ColumnLimit: 1000
 AccessModifierOffset: -4
 EmptyLineBeforeAccessModifier: Always
