@@ -6,6 +6,7 @@ A Rust-based tool for algorithm competition participants to manage C++ reference
 
 - **Extract C++ References**: Automatically extracts C++ reference URLs from Markdown files
 - **Download HTML Pages**: Downloads reference pages from cppreference.com
+- **Multi-language Support**: Supports both English and Chinese (zh) versions
 - **Process HTML**: Removes unnecessary navigation elements for cleaner printing
 - **Concatenate Files**: Combines multiple HTML files into a single printable document
 - **Syntax Highlighting Control**: Supports both colored and flattened output modes
@@ -35,12 +36,18 @@ algcmp/
 │   ├── Binary_search.md
 │   ├── Permutation.md
 │   └── ...
-├── cppreference/       # Downloaded HTML files (created by download command)
+├── cppreference_en/    # Downloaded English HTML files (created by download command)
 │   ├── std::midpoint.html
 │   ├── std::next_permutation.html
 │   └── ...
-├── cppreference_print.html           # Generated printable HTML (flattened)
-└── cppreference_print_colored.html   # Generated printable HTML (colored)
+├── cppreference_zh/    # Downloaded Chinese HTML files (created by download command)
+│   ├── std::midpoint.html
+│   ├── std::next_permutation.html
+│   └── ...
+├── cppreference_en_print.html           # Generated English printable HTML (flattened)
+├── cppreference_en_print_colored.html   # Generated English printable HTML (colored)
+├── cppreference_zh_print.html           # Generated Chinese printable HTML (flattened)
+└── cppreference_zh_print_colored.html   # Generated Chinese printable HTML (colored)
 ```
 
 ### Commands
@@ -50,23 +57,35 @@ algcmp/
 Extracts C++ reference URLs from Markdown files in `./contents` and downloads the corresponding HTML pages.
 
 ```bash
-# Download only missing files
+# Download English version (default)
 cargo run -- ref download
+cargo run -- ref download --lang en
+
+# Download Chinese version
+cargo run -- ref download --lang zh
 
 # Re-download all files (overwrite existing)
 cargo run -- ref download --overwrite
+cargo run -- ref download --lang zh --overwrite
 ```
+
+**Note for Chinese version**: If you encounter redirect issues to English pages, you can add browser request headers (including Cookie) in `src/commands/download.rs`.
 
 #### Generate Printable HTML
 
 Concatenates all downloaded HTML files into a single printable document.
 
 ```bash
-# Generate flattened output (no syntax highlighting, suitable for non-colored printing)
+# Generate English version (default)
 cargo run -- ref print
+cargo run -- ref print --lang en
+
+# Generate Chinese version
+cargo run -- ref print --lang zh
 
 # Generate colored output (preserves syntax highlighting)
 cargo run -- ref print --colored
+cargo run -- ref print --lang zh --colored
 ```
 
 ### Markdown Format

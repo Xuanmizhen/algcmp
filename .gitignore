@@ -1,3 +1,12 @@
 target
-cppreference
-cppreference_cn
+
+cppreference_en
+cppreference_zh
+
+cppreference_en_print.html
+cppreference_en_print_colored.html
+cppreference_zh_print.html
+cppreference_zh_print_colored.html
+
+*.dSYM
+.DS_Store
