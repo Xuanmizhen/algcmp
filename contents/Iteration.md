@@ -33,5 +33,9 @@
 ### Concepts
 | Concept | C++ |
 | ------- | --- |
+| 输入或输出迭代器 | [`std::input_or_output_iterator` (C++20)](https://en.cppreference.com/w/cpp/iterator/input_or_output_iterator.html) |
+| 输入迭代器 | [`std::input_iterator` (C++20)](https://en.cppreference.com/w/cpp/iterator/input_iterator.html) |
+| 前向迭代器 | [`std::forward_iterator` (C++20)](https://en.cppreference.com/w/cpp/iterator/forward_iterator.html) |
 | 随机访问迭代器 | [`std::random_access_iterator` (C++20)](https://en.cppreference.com/w/cpp/iterator/random_access_iterator.html) |
+| 范围 | [`std::ranges::range` (C++20)](https://en.cppreference.com/w/cpp/ranges/range.html) |
 | 随机访问范围 | [`std::random_access_range` (C++20)](https://en.cppreference.com/w/cpp/ranges/random_access_range.html) |

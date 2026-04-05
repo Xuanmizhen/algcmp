@@ -194,7 +194,7 @@ fn kruskal_safe_edge(disjoint_set &components, std::priority_queue<undirected_ed
             return e;
         }
     }
-    return {};
+    return std::nullopt;
 }
 
 template<typename C>
