@@ -51,23 +51,21 @@ use crate::{
 ///
 /// - `./cppreference_print.html` - Flattened output (no syntax highlighting)
 /// - `./cppreference_print_colored.html` - Colored output (with syntax highlighting)
-pub fn print_references(colored: bool) -> Result<(), AppError> {
-    info!("Starting reference printer");
+pub fn print_references(colored: bool, lang: &str) -> Result<(), AppError> {
+    info!("Starting reference printer (language: {})", lang);
 
-    // Check if cppreference directory exists
-    let cppreference_dir = Path::new("./cppreference");
+    let cppreference_dir_name = format!("./cppreference_{}", lang);
+    let cppreference_dir = Path::new(&cppreference_dir_name);
     if !cppreference_dir.exists() {
-        error!("cppreference directory does not exist");
+        error!("{} directory does not exist", cppreference_dir_name);
         return Err(AppError::IoError(std::io::Error::new(
             std::io::ErrorKind::NotFound,
-            "cppreference directory does not exist",
+            format!("{} directory does not exist", cppreference_dir_name),
         )));
     }
 
-    // Get required references from markdown files
     let unique_references = get_required_references()?;
 
-    // Get the set of required file names (without extension)
     let required_names: HashSet<String> = unique_references.keys().cloned().collect();
 
     info!("Found {} required references", required_names.len());
@@ -197,20 +195,20 @@ pub fn print_references(colored: bool) -> Result<(), AppError> {
             }
         } else {
             // No files found
-            error!("No HTML files found in cppreference directory");
+            error!("No HTML files found in {} directory", cppreference_dir_name);
             return Err(AppError::IoError(std::io::Error::new(
                 std::io::ErrorKind::NotFound,
-                "No HTML files found in cppreference directory",
+                format!("No HTML files found in {} directory", cppreference_dir_name),
             )));
         }
     };
 
-    // Save to appropriate file
-    let output_file = if colored {
-        Path::new("./cppreference_print_colored.html")
+    let output_file_name = if colored {
+        format!("./cppreference_{}_print_colored.html", lang)
     } else {
-        Path::new("./cppreference_print.html")
+        format!("./cppreference_{}_print.html", lang)
     };
+    let output_file = Path::new(&output_file_name);
 
     fs::write(output_file, processed_content)?;
     info!("Saved concatenated references to {:?}", output_file);

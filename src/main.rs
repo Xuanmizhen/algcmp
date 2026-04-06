@@ -70,11 +70,17 @@ enum RefSubcommands {
         /// Overwrite existing files
         #[arg(long, default_value_t = false)]
         overwrite: bool,
+        /// Language version: "en" for English (default), "zh" for Chinese
+        #[arg(long, default_value = "en")]
+        lang: String,
     },
     Print {
         /// Include colored output
         #[arg(long, default_value_t = false)]
         colored: bool,
+        /// Language version: "en" for English (default), "zh" for Chinese
+        #[arg(long, default_value = "en")]
+        lang: String,
     },
 }
 
@@ -94,15 +100,15 @@ fn main() -> Result<(), AppError> {
 
     match &cli.command {
         Commands::Ref { subcommand } => match subcommand {
-            RefSubcommands::Download { overwrite } => {
+            RefSubcommands::Download { overwrite, lang } => {
                 let rt = tokio::runtime::Builder::new_current_thread()
                     .enable_all()
                     .build()
                     .unwrap();
 
-                rt.block_on(download_references(*overwrite))
+                rt.block_on(download_references(*overwrite, lang))
             }
-            RefSubcommands::Print { colored } => print_references(*colored),
+            RefSubcommands::Print { colored, lang } => print_references(*colored, lang),
         },
     }
 }
