@@ -1,11 +1,14 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
     public static void main() {
-        Scanner scan = new Scanner(System.in);
-        int t = scan.nextInt();
-        while (t-- > 0) {
+        final var br = new BufferedReader(new InputStreamReader(System.in));
+        try (final var pw = new PrintWriter(System.out)) {
+            var t = Integer.parseInt(br.readLine());
+            while (t-- > 0) {
+            }
+        } catch (IOException e) {
+            // e.printStackTrace();
         }
-        scan.close();
     }
 }
