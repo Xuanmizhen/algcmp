@@ -8,7 +8,7 @@ MaxEmptyLinesToKeep: 3
 FixNamespaceComments: false
 NamespaceIndentation: All
 AllowShortBlocksOnASingleLine: Empty
-SpaceAfterTemplateKeyword: false
+SpaceAfterTemplateKeyword: true
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortLambdasOnASingleLine: Empty
 AlignEscapedNewlines: DontAlign
