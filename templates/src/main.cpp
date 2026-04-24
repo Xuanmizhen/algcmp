@@ -452,11 +452,23 @@ fn comb(const I n, const I k) -> R {
 // 最长公共子序列
 
 // longest-common-subsequence problem
-template <std::ranges::input_range R>
-fn lcs(R &&a, R &&b) -> usize {
-    usize cnt{0};
-    todo();
-    return cnt;
+template <std::ranges::input_range A, std::ranges::input_range B>
+fn lcs(A &&a, B &&b) -> usize {
+    var dp = std::vector(b.size() + 1uz, 0uz);
+    for (let a_ch in a) {
+        // LI: a 已经被遍历过的部分和 b[:i] 的 LCS 长度记录在 dp[i] 中。
+        // 推论：数组 dp 是非递减的。
+        var dp_last = dp.begin();
+        for (let b_ch in b) {
+            // LI: *dp_last 表示 a 已经被遍历过的部分和 b[:b_ch] 的 LCS 长度。
+            let dp_current = dp_last + 1;
+            *dp_current = (b_ch == a_ch ? *dp_last + 1 : std::max(*dp_last, *dp_current));
+            // Q: 这里为什么要取 std::max(*dp_last, *dp_current)，不能直接取 *dp_current？
+            // A: *dp_last 是本次大循环的计算结果，而 *dp_current 则是上个大循环的计算结果，故单调性不保证。
+            dp_last = dp_current;
+        }
+    }
+    return dp[b.size()];
 }
 
 
