@@ -472,6 +472,12 @@ fn lcs(A &&a, B &&b) -> usize {
 }
 
 
+template <typename T>
+fn cross(std::array<T, 3> a, std::array<T, 3> b) -> std::array<T, 3> {
+    return {a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]};
+}
+
+
 // 测试
 
 fn test() {

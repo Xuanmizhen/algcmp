@@ -162,6 +162,16 @@ def comb_mod2(n: int, k: int, mod: int):
     return res
 
 
+def egcd(a, b):
+    """返回 (g, x, y)，使得 a*x + b*y = g = gcd(a, b)"""
+    if b == 0:
+        return (a, 1, 0)
+    else:
+        div, mod = divmod(a, b)
+        g, x1, y1 = egcd(b, mod)
+        return (g, y1, x1 - div * y1)
+
+
 t = int(input())
 for _ in range(t):
     pass
