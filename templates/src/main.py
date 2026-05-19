@@ -3,7 +3,7 @@ from contextlib import suppress
 # from fractions import Fraction
 from functools import cache
 from itertools import (chain, islice, product, starmap)
-from math import isqrt
+from math import comb, isqrt
 import operator
 import sys
 
@@ -163,7 +163,7 @@ def comb_mod2(n: int, k: int, mod: int):
 
 
 def egcd(a, b):
-    """返回 (g, x, y)，使得 a*x + b*y = g = gcd(a, b)"""
+    "返回 (g, x, y)，使得 a*x + b*y = g = gcd(a, b)"
     if b == 0:
         return (a, 1, 0)
     else:
@@ -171,7 +171,31 @@ def egcd(a, b):
         g, x1, y1 = egcd(b, mod)
         return (g, y1, x1 - div * y1)
 
+def catalan(n):
+    "The nth Catalan number."
+    return comb(2 * n, n) // (n + 1)
 
-t = int(input())
-for _ in range(t):
-    pass
+def catalan_mod(n):
+    "The nth Catalan number."
+    return factorial_mod(2*n, 10**9+7) * pow(factorial_mod(n+1, 10**9+7), -1, 10**9+7) * pow(factorial_mod(n, 10**9+7), -1, 10**9+7) % (10**9+7)
+
+def catalan_sequence(bound):
+    "Catalan numbers up to the given bound."
+    c = [0] * bound
+    c[0] = 1
+    for i in range(1, bound):
+        c[i] = c[i - 1] * (4 * i - 2) // (i + 1)
+    return c
+
+def test():
+    cat = catalan_sequence(10)
+    assert cat == [1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862]
+    assert cat == [catalan(i) for i in range(10)]
+    print('Test passed')
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        pass
+else:
+    test()
